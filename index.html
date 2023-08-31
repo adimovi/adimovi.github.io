@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontDev - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="spacing" id="main">
+
+  <a href="#home"><img class="scroll-button" title="Go to top" id="scroll-button" src="img/arrow-up.png"></a>
+
+
+<!-- The social media icon bar desktop -->
+<div class="icon-bar" id="mySidebar">
+  <a href="https://www.facebook.com/adrian.movileanu" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://instagram.com/movi.adi" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/adrian-robert-movileanu-33360621a" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="tel:+40747223614" class="phone" target="_blank"><i class="fa fa-phone"></i></a>
+  <a href="mailto:movifrontdev1993@gmail.com" class="mail" target="_blank"><i class="fa fa-envelope-open-o"></i></a>
+</div>
+<div class="openbtn tooltip" id="toggleButton">
+<img src="img/arrow-right.png" id="toggleArrow"  class="arrow "></img>
+<span class="tooltiptext">Socials</span>
+</div>
+  <div class="container-fluid" id="home">
+    <div class="row dark-green-bg py-2 py-lg-0">
+      <div class="container py-2 py-md-2" id="navbar">
+        <section class="top-nav">
+
+          <div class="d-block d-md-none">
+            <p class="pt-3 text-center" style="font-size: 22px;"><b>My Portfolio</b></p>
+          </div>
+          <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+          <ul class="menu">
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
+              <a onclick="hideMenu()" href="#home">HOME</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#about">ABOUT</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#services">SERIVCES</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#resume">RESUME</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#faq">FAQ</a>
+            </li>
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#contact">CONTACT</a>
+            </li>
+
+            <!--<li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0" id="socials">
+              <a style="transform: none;" href="https://www.facebook.com/adrian.movileanu"><img src="img/facebook.png"
+                  class="socials"></a>
+              <a href="https://instagram.com/movi.adi"><img src="img/instagram.png" class="socials"></a>
+              <a href="https://www.linkedin.com/in/adrian-robert-movileanu-33360621a"><img src="img/linkedin.png"
+                  class="socials"></a></li>
+          </ul>-->
+        </section>
+        <script>
+          function hideMenu() {
+            document.getElementById("menu-toggle").checked = false;
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="d-none d-md-block hero-background">
+    <div class="hero-text">
+      <h1 style="font-size:55px;text-transform:uppercase;font-weight:400;text-align: left;"  class="my-0">I am Adrian Movileanu</h1>
+      <p style="font-size:45px" class="my-0">And I am a <b id="demo"></b></p>
+      <p class="mt-0" style="font-weight:200;">based in Bucharest, Romania.</p>
+      <img src="img/alb.jpeg" class="hero-image">
+      <button><a href="#portfolio">Portfolio</a></button>
+      <button><a href="#contact">Contact Me</a></button>
+
+    </div>
+  </div>
+
+  <div class="d-block d-md-none text-center hero-background-mobile py-4  ">
+    <div class="hero-text-mobile">
+      <img src="img/avatar2.jpeg" class="hero-image-mobile mx-auto">
+      <h1 style="text-transform: uppercase;font-weight: 400;" class="my-3">I am Adrian Movileanu</h1>
+      <p class="my-0">And I am a <b >Frontend developer</b></p>
+      <p class="mt-0">based in Bucharest, Romania.</p>
+      <button><a href="#portfolio">Portfolio</a></button>
+      <button><a href="#contact">Contact Me</a></button>
+
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4 px-md-5 about" id="about">
+    <div class="py-md-3"></div>
+    <div class="container py-5 px-md-5">
+      <h1><span class="y-h1 px-1">About me</span></h1>
+      <div class="row py-4">
+        <div class="col-12">
+          <h2 class="pt-4">Hi, I'm <u>Movileanu Adrian</u></h2>
+          <p class="">
+            I am a Frontend developer with about 2 years of experience with a passion for web development. I am a
+            sociable person, in an ongoing process of self development with a very high interest in everything IT.
+            Discipline, hardwork, punctuality and the ability to acumulate information very fast, but also beeing a team
+            player are only a few things that describe me.
+          </p>
+        </div>
+      </div>
+      <div class="row pb-4">
+        <div class="col-md-3 col-6">Name:<br><b>Adrian Movileanu</b></div>
+        <div class="col-md-3 col-6">Email:<br><a href="mailto:movifrontdev1993@gmail.com" class="text-black"><b
+              style="word-break: break-all;">movifrontdev1993@gmail.com</b></a></div>
+        <div class="col-md-3 col-6 pt-md-0 pt-3">Date of birth:<br><b>04.09.1993</b></div>
+        <div class="col-md-3 col-6 pt-md-0 pt-3">From:<br><b>Bucharest, Romania</b></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-4 px-md-5 services" id="services">
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-md-4 pb-4"><span class="y-h1 px-1">Services</span></h1>
+      <p>
+        Do you need to create a website for your online business so you can get even more clients?
+      </p>
+      <p> I can help people bring their businesses online by creating eye catching websites that will make them reach
+        the next level!
+      </p>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-12">
+          <ul class="b-on py-4">
+            <p class="mb-0 mx-0"><b><u>Sites I can develop for you</u></b></p>
+            <li>Portfolio or Resumes</li>
+            <li>Landing pages</li>
+            <li>Presentation websites</li>
+            <li>Medical or clinical</li>
+            <li>Restaurant or Food related</li>
+            <li>Translate Figma, Adobe XD, Sketch, PSD to HTML</li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-12">
+          <ul class="b-on py-4">
+            <p class="mb-0 mx-0"><b><u>What I offer</u></b></p>
+            <li>I will do the best choice to optimise the website</li>
+            <li>Responsive design for mobile and small screens</li>
+            <li>Support after development</li>
+            <li>Always professional and results oriented</li>
+          </ul>
+        </div>
+      </div>
+      <p><b>I mostly work on front-end part of the site, but if yours requires any kind of backend, please tell me and
+          we will make it work!</b></p>
+      <p><b>Consultancy</b> is included. Please get in touch with me beforehand so we can clarify eventual questions,
+        advise on the best roadmap to follow, and eventually guide you through the purchasing process.</p>
+      <p><b>Hosting</b>, <b>domain purchasing</b>, and other <b>deployment-related services</b> can be purchased
+        beforehand or afterward. Those are <b>NOT</b> included in this package.</p>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4 px-md-5 resume" id="resume">
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Resume</span></h1>
+      <h2 class="text-left py-2">My Experience</h2>
+      <div class="timeline d-none d-md-block py-4">
+        <div class="container-timeline left">
+          <div class="content">
+            <h2>2021 - Present Day</h2>
+            <p>Junior Frontend Developer at Apex Digital </p>
+          </div>
+        </div>
+        <div class="container-timeline right">
+          <div class="content">
+            <h2>2011 - 2021</h2>
+            <p>Professional basketball player at
+              CSU Asesoft Ploiesti, CSM Ploiesti, BCM Olimpic Baia Mare,
+              CS Cuza Sport Braila, CSM Miercurea Ciuc </p>
+          </div>
+        </div>
+        <div class="container-timeline left">
+          <div class="content">
+            <h2>2012 - 2015</h2>
+            <p>Informatics<br>
+              Petrol - Gaze University of Ploiesti </p>
+          </div>
+        </div>
+        <div class="container-timeline right">
+          <div class="content">
+            <h2>2008 - 2012</h2>
+            <p>Mathematics and Informatics-Intensive specialization
+              National College 'Alexandru Ioan Cuza', Ploiesti </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-mobile d-block d-md-none pt-3 pb-4">
+        <div class="row gy-3">
+          <div class="col-12">
+            <div class="white-bg px-3 py-2 ">
+              <h2 class="text-center">2021 - Present Day</h2>
+              <p>Junior Frontend Developer at Apex Digital </p>
+            </div>
+
+          </div>
+          <div class="col-12 ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2011 - 2021</h2>
+              <p>Professional basketball player at
+                CSU Asesoft Ploiesti, CSM Ploiesti, BCM Olimpic Baia Mare,
+                CS Cuza Sport Braila, CSM M. Ciuc </p>
+            </div>
+          </div>
+
+          <div class="col-12  ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2012 - 2015</h2>
+              <p>Informatics<br>
+                Petrol - Gaze University of Ploiesti </p>
+            </div>
+
+          </div>
+          <div class="col-12  ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2008 - 2012</h2>
+              <p>Mathematics and Informatics-intensive Specialization
+                National College 'Alexandru Ioan Cuza', Ploiesti </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <h2 class="text-left pb-2 pt-4">My Skills</h2>
+      <div class="row gx-5 py-md-4 py-2">
+        <div class="col-md-4  text-center">
+          <div class="white-bg">
+            <div class="row py-4">
+              <div class="col-12"><img src="img/language.png" class=" img-fluid mx-auto card-image">
+              </div>
+              <div class="col-12">
+                <p class="mb-0 bold">Language Skills</p>
+              </div>
+            </div>
+            <hr>
+            <ul class=" py-4">
+              <li>
+                Romanian (Native)
+              </li>
+              <li>
+                English (Fluent)
+              </li>
+              <li>
+                German (Basic)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4   text-center">
+          <div class="white-bg">
+            <div class="row py-4">
+              <div class="col-12"><img src="img/digital.png" class=" img-fluid mx-auto card-image"></div>
+              <div class="col-12">
+                <p class="mb-0 bold">Digital Skills</p>
+              </div>
+            </div>
+            <hr>
+            <ul class=" py-4">
+              <li>HTML</li>
+              <li>PHP</li>
+              <li>CSS</li>
+              <li>Bootstrap</li>
+              <li>Javascript</li>
+              <li>SQL</li>
+              <li>C/C++</li>
+              <li>Advanced Hardware Knowledge</li>
+              <li>Computer Networks</li>
+              <li>Wordpress</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4  text-center">
+          <div class="white-bg">
+            <div class="row py-4">
+              <div class="col-12"><img src="img/com.png" class=" img-fluid mx-auto card-image"></div>
+              <div class="col-12">
+                <p class=" mb-0 bold">Communication Skills</p>
+              </div>
+            </div>
+            <hr>
+            <ul class="py-4">
+              <li>The ability to work under pressure</li>
+              <li>Good abilites of public speaking
+              </li>
+              <li>Responsability and flexibility</li>
+              <li>Team Spirit</li>
+              <li>Multitasking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="MoviEng.pdf" download>
+      <div class="cv-button text-center mx-auto">Download CV</div>
+    </a>
+    <div class="py-md-4"></div>
+  </div>
+
+  <div class="container-fluid text-center hire-me-bg ">
+    <div class="py-md-3"></div>
+    <div class="py-md-3"></div>
+
+    <h1 class="py-5 text-white mb-0">Interested in working with me?</h1>
+    <a class="text-black" href="#contact"><button class="hire-me-button">Hire Me</button></a>
+    <div class="py-md-4"></div>
+    <div class="py-md-4 py-2"></div>
+  </div>
+  <div class="container-fluid px-md-5 py-4" id="faq">
+    <div class="container px-md-5 py-4">
+      <div class="py-md-3"></div>
+      <h1 class="py-4"><span class="y-h1 px-1">FAQ</span></h1>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-8 col-12 ">
+          <div class="accordion-div">
+            <button class="accordion"><span class="faq__question-heading">
+                <div class="row">
+                  <div class="col text-right mt-md-3 mt-0 arrow">
+                  </div>
+                  <div class=" col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+                    <h3 class="my-0  acc "><b>What is a Frontend Developer?</b></h3>
+
+
+                  </div>
+
+                </div>
+              </span></button>
+            <div class="panel">
+              <p class="acc  ml-md-4">A <b>Frontend Developer</b> builds the front-end portion of websites and web
+                applications—that is, the part that users actually see and interact with.
+              </p>
+              <p class="acc  ml-md-4">A front-end developer creates websites and applications that allow users to access
+                and interact with the site or app.
+                When you visit a website, the design elements you see were created by a front-end developer.</p>
+
+
+            </div>
+
+            <button class="accordion"><span class="faq__question-heading">
+                <div class="row">
+                  <div class="col text-right  mt-md-3 mt-0 arrow">
+                  </div>
+                  <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+                    <h3 class="my-0  acc"><b>How to become a Front-end developer ?</b></h3>
+
+
+                  </div>
+
+                </div>
+              </span>
+            </button>
+            <div class="panel">
+              <p class="acc  ml-md-4"><b>HTML, CSS, and JavaScript</b>: These three languages are essential to anyone
+                who wants to work in front-end development.
+                HTML, CSS, and JavaScript work together to determine the look and functionality of the page.
+              </p>
+              <p class="acc  ml-md-4"><b>Frameworks</b>: Frameworks are tools required for JavaScript and CSS to perform
+                the way you want them to.
+                Having a solid understanding of them is crucial for creating page structures.</p>
+
+              <p class="acc  ml-md-4"><b>Developer tools and software</b>: Software like version control, which tracks
+                and controls changes in your source code, is critical to allow you to make changes without starting
+                over.
+                Understanding how to use many different software development tools is a building block to a successful
+                career.
+              </p>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="py-md-3"></div>
+
+    </div>
+  </div>
+  <div class="container-fluid py-5 px-md-5 contact" id="contact">
+
+    <div class="container py-4 px-md-5">
+      <div class="row gx-5">
+        <div class="col-md-6 col-12">
+          <h2 class="mid-mobile pb-4">Let's get in touch</h2>
+          <p class="mid-mobile pr-md-5">I enjoy discussing new projects and jobs. So if you want to get in touch with me
+            or get additional info please don't hesitate to contact me.</p>
+          <p class="mid-mobile pt-md-4 pt-2 my-0"><b>Located In:</b></p>
+          <p class="mid-mobile my-0 text-left ">Bucharest, Romania</p>
+          <p class="mid-mobile text-left  pt-2 my-0"><b>Phone:</b></p>
+          <p class="mid-mobile my-0 text-left"><a href="tel:+40747223614" style="color: black;">+40 747 223 614</a></p>
+          <div class="py-md-3"></div>
+          <div class="py-md-0 py-3"></div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <h2 class="mid-mobile pb-4">Send me an E-mail</h2>
+          <form action="https://formsubmit.co/movifrontdev1993@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your name here" id="name" class="contact-bg" required><br>
+            <input type="email" name="email" placeholder="Your email here" class="contact-bg" id="email" required><br>
+            <textarea placeholder="How can I help you?" id="message" name="message" rows="6" cols="50"
+              class="contact-bg" required style="resize: none;"></textarea><br>
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_subject" value="New submission!">
+            <input type="submit" id="submit" class="submit-button " name="submit" value="Send">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="copyright text-center"><u>Designed By Adrian Movileanu</u></p>
+  </footer>
+
+
+  <script src="functions.js"></script>
+
+</body>
+
+</html>
