@@ -1,6 +1,6 @@
     var apikey = '09a89466de52c380033f18743f563f73';
     var units = 'metric';
-    var lang = 'ro';
+    var lang = 'en';
 
   function searchCity(){
        var city = document.getElementById('search').value; 
@@ -20,7 +20,7 @@
       document.getElementById('location').innerHTML = name + ' ('+ country + ')';
       document.getElementById('temp').innerHTML =  temp + ' °C' ;
       document.getElementById('description').innerHTML = description;
-      document.getElementById('wind').innerHTML = "Vant " + speed + ' km/h';
+      document.getElementById('wind').innerHTML = "Wind " + speed + ' km/h';
       document.getElementById('real').innerHTML = "Real Feel " + feels_like + '°C';
       document.getElementById('demo').style.display = "block";
 
@@ -59,6 +59,7 @@
 
    function displayForecast(data1)
    {
+    var j = 1 ;
     for(i=0;i<39;i+=8){
       
      const forecastBox = document.createElement("div");
@@ -80,47 +81,33 @@
 
      const windP = document.createElement("p");
      forecastBox.appendChild(windP);
-     windP.innerHTML = 'Vant ' + data1.list[i].wind.speed + ' km/h';
+     windP.innerHTML = 'Wind ' + data1.list[i].wind.speed + ' km/h';
 
      const descP = document.createElement("p");
      forecastBox.appendChild(descP);
      descP.innerHTML = data1.list[i].weather[0].description;
      descP.style.textTransform = 'capitalize';
 
+     var currentDate = new Date();
+     var currentDay = currentDate.getDate();
+     var newDay = currentDay + j;
+     currentDate.setDate(newDay);
+     var year = currentDate.getFullYear();
+     var name = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+     let month = name[currentDate.getMonth()];
+     var day = currentDate.getDate();
+     var fullDate = day + ' ' + month + ' ' + year ; 
      
-     
-      var currentDate = new Date();
-      var currentDay = currentDate.getDate();
-      var newDay = currentDay + 40/(40-i);
-   
-      currentDate.setDate(newDay);
-     
-      var year = currentDate.getFullYear();
-      var name = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-      let month = name[currentDate.getMonth()];
-      var day = currentDate.getDate();
-
-      var fullDate = day + ' ' + month + ' ' + year ; 
-
-      
-const dateP = document.createElement("p");
+     const dateP = document.createElement("p");
      forecastBox.appendChild(dateP);
      dateP.innerHTML = fullDate;
    
      const element = document.getElementById("test");
      element.appendChild(forecastBox);
-    
+     j+=1;
+    }    
     }
-        
-    }
 
-
-  /* function forecast(){
-    fetch('api.openweathermap.org/data/2.5/forecast?lat='+ {lat} + '&lon=' + {lon}+ '&appid=' + apikey + '&units=' + units )
-    .then((response) => response.json())
-    .then((data) => displayForecast(data));
-
-   }*/
    
 
 
