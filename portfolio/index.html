@@ -28,7 +28,7 @@
   <a href="tel:+40747223614" class="phone" target="_blank"><i class="fa fa-phone"></i></a>
   <a href="mailto:movifrontdev1993@gmail.com" class="mail" target="_blank"><i class="fa fa-envelope-open-o"></i></a>
 </div>
-<div class="openbtn tooltip" id="toggleButton">
+<div class="openbtn" id="toggleButton">
 <img src="img/arrow-right.png" id="toggleArrow"  class="arrow "></img>
 <span class="tooltiptext">Socials</span>
 </div>
@@ -63,19 +63,15 @@
             </li>
 
             <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#portfolio">PORTFOLIO</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
               <a onclick="hideMenu()" href="#faq">FAQ</a>
             </li>
             <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
               <a onclick="hideMenu()" href="#contact">CONTACT</a>
             </li>
-
-            <!--<li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0" id="socials">
-              <a style="transform: none;" href="https://www.facebook.com/adrian.movileanu"><img src="img/facebook.png"
-                  class="socials"></a>
-              <a href="https://instagram.com/movi.adi"><img src="img/instagram.png" class="socials"></a>
-              <a href="https://www.linkedin.com/in/adrian-robert-movileanu-33360621a"><img src="img/linkedin.png"
-                  class="socials"></a></li>
-          </ul>-->
         </section>
         <script>
           function hideMenu() {
@@ -180,9 +176,38 @@
     </div>
   </div>
 
+  <div class="container-fluid py-4 px-md-5 resume" id="portfolio">
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Portfolio</span></h1>
+      <h2 class="text-left py-2">A few examples of my work</h2>
+      <div class="row pt-md-4">
+        <div class="col-md-4 col-12">
+          <img src="img/pipe1.png" class="d-block work img-fluid mx-auto">
+        </div>
+        <div class="col-md-4 col-12 pt-md-0 pt-3">
+          <img src="img/pipe2.png" class="d-block work img-fluid mx-auto">
+        </div>
+        <div class="col-md-4 col-12 pt-md-0 pt-3">
+          <img src="img/pipe3.png" class="d-block work img-fluid mx-auto">
+        </div>
+      </div>
+
+      <div class="row pt-md-4">
+        <div class="col-md-4 col-12 pt-md-0 pt-3">
+          <img src="img/rr1.png" class="d-block work img-fluid mx-auto">
+        </div>
+        <div class="col-md-4 col-12 pt-md-0 pt-3">
+          <img src="img/rr2.png" class="d-block work img-fluid mx-auto">
+        </div>
+        <div class="col-md-4 col-12 pt-md-0 pt-3">
+          <img src="img/rr3.png" class="d-block work img-fluid mx-auto">
+        </div>
+      </div>
+      </div>
+      </div>
 
 
-  <div class="container-fluid py-4 px-md-5 resume" id="resume">
+  <div class="container-fluid py-4 px-md-5 services" id="resume">
     <div class="container py-5 px-md-5">
       <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Resume</span></h1>
       <h2 class="text-left py-2">My Experience</h2>
@@ -342,67 +367,85 @@
       <div class="py-md-3"></div>
       <h1 class="py-4"><span class="y-h1 px-1">FAQ</span></h1>
       <div class="row d-flex justify-content-center">
-        <div class="col-md-8 col-12 ">
+        <div class="col-md-9 col-12">
           <div class="accordion-div">
+            
             <button class="accordion"><span class="faq__question-heading">
-                <div class="row">
-                  <div class="col text-right mt-md-3 mt-0 arrow">
-                  </div>
-                  <div class=" col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+              <div class="row">
+                <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+                </div>
+                <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
 
-                    <h3 class="my-0  acc "><b>What is a Frontend Developer?</b></h3>
+                  <h3 class="my-0  acc"><b>What is frontend development?</b></h3>
 
-
-                  </div>
 
                 </div>
-              </span></button>
-            <div class="panel">
-              <p class="acc  ml-md-4">A <b>Frontend Developer</b> builds the front-end portion of websites and web
-                applications—that is, the part that users actually see and interact with.
-              </p>
-              <p class="acc  ml-md-4">A front-end developer creates websites and applications that allow users to access
-                and interact with the site or app.
-                When you visit a website, the design elements you see were created by a front-end developer.</p>
+
+              </div>
+            </span>
+          </button>
+          <div class="panel">
+            <p class="acc  ml-md-4">Frontend development involves creating the user interface and user experience of a website or web application. It focuses on the client-side of development, dealing with the presentation and behavior of the site.
+            </p>
+          </div>
+
+          <button class="accordion"><span class="faq__question-heading">
+            <div class="row">
+              <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+              </div>
+              <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+                <h3 class="my-0  acc"><b>What are the essential skills for a frontend developer?</b></h3>
+
+
+              </div>
+
+            </div>
+          </span>
+        </button>
+        <div class="panel">
+          <p class="acc  ml-md-4">HTML, CSS, and JavaScript are fundamental. Knowledge of frameworks like React, Angular, or Vue.js is often required. Understanding responsive design, version control (e.g., Git), and basic graphic design principles can also be beneficial.
+          </p>
+        </div>
+
+        <button class="accordion"><span class="faq__question-heading">
+          <div class="row">
+            <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+            </div>
+            <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+              <h3 class="my-0  acc"><b>What is  the concept of responsive design?
+              </b></h3>
 
 
             </div>
 
-            <button class="accordion"><span class="faq__question-heading">
-                <div class="row">
-                  <div class="col text-right  mt-md-3 mt-0 arrow">
-                  </div>
-                  <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+          </div>
+        </span>
+      </button>
+      <div class="panel">
+        <p class="acc  ml-md-4">Responsive design ensures that a website adapts to different screen sizes and devices, providing an optimal user experience on desktops, tablets, and smartphones.
+        </p>
+      </div>
 
-                    <h3 class="my-0  acc"><b>How to become a Front-end developer ?</b></h3>
+      <button class="accordion"><span class="faq__question-heading">
+        <div class="row">
+          <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+          </div>
+          <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
 
-
-                  </div>
-
-                </div>
-              </span>
-            </button>
-            <div class="panel">
-              <p class="acc  ml-md-4"><b>HTML, CSS, and JavaScript</b>: These three languages are essential to anyone
-                who wants to work in front-end development.
-                HTML, CSS, and JavaScript work together to determine the look and functionality of the page.
-              </p>
-              <p class="acc  ml-md-4"><b>Frameworks</b>: Frameworks are tools required for JavaScript and CSS to perform
-                the way you want them to.
-                Having a solid understanding of them is crucial for creating page structures.</p>
-
-              <p class="acc  ml-md-4"><b>Developer tools and software</b>: Software like version control, which tracks
-                and controls changes in your source code, is critical to allow you to make changes without starting
-                over.
-                Understanding how to use many different software development tools is a building block to a successful
-                career.
-              </p>
-            </div>
+            <h3 class="my-0  acc"><b>What is the difference between HTML, CSS, and JavaScript?</b></h3>
 
 
+          </div>
 
-
-
+        </div>
+      </span>
+    </button>
+    <div class="panel">
+      <p class="acc  ml-md-4">HTML is used for structuring content, CSS for styling, and JavaScript for adding interactivity to web pages.
+      </p>
+    </div>
 
           </div>
         </div>
