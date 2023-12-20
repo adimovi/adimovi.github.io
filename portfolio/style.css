@@ -742,7 +742,7 @@ button:focus {
   outline: none;
 }
 
-.arrow {
+.faq-arrow {
   background-image: url(img/arrow.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -974,5 +974,12 @@ position: absolute;
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.work{
+  width: 500px;
+  height:280px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
 }
 
