@@ -142,3 +142,21 @@ function closeNav() {
 document.getElementById("toggleButton").addEventListener("click", toggleNav);
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var columnElements = document.querySelectorAll('.column');
+
+  var observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  // Start observing each column element
+  columnElements.forEach(function(columnElement) {
+    observer.observe(columnElement);
+  });
+});
