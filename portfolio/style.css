@@ -586,6 +586,10 @@ hr {
   }
 }
 
+.dark-green-bg{
+  background-color: #000000;
+}
+
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff !important;
@@ -644,8 +648,8 @@ hr {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 20000;
-  background-color: white;
+  z-index: 100;
+  background-color: black;
 }
 
 .sticky+.spacing {
@@ -702,7 +706,7 @@ hr {
 
 @media(min-width:992px) {
   #navbar a {
-    color: #18272F;
+    color: #ffffff;
     position: relative;
     text-decoration: none;
   }
@@ -979,7 +983,46 @@ position: absolute;
   height:280px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 25px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  opacity: 1;
+  display: block;
 }
+
+.box-hover{
+  position: relative;
+}
+
+
+.middle-box {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.box-hover:hover .work {
+  opacity: 0.3;
+}
+
+.box-hover:hover .middle-box {
+  opacity: 1;
+}
+
+.text {
+  background-color: #f5df4e;
+  color: black;
+  font-size: 16px;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
 
 /* animation for skill cards */
 
@@ -1018,4 +1061,76 @@ position: absolute;
 }
 .delay-3 {
   animation-delay: 0.8s;
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 101; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 25px;
+  padding:30px;
+}
+
+/* Caption of Modal Image */
+
+/* Add Animation */
+.modal-content {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  color: #000000;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  z-index: 10000;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
 }
