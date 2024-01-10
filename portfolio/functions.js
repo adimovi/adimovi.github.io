@@ -95,7 +95,7 @@ function myFunction() {
 
 var i = 0;
 var txt = 'Frontend Developer';
-var speed = 150;
+var speed = 100;
 
 function typeWriter() {
   if (i < txt.length) {
@@ -160,3 +160,25 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(columnElement);
   });
 });
+
+
+
+function openModal(imgId, modalId) {
+  var modal = document.getElementById(modalId);
+  var img = document.getElementById(imgId);
+  var modalImg = document.getElementById("img" + imgId.slice(-2));
+
+
+  img.onclick = function() {
+    modal.style.display = "block";
+  }
+}
+  function closeModal(modalId) {
+    var close = document.getElementById(modalId);
+    close.style.display = "none";
+  }
+
+
+openModal("img1", "modal1");
+openModal("img2", "modal2");
+openModal("img3", "modal3");
