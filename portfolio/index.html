@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrontDev - Portfolio</title>
+  <title>FrontDev - Adrian Movileanu</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -38,7 +38,7 @@
         <section class="top-nav">
 
           <div class="d-block d-md-none">
-            <p class="pt-3 text-center" style="font-size: 22px;"><b>My Portfolio</b></p>
+            <p class="pt-3 text-center" style="font-size: 22px;"><b class="text-white">My Portfolio</b></p>
           </div>
           <input id="menu-toggle" type="checkbox" />
           <label class='menu-button-container' for="menu-toggle">
@@ -55,7 +55,7 @@
             </li>
 
             <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
-              <a onclick="hideMenu()" href="#services">SERIVCES</a>
+              <a onclick="hideMenu()" href="#services">SERVICES</a>
             </li>
 
             <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
@@ -86,7 +86,7 @@
 
   <div class="d-none d-md-block hero-background">
     <div class="hero-text">
-      <h1 style="font-size:55px;text-transform:uppercase;font-weight:400;text-align: left;"  class="my-0">I am Adrian Movileanu</h1>
+      <h1 style="font-size:75px;text-transform:uppercase;font-weight:400;text-align: left;"  class="my-0">I am Adrian Movileanu</h1>
       <p style="font-size:45px" class="my-0">And I am a <b id="demo"></b></p>
       <p class="mt-0" style="font-weight:200;">based in Bucharest, Romania.</p>
       <img src="img/avatar2.jpeg" class="hero-image">
@@ -154,16 +154,17 @@
             <li>Presentation websites</li>
             <li>Medical or clinical</li>
             <li>Restaurant or Food related</li>
-            <li>Translate Figma, Adobe XD, Sketch, PSD to HTML</li>
+            
           </ul>
         </div>
         <div class="col-md-6 col-12">
           <ul class="b-on py-4">
             <p class="mb-0 mx-0"><b><u>What I offer</u></b></p>
-            <li>I will do the best choice to optimise the website</li>
+            <li>I will make the best choices to optimise the website</li>
             <li>Responsive design for mobile and small screens</li>
             <li>Support after development</li>
             <li>Always professional and results oriented</li>
+            <li>Attention to small details</li>
           </ul>
         </div>
       </div>
@@ -174,6 +175,74 @@
       <p><b>Hosting</b>, <b>domain purchasing</b>, and other <b>deployment-related services</b> can be purchased
         beforehand or afterward. Those are <b>NOT</b> included in this package.</p>
     </div>
+  </div>
+
+  
+  <!--
+ Modals
+  -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2 class="text-center py-2"><u>Pipe Medic Website</u></h2>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2 class="text-center py-2"><u>Affiliate Site</u></h2>
+  </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2 class="text-center py-2"><u>Contest Site</u></h2>
+  </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4 px-md-5 resume" id="portfolio">
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Portfolio</span></h1>
+      <h2 class="text-left py-2">A few examples of my work</h2>
+      <div class="row pt-md-4">
+        <div class="col-md-4 box-hover col-12">
+          <img src="img/pipe1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" id="img1">Pipe Medic Website
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-4 col-12 box-hover pt-md-0 pt-3">
+          <img src="img/rr1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" id="img2">Affiliate Site
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-12 box-hover pt-md-0 pt-3">
+          <img src="img/rr3.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" id="img3">Contest Site
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+  <div class="container-fluid text-center hire-me-bg ">
+    <div class="py-md-3"></div>
+    <div class="py-md-3"></div>
+
+    <h1 class="py-5 text-white mb-0">Interested in working with me?</h1>
+    <a class="text-black" href="#contact"><button class="hire-me-button">Hire Me</button></a>
+    <div class="py-md-4"></div>
+    <div class="py-md-4 py-2"></div>
   </div>
 
  
@@ -324,50 +393,12 @@
     <div class="py-md-4"></div>
   </div>
 
-  <div class="container-fluid py-4 px-md-5 resume" id="portfolio">
-    <div class="container py-5 px-md-5">
-      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Portfolio</span></h1>
-      <h2 class="text-left py-2">A few examples of my work</h2>
-      <div class="row pt-md-4">
-        <div class="col-md-4 col-12">
-          <img src="img/pipe1.png" class="d-block work img-fluid mx-auto">
-        </div>
-        <div class="col-md-4 col-12 pt-md-0 pt-3">
-          <img src="img/pipe2.png" class="d-block work img-fluid mx-auto">
-        </div>
-        <div class="col-md-4 col-12 pt-md-0 pt-3">
-          <img src="img/pipe3.png" class="d-block work img-fluid mx-auto">
-        </div>
-      </div>
-
-      <div class="row pt-md-4">
-        <div class="col-md-4 col-12 pt-md-0 pt-3">
-          <img src="img/rr1.png" class="d-block work img-fluid mx-auto">
-        </div>
-        <div class="col-md-4 col-12 pt-md-0 pt-3">
-          <img src="img/rr2.png" class="d-block work img-fluid mx-auto">
-        </div>
-        <div class="col-md-4 col-12 pt-md-0 pt-3">
-          <img src="img/rr3.png" class="d-block work img-fluid mx-auto">
-        </div>
-      </div>
-      </div>
-      </div>
-
-  <div class="container-fluid text-center hire-me-bg ">
-    <div class="py-md-3"></div>
-    <div class="py-md-3"></div>
-
-    <h1 class="py-5 text-white mb-0">Interested in working with me?</h1>
-    <a class="text-black" href="#contact"><button class="hire-me-button">Hire Me</button></a>
-    <div class="py-md-4"></div>
-    <div class="py-md-4 py-2"></div>
-  </div>
+  
   <div class="container-fluid px-md-5 py-4" id="faq">
     <div class="container px-md-5 py-4">
       <div class="py-md-3"></div>
       <h1 class="py-4"><span class="y-h1 px-1">FAQ</span></h1>
-      <div class="row d-flex justify-content-start">
+      <div class="row d-flex justify-content-center">
         <div class="col-md-9 col-12">
           <div class="accordion-div">
             
