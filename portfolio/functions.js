@@ -168,17 +168,58 @@ function openModal(imgId, modalId) {
   var img = document.getElementById(imgId);
   var modalImg = document.getElementById("img" + imgId.slice(-2));
 
-
   img.onclick = function() {
     modal.style.display = "block";
   }
-}
-  function closeModal(modalId) {
-    var close = document.getElementById(modalId);
-    close.style.display = "none";
-  }
 
+  // Add event listener for the Escape key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal(modalId);
+    }
+  });
+}
+
+function closeModal(modalId) {
+  var close = document.getElementById(modalId);
+  close.style.display = "none";
+
+  // Remove event listener for the Escape key when the modal is closed
+  document.removeEventListener('keydown', closeModal);
+}
 
 openModal("img1", "modal1");
 openModal("img2", "modal2");
 openModal("img3", "modal3");
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let k;
+  let slides = document.getElementsByClassName("mySlides");
+  console.log(slides);
+  let dots = document.getElementsByClassName("modal-dot");
+  console.log(dots);
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (k = 0; k < slides.length; k++) {
+    slides[k].style.display = "none";
+  }
+  for (k = 0; k < dots.length; k++) {
+    dots[k].className = dots[k].className.replace(" modal-active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " modal-active";
+}
