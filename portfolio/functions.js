@@ -170,6 +170,7 @@ function openModal(imgId, modalId) {
 
   img.onclick = function() {
     modal.style.display = "block";
+    document.body.style.overflow = "hidden";
   }
 
   // Add event listener for the Escape key
@@ -183,6 +184,7 @@ function openModal(imgId, modalId) {
 function closeModal(modalId) {
   var close = document.getElementById(modalId);
   close.style.display = "none";
+  document.body.style.overflow = "visible";
 
   // Remove event listener for the Escape key when the modal is closed
   document.removeEventListener('keydown', closeModal);
