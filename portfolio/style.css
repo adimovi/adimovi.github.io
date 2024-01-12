@@ -810,7 +810,7 @@ button:focus {
     font-size: 18px;
     padding-left: 2px;
     padding-right: 0px;
-
+    color:#000;
   }
 }
 
@@ -1068,7 +1068,6 @@ position: absolute;
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
   z-index: 101; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
@@ -1083,8 +1082,7 @@ position: absolute;
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 900px;
+  width: 50%;
   border-radius: 25px;
   padding:30px;
 }
@@ -1132,5 +1130,134 @@ position: absolute;
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 100%;
+  }
+  .close {
+    top: 0px;
+    right: 13px;
+    font-size: 29px;
+   
+  }
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: #eaeaea;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.modal-text {
+  color: #000;
+  font-size: 15px;
+  padding: 8px 12px;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+
+
+/* The dots/bullets/indicators */
+.modal-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.modal-active, .modal-dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.fade:not(.show) {
+   opacity: 1;
+}
+
+.modal p{
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding:12px 0px;
+}
+
+.modal h3{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0px; 
+}
+
+.modal-work{
+  width: 100%;
+  height: 450px;
+}
+
+.brd-mod {
+  border-bottom: 1px solid #eaeaea;
+}
+
+
+@media (max-width: 993px) {
+
+  .work{
+    height: auto; 
+  }
+  .modal-work{
+    height:auto;
+  }
+
+  .modal-content{
+    padding:30px 0px;
+  }
+  .modal{
+    padding-top:0px;
   }
 }
