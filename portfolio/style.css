@@ -359,8 +359,7 @@ ul {
 
 
 .card-image {
-  height: 75px;
-  overflow: hidden;
+  height: 105px;
 }
 
 hr {
@@ -1021,44 +1020,9 @@ position: absolute;
 }
 
 
-/* animation for skill cards */
 
-.animate {
-  animation-duration: 0.75s;
-  animation-delay: 0.5s;
-  animation-name: animate-fade;
-  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
-  animation-fill-mode: backwards;
-}
 
-/* Glow In */
-.animate.glow {
-  animation-name: animate-glow;
-  animation-timing-function: ease;
-}
 
-@keyframes animate-glow {
-  0% {
-    opacity: 0;
-    filter: brightness(3) saturate(3);
-    transform: scale(0.8, 0.8);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1) saturate(1);
-    transform: scale(1, 1);
-  }
-}
-
-.delay-1 {
-  animation-delay: 0.6s;
-}
-.delay-2 {
-  animation-delay: 0.7s;
-}
-.delay-3 {
-  animation-delay: 0.8s;
-}
 
 
 
@@ -1268,7 +1232,95 @@ position: absolute;
     padding-top:0px;
   }
 
-  #skills .white-bg {
+  #skills  .white-bg {
     height:auto;
   }
 }
+
+
+
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.5s forwards;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.5s forwards;
+          opacity: 0;
+}
+
+
+
+ @-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+  
+  
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 25px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+flex-wrap: wrap;
+flex-direction: column;
+}
+
+.flip-card-front {
+  background-color: #ffffff;
+  color: black;
+  border-radius: 25px;
+  
+}
+
+.flip-card-back {
+  background-color: #f5df4e;
+  color: black;
+  transform: rotateY(180deg);
+  border-radius: 25px;
+  border:2px solid black;
+  font-size:20px;
+}
+
