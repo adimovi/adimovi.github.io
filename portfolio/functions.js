@@ -91,22 +91,42 @@ function myFunction() {
 }
 
 
-//typing effect 
+function typeWriter(element) {
+  var isTyping = false;
+  var i = 0;
+  var text = element.innerText;
 
-var i = 0;
-var txt = 'Frontend Developer';
-var speed = 100;
+  // Hide the existing content
+  element.innerText = '';
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
+  function type() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 100);
+    } else {
+      // Reset isTyping to false once the text is fully typed
+      isTyping = false;
+    }
   }
+
+  // Start after a delay of 1 second
+  setTimeout(function() {
+    if (!isTyping) {
+      isTyping = true;
+      type();
+    }
+  }, 1000);
 }
 
-window.onload =  function () {
-  typeWriter()
+window.onload = function() {
+  // Get all elements with class "typewriter"
+  var elements = document.querySelectorAll('.typewriter');
+
+  // Apply typewriter effect to each element
+  elements.forEach(function(element) {
+    typeWriter(element);
+  });
 };
 
 // open/close social bar
@@ -160,6 +180,9 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(columnElement);
   });
 });
+
+
+
 
 
 
@@ -225,3 +248,61 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " modal-active";
 }
+
+
+let cards = [
+  {
+      "name": "Language Skills",
+      "skills": ["Romanian (Native)", "English (Fluent)", "German (Basic)"],
+      "source": "language.png"
+  },
+  {
+      "name": "Digital Skills",
+      "skills": ["HTML", "PHP", "CSS", "Bootstrap", "Javascript", "SQL", "Wordpress"],
+      "source": "digital.png"
+  },
+  {
+      "name": "Communication Skills",
+      "skills": ["The ability to work under pressure",
+          "Good abilities of public speaking",
+          "Responsibility and flexibility",
+          "Team Spirit",
+          "Multitasking"],
+      "source": "com.png"
+  }
+];
+
+// Get the div where you want to display the cards
+let carDiv = document.getElementById('carDiv');
+
+// Initialize an empty string to store the concatenated HTML
+let htmlContent = '';
+
+// Loop through the array and concatenate HTML elements
+cards.forEach(card => {
+  htmlContent += `
+  
+   <div class="col-md-4 col-12">
+    <div class="flip-card">
+    <div class="flip-card-inner">
+    <div class="flip-card-front">
+    <img src="img/${card.source}" class=" img-fluid mx-auto card-image">
+    <p class="mb-0 bold">${card.name}</p>
+  </div>
+    
+    <div class="flip-card-back">
+    <ul class="py-4">
+    ${card.skills.map(skill => `<li>${skill}</li>`).join('')}
+   </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+  `;
+});
+
+// Set the final HTML content to the carDiv
+carDiv.innerHTML = htmlContent;
+
+
