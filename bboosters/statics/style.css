@@ -1,3 +1,13 @@
+
+body {
+  padding-top: 130px;
+}
+
+@media (max-width: 992px){
+  body{
+    padding-top: 56px;
+  }
+}
 .white-card{
     background-color: #ffffff;
     box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.1);
@@ -13,16 +23,22 @@
   min-height: 100vh;
 }
 
+.lc-block .fa-solid{
+font-size: 15px;
+margin-right:px;
+margin-left:5px;
+}
+
 .hero-text{
 text-align: left;
     position: absolute;
     top: 40%;
-    left: 45%;
+    left: 47%;
     transform: translate(-55%, -55%);
 }
 
 * {
-        --main-color:rgba(20,28,45,.95);
+        --main-color:rgba(20,28,45);
     }
 
     .main-color{
@@ -33,8 +49,8 @@ text-align: left;
         background-color: var(--main-color);
     }
 
-    .header-bg .more{
-        color:#ffffff;
+    .header-bg .fa-brands{
+        margin-right:15px;
     }
 
     .avt-img
@@ -42,6 +58,53 @@ text-align: left;
         width:105px;
         border-radius: 180px;
         margin:0px auto;
+    }
+
+    .avt-img2
+    {
+        width:100%;
+        margin:0px auto;
+        height: auto;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
+        
+    }
+
+    .avt-bg{
+      box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.2);
+      border-radius:25px;
+
+    }
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(20,28,45,.95);
+      overflow: hidden;
+      width: 100%;;
+      height: 0;
+      transition: .5s ease;
+      margin:0px auto;
+      border-radius:25px;
+    }
+    
+    
+    
+    .hov-cards:hover .overlay {
+      height: 100%;
+    }
+    
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      text-align: center;
+      top:18%;
+    }
+
+    .overlay .fa-brands{
+      margin-right: 15px;
     }
 
      .contact-button
@@ -193,3 +256,27 @@ text-align: left;
     border: none!important;
     box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.1);
   }
+
+
+  .contact-bckg
+  {
+    background-image: url(../statics/img/contact-bg.webp);
+    background-repeat: no-repeat;
+    background-position:50% 75%;
+    background-size: cover;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+
+  .form-bg{
+    box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.1);
+    border-radius: 25px!important;
+  }
+
+  .shadow{
+    text-shadow: 2px 2px black;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+
+  
