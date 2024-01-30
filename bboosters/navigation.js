@@ -14,13 +14,20 @@ try {    var menu_bar = document.createRange().createContextualFragment(
          </div>
          <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-    
+   
         <div class="container">
-        
+         <div class="row">
+         <div class="col-3">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+            </div>
+            <div class="col-3">
+            <a class="navbar-brand d-block  d-md-none" href="index.html">
+            <img src="./statics/img/logo.webp" class="" style="width: 122px;"> 
+        </a>
+        </div>
+        </div>
             <div class="collapse navbar-collapse" id="navbarText">
                 <a class="navbar-brand d-none d-md-block" href="index.html">
                     <img src="./statics/img/logo.webp" style="width: 175px;"> 
@@ -48,6 +55,8 @@ try {    var menu_bar = document.createRange().createContextualFragment(
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
                     </li>
                 </ul>
             </div>
