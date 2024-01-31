@@ -193,6 +193,7 @@ text-align: left;
     background-image: url(../statics/img/brand.jpg);
     background-position:top right;
     background-size: cover;
+    background-attachment: fixed;
   }
    
 
@@ -270,13 +271,15 @@ text-align: left;
 
   .shadow{
     text-shadow: 2px 2px black;
-    
   }
+
 
   .over-bg
   {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
   }
+
+  
 
   .contact-bckg, .shadow, .over-bg {
     border-top-right-radius: 25px;
@@ -292,6 +295,18 @@ text-align: left;
   transition: 0.3s;
   transform: scale(1.4);
 }
+
+#ads .fa-brands{
+  transform: rotate(-40deg);  }
+
+  .about-bg{
+    background-image: url('../statics/img/aboutus.jpg');
+    background-position: 10% 20%;
+    background-size: 125%;
+    background-attachment: fixed;
+  }
+
+
   @media (max-width: 992px){
     body{
       padding-top: 100px;
@@ -307,7 +322,58 @@ text-align: left;
     }
   }
 
-  #ads .fa-brands{
-transform: rotate(-40deg);  }
+
+
+  @keyframes show-scroll-button {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+ 
+
+
+  .scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.4s;
+    overflow-x: hidden;
+    color:#ffffff;
+    font-size: 20px;
+    width: 30px;
+    border-radius:90px;
+    background-color: var(--main-color);
+    transition: 0.4s;
+    box-shadow: var(--main-shadow);
+    animation: show-scroll-button 1.5s linear 0s  normal forwards;
+  }
+
+  #scroll-button{
+    display: none;
+  }
+  
+  .scroll-button:hover {
+    transition: 0.4s;
+    background-color: #ffffff;
+    color:var(--main-color);
+    box-shadow: var(--main-shadow);
+  }
+
+
+  .gads-bg{
+    background-image: url('./img/gads2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
   
