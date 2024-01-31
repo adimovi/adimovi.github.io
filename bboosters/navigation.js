@@ -1,4 +1,26 @@
-try {    var menu_bar = document.createRange().createContextualFragment(
+
+
+
+var styles = document.createElement('link');
+styles.rel = 'stylesheet';
+styles.href = './statics/style.css';
+document.head.appendChild(styles);
+
+
+
+
+
+var cdn1 = document.createElement('link');
+cdn1.rel = 'stylesheet';
+cdn1.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
+cdn1.integrity ='sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN';
+cdn1.crossOrigin ='anonymous';
+document.head.appendChild(cdn1);
+
+
+
+  
+var menu_bar = document.createRange().createContextualFragment(
             `
             <div class="fixed-top">
             <div class="container-fluid  header-bg py-2">
@@ -13,8 +35,8 @@ try {    var menu_bar = document.createRange().createContextualFragment(
                 
             </div>
          </div>
-         <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
+         <nav class="navbar navbar-expand-lg bg-light" >
+    <div class="container-fluid" id="home">
    
         <div class="container">
          <div class="row">
@@ -42,9 +64,9 @@ try {    var menu_bar = document.createRange().createContextualFragment(
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="serviciiDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicii</a>
                         <div class="dropdown-menu" aria-labelledby="serviciiDropdown">
-                            <!-- Dropdown items go here -->
                             <a class="dropdown-item" href="servicii.html#branding">Branding</a>
                             <a class="dropdown-item" href="servicii.html#web">Dezvoltare Web</a>
+                            <a class="dropdown-item" href="servicii.html#gads">Google Ads</a>
                             <a class="dropdown-item" href="servicii.html#support">Ongoing Support</a>
                             <a class="dropdown-item" href="servicii.html#seo">SEO</a>
                             <a class="dropdown-item" href="servicii.html#ads">Facebook/Instagram Ads</a>
@@ -63,17 +85,15 @@ try {    var menu_bar = document.createRange().createContextualFragment(
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap 5 requires Popper.js and Bootstrap.js for dropdowns -->
     <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cf94516c3a.js" crossorigin="anonymous"></script>
 </nav>
 </div>
-
+<a href="#home" id="scroll-button" onclick="topFunction()"><div class="scroll-button text-center"><i class="fa-solid fa-arrow-up"></i></div></a>
 
 `
-        );
+);
 
         var footer_bar = document.createRange().createContextualFragment(
           `
@@ -95,12 +115,10 @@ try {    var menu_bar = document.createRange().createContextualFragment(
 
 
         var acc = document.getElementsByClassName("accordion");
-  console.log(acc);
-  var i;
+        var i;
   
  
-} catch (e) {
-}
+
 
 for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
@@ -164,3 +182,28 @@ function checkScroll() {
 
 // Attach the scroll event listener
 window.addEventListener('scroll', checkScroll);
+
+
+// Get the button:
+let mybutton = document.getElementById("scroll-button");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+
+
+
