@@ -10,6 +10,7 @@ try {    var menu_bar = document.createRange().createContextualFragment(
                 <i class="fa-brands fa-linkedin"></i>
                 <i class="fa-regular fa-envelope"></i>
                 </h3>
+                
             </div>
          </div>
          <nav class="navbar navbar-expand-lg bg-light">
@@ -23,7 +24,7 @@ try {    var menu_bar = document.createRange().createContextualFragment(
             </button>
             </div>
             <div class="col-3">
-            <a class="navbar-brand d-block  d-md-none" href="index.html">
+            <a class="navbar-brand d-block ms-4  d-md-none" href="index.html">
             <img src="./statics/img/logo.webp" class="" style="width: 122px;"> 
         </a>
         </div>
