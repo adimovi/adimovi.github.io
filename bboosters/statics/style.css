@@ -403,6 +403,8 @@ text-align: left;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      background-attachment: unset;
+
     }
 
     .mobile-border{
