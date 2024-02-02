@@ -428,9 +428,10 @@ text-align: left;
       background-size: cover;
       background-attachment: unset;
       background-repeat: no-repeat;
-
     }
-
+.list-padding li {
+  margin-bottom:15px;
+}
   }
 
   .custom-navbar-toggler {
