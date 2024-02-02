@@ -40,10 +40,15 @@ var menu_bar = document.createRange().createContextualFragment(
         <div class="container">
             <div class="row">
                 <div class="col-3 align-self-center">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                <button class="custom-navbar-toggler d-block d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</button>
+<script>
+    
+</script>
                 </div>
                 <div class="col-3">
                     <a class="navbar-brand d-block ms-4 d-md-none" href="index.html">
@@ -93,14 +98,7 @@ var menu_bar = document.createRange().createContextualFragment(
     <script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cf94516c3a.js" crossorigin="anonymous"></script>
 <script>
-    // Function to close the navbar on mobile after a link is clicked
-    function closeNavbar() {
-        // Check if the navbar is expanded (visible)
-        if ($('.navbar-toggler').is(':visible')) {
-            // Collapse the navbar
-            $('.navbar-toggler').click();
-        }
-    }
+    
 </script>
 
 </div>
@@ -147,23 +145,32 @@ var menu_bar = document.createRange().createContextualFragment(
       );
 
 
-  
 
         var host = document.getElementById('host');
         var footer_host = document.getElementById('footer_host');
         host.appendChild(menu_bar);
-        footer_host.appendChild(footer_bar);     
+        footer_host.appendChild(footer_bar);    
+        
+        // Function to close the navbar on mobile after a link is clicked
+    function closeNavbar() {
+        // Check if the navbar is expanded (visible)
+        if ($('.navbar-toggler').is(':visible')) {
+            // Collapse the navbar
+            $('.navbar-toggler').click();
+        }
+    }
+
+    // add active class for the animation to trigger
+    document.querySelector('.custom-navbar-toggler').addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
 
 
         var acc = document.getElementsByClassName("accordion");
         var i;
-  
- 
-
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+    this.classList.toggle("active-acc");
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
@@ -173,6 +180,7 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+// Counter functions
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
@@ -225,10 +233,10 @@ function checkScroll() {
 window.addEventListener('scroll', checkScroll);
 
 
-// Get the button:
+// scroll to top button
 let mybutton = document.getElementById("scroll-button");
 
-// When the user scrolls down 20px from the top of the document, show the button
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -241,8 +249,8 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
 }
 
 
