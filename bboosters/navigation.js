@@ -23,7 +23,7 @@ document.head.appendChild(cdn1);
 var menu_bar = document.createRange().createContextualFragment(
             `
             <div class="fixed-top">
-            <div class="container-fluid  header-bg py-2">
+            <div class="container-fluid d-none d-md-block  header-bg py-2">
             <div class="container text-center"  >
                 
                 <h3 class="mb-0 text-white">
@@ -35,49 +35,51 @@ var menu_bar = document.createRange().createContextualFragment(
                 
             </div>
          </div>
-         <nav class="navbar navbar-expand-lg bg-light" >
+         <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid" id="home">
-   
         <div class="container">
-         <div class="row">
-         <div class="col-3 align-self-center">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="row">
+                <div class="col-3 align-self-center">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="col-3">
+                    <a class="navbar-brand d-block ms-4 d-md-none" href="index.html">
+                        <img src="./statics/img/logo.webp" class="" style="width: 122px;">
+                    </a>
+                </div>
             </div>
-            <div class="col-3">
-            <a class="navbar-brand d-block ms-4  d-md-none" href="index.html">
-            <img src="./statics/img/logo.webp" class="" style="width: 122px;"> 
-        </a>
-        </div>
-        </div>
             <div class="collapse navbar-collapse" id="navbarText">
                 <a class="navbar-brand d-none d-md-block" href="index.html">
-                    <img src="./statics/img/logo.webp" style="width: 175px;"> 
+                    <img src="./statics/img/logo.webp" style="width: 175px;">
                 </a>
 
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.html">Pagina de start</a>
+                        <a class="nav-link" aria-current="page" href="index.html" onclick="closeNavbar()">Pagina de
+                            start</a>
                     </li>
-                    
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="serviciiDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicii</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="serviciiDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicii</a>
                         <div class="dropdown-menu" aria-labelledby="serviciiDropdown">
-                            <a class="dropdown-item" href="servicii.html#branding">Branding</a>
-                            <a class="dropdown-item" href="servicii.html#web">Dezvoltare Web</a>
-                            <a class="dropdown-item" href="servicii.html#gads">Google Ads</a>
-                            <a class="dropdown-item" href="servicii.html#support">Ongoing Support</a>
-                            <a class="dropdown-item" href="servicii.html#seo">SEO</a>
-                            <a class="dropdown-item" href="servicii.html#ads">Facebook/Instagram Ads</a>
+                            <a class="dropdown-item" href="servicii.html#branding" onclick="closeNavbar()">Branding</a>
+                            <a class="dropdown-item" href="servicii.html#web" onclick="closeNavbar()">Dezvoltare Web</a>
+                            <a class="dropdown-item" href="servicii.html#gads" onclick="closeNavbar()">Google Ads</a>
+                            <a class="dropdown-item" href="servicii.html#support" onclick="closeNavbar()">Ongoing Support</a>
+                            <a class="dropdown-item" href="servicii.html#seo" onclick="closeNavbar()">SEO</a>
+                            <a class="dropdown-item" href="servicii.html#ads" onclick="closeNavbar()">Facebook/Instagram Ads</a>
                         </div>
                     </li>
-                   
+
                     <li class="nav-item">
-                        <a class="nav-link" href="despre.html">Despre noi</a>
+                        <a class="nav-link" href="despre.html" onclick="closeNavbar()">Despre noi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html" onclick="closeNavbar()">Contact</a>
                     </li>
                     <li class="nav-item">
                     </li>
@@ -85,10 +87,22 @@ var menu_bar = document.createRange().createContextualFragment(
             </div>
         </div>
     </div>
-    <script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+</nav>
+
+<script src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/cf94516c3a.js" crossorigin="anonymous"></script>
-</nav>
+<script>
+    // Function to close the navbar on mobile after a link is clicked
+    function closeNavbar() {
+        // Check if the navbar is expanded (visible)
+        if ($('.navbar-toggler').is(':visible')) {
+            // Collapse the navbar
+            $('.navbar-toggler').click();
+        }
+    }
+</script>
+
 </div>
 <a href="#home" id="scroll-button" onclick="topFunction()"><div class="scroll-button text-center"><i class="fa-solid fa-arrow-up"></i></div></a>
 
