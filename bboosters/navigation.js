@@ -112,10 +112,37 @@ var menu_bar = document.createRange().createContextualFragment(
         var footer_bar = document.createRange().createContextualFragment(
           `
           <footer>
-        <div class="container py-5">
-            <p class="text-center my-0"><u>Copyright - Brand Boosters</u></p>
+        <div class="container py-md-5">
+        <div class="row px-md-0 px-3 py-5 d-flex justify-content-around ">
+            <div class="col-md-3 col-12  footer-align align-self-center mb-md-0 mb-4">
+                <a class="" href="index.html">
+                    <img src="./statics/img/logo.webp"  style="width: 175px;filter: invert(100%);">
+                </a>
+                
+                    <h3 class="my-3 footer-socials text-white">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <i class="fa-regular fa-envelope"></i>
+                        </h3>
+                </div>
+            
+            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                <h5>Link-uri Rapide</h5>
+                <a href="index.html">Pagina de start</a><br>
+                <a href="servicii.html">Servicii</a><br>
+                <a href="despre.html">Despre Noi</a><br>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="col-md-2 col-12">
+            <h5>Contactați-ne</h5>
+             <a href="mailto:digitalmarketing.brandboosters@gmail.com">digitalmarketing.brandboosters@gmail.com</a><br>
+             <a href="tel:0734413198">0734413198</a>
+            </div>
         </div>
-     </footer>
+            <p class="text-center my-0 pb-md-0 pb-5 "><u>Copyright - Brand Boosters</u></p>
+        </div>
+     </footer>  
 `
       );
 
@@ -174,7 +201,7 @@ function numara(maxNr,counterID,speed) {
 function laScroll() {
 numara(8,'counter-display1','100');
 numara(100,'counter-display2','15');
-numara(150,'counter-display3','15');
+numara(150,'counter-display3','10');
 }
 
 
