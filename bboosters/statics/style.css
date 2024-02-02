@@ -6,8 +6,15 @@ body {
 
 .white-card{
     background-color: #ffffff;
-    box-shadow: 0 0.5rem 1.5625rem rgba(0,0,0,.1);
+    box-shadow: var(--main-shadow);
     border-radius: 25px;
+  }
+
+  .dark-card{
+    background-color: var(--main-color);
+    box-shadow: var(--main-shadow);
+    border-radius: 25px;
+    color:#ffffff;
   }
 
   .hero-image {
@@ -46,7 +53,7 @@ text-align: left;
         background-color: var(--main-color);
     }
 
-    .header-bg .fa-brands{
+    .header-bg  .footer-socials , .fa-brands{
         margin-right:15px;
     }
 
@@ -307,20 +314,6 @@ text-align: left;
   }
 
 
-  @media (max-width: 992px){
-    body{
-      padding-top: 100px;
-    }
-
-    .hero-image {
-
-      background-position: 74%;
-
-    }
-    .hero-text{
-      top:50%;
-    }
-  }
 
 
 
@@ -377,3 +370,69 @@ text-align: left;
   }
 
   
+.list-padding{
+  padding-left: 20px;
+}
+  
+  @media (max-width: 992px){
+    body{
+      padding-top: 71px;
+    }
+
+    .hero-image {
+
+      background-position: 74%;
+
+    }
+    .hero-text{
+      top:50%;
+    }
+    .footer-align{
+     text-align: center;
+    }
+
+    a {
+      word-break: break-all;
+    }
+  }
+
+
+  footer a, footer p{
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  footer a:hover
+  {
+    transform: scale(1.03);
+    text-decoration: underline;
+    transition: 0.4s;
+  }
+  
+  
+
+  .more-button {
+    background-color: var(--main-color);
+    padding: 10px 15px 12px 15px;
+    border-radius: 25px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  
+  @keyframes myAnim {
+    0% {
+      opacity: 0;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(8px);
+    }
+  }
+
+  .fa-arrow-right {
+    animation: myAnim 2s ease 0s infinite normal forwards;
+  }
