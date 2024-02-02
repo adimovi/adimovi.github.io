@@ -151,7 +151,7 @@ var menu_bar = document.createRange().createContextualFragment(
         host.appendChild(menu_bar);
         footer_host.appendChild(footer_bar);    
         
-   // Function to close the navbar on mobile after a link is clicked
+    // Function to close the navbar on mobile after a link is clicked
 function closeNavbar() {
     // Get the navbar collapse element
     var navbarCollapse = document.getElementById('navbarText');
@@ -161,12 +161,13 @@ function closeNavbar() {
         // Remove the 'show' class to hide the navbar collapse
         navbarCollapse.classList.remove('show');
     }
+
+    // Toggle the 'active' class for the animation
+    document.querySelector('.custom-navbar-toggler').classList.toggle('active');
 }
 
-    // add active class for the animation to trigger
-    document.querySelector('.custom-navbar-toggler').addEventListener('click', function () {
-        this.classList.toggle('active');
-    });
+// Event listener for the navbar toggler
+document.querySelector('.custom-navbar-toggler').addEventListener('click', closeNavbar);
 
 
         var acc = document.getElementsByClassName("accordion");
