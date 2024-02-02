@@ -151,14 +151,17 @@ var menu_bar = document.createRange().createContextualFragment(
         host.appendChild(menu_bar);
         footer_host.appendChild(footer_bar);    
         
-        // Function to close the navbar on mobile after a link is clicked
-    function closeNavbar() {
-        // Check if the navbar is expanded (visible)
-        if ($('.navbar-toggler').is(':visible')) {
-            // Collapse the navbar
-            $('.navbar-toggler').click();
-        }
+   // Function to close the navbar on mobile after a link is clicked
+function closeNavbar() {
+    // Get the navbar collapse element
+    var navbarCollapse = document.getElementById('navbarText');
+
+    // Check if the navbar collapse is expanded (visible)
+    if (navbarCollapse.classList.contains('show')) {
+        // Remove the 'show' class to hide the navbar collapse
+        navbarCollapse.classList.remove('show');
     }
+}
 
     // add active class for the animation to trigger
     document.querySelector('.custom-navbar-toggler').addEventListener('click', function () {
