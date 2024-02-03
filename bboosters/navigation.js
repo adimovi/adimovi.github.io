@@ -151,7 +151,7 @@ var menu_bar = document.createRange().createContextualFragment(
         host.appendChild(menu_bar);
         footer_host.appendChild(footer_bar);    
         
-    // Function to close the navbar on mobile after a link is clicked
+   // Function to close the navbar on mobile after a link is clicked or outside click
 function closeNavbar() {
     // Get the navbar collapse element
     var navbarCollapse = document.getElementById('navbarText');
@@ -168,6 +168,18 @@ function closeNavbar() {
 
 // Event listener for the navbar toggler
 document.querySelector('.custom-navbar-toggler').addEventListener('click', closeNavbar);
+
+// Event listener to close the navbar when clicking outside
+document.addEventListener('click', function (event) {
+    var isClickInsideNavbar = document.getElementById('navbarText').contains(event.target);
+    var isNavbarToggler = event.target.closest('.custom-navbar-toggler');
+
+    // Check if the click is not inside the navbar and not on the navbar toggler
+    if (!isClickInsideNavbar && !isNavbarToggler) {
+        closeNavbar();
+    }
+});
+
 
 
         var acc = document.getElementsByClassName("accordion");
