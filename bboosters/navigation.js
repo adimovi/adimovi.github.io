@@ -1,12 +1,6 @@
 
 
 
-var styles = document.createElement('link');
-styles.rel = 'stylesheet';
-styles.href = './statics/style.css';
-document.head.appendChild(styles);
-
-
 
 
 
@@ -151,20 +145,22 @@ var menu_bar = document.createRange().createContextualFragment(
         host.appendChild(menu_bar);
         footer_host.appendChild(footer_bar);    
         
-   // Function to close the navbar on mobile after a link is clicked or outside click
 function closeNavbar() {
-    // Get the navbar collapse element
-    var navbarCollapse = document.getElementById('navbarText');
-
-    // Check if the navbar collapse is expanded (visible)
-    if (navbarCollapse.classList.contains('show')) {
-        // Remove the 'show' class to hide the navbar collapse
-        navbarCollapse.classList.remove('show');
-    }
-
-    // Toggle the 'active' class for the animation
-    document.querySelector('.custom-navbar-toggler').classList.toggle('active');
-}
+            // Get the navbar collapse element
+            var navbarCollapse = document.getElementById('navbarText');
+        
+            // Toggle the 'active' class for the animation
+document.querySelector('.custom-navbar-toggler').addEventListener('click', function(event) {
+    closeNavbar();
+    event.stopPropagation(); // Prevent the click event from propagating to the document click listener
+});
+        
+            // Check if the navbar collapse is expanded (visible)
+            if (navbarCollapse.classList.contains('show')) {
+                // Remove the 'show' class to hide the navbar collapse
+                navbarCollapse.classList.remove('show');
+            }
+        }
 
 // Event listener for the navbar toggler
 document.querySelector('.custom-navbar-toggler').addEventListener('click', closeNavbar);
