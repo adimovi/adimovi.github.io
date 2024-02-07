@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontDev - Adrian Movileanu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+</head>
+
+<body class="spacing" id="main">
+
+  <a href="#home"><img class="scroll-button" title="Go to top" id="scroll-button" src="img/arrow-up.png"></a>
+
+
+<!-- The social media icon bar desktop -->
+<div class="icon-bar" id="mySidebar">
+  <a href="https://www.facebook.com/adrian.movileanu" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://instagram.com/movi.adi" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/adrian-robert-movileanu-33360621a" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="tel:+40747223614" class="phone" target="_blank"><i class="fa fa-phone"></i></a>
+  <a href="mailto:movifrontdev1993@gmail.com" class="mail" target="_blank"><i class="fa fa-envelope-open-o"></i></a>
+</div>
+<div class="openbtn" id="toggleButton">
+<img src="img/arrow-right.png" id="toggleArrow"  class="arrow "></img>
+<span class="tooltiptext">Socials</span>
+</div>
+  <div class="container-fluid" id="home">
+    <div class="container"></div>
+    <div class="row dark-green-bg py-2 py-lg-0">
+      <div class="container py-2 py-md-2" id="navbar">
+        <section class="top-nav">
+
+          <div class="d-block d-md-none">
+            <p class="pt-3 text-center" style="font-size: 22px;"><b class="text-white">My Portfolio</b></p>
+          </div>
+          <input id="menu-toggle" type="checkbox" />
+          <label class='menu-button-container' for="menu-toggle">
+            <div class='menu-button'></div>
+          </label>
+          <ul class="menu">
+
+            <img src="./img/favicon.png" class="d-block img-fluid mx-auto code-img">
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
+              <a onclick="hideMenu()" href="#home">HOME</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#about">ABOUT</a>
+            </li>
+
+            
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#services">SERVICES</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#portfolio">PORTFOLIO</a>
+            </li>
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#resume">RESUME</a>
+            </li>
+
+            
+
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#faq">FAQ</a>
+            </li>
+            <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+              <a onclick="hideMenu()" href="#contact">CONTACT</a>
+            </li>
+        </section>
+        <script>
+          function hideMenu() {
+            document.getElementById("menu-toggle").checked = false;
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="d-none d-md-block hero-background">
+    <div class="hero-text">
+      <h1 style="font-size:75px;text-transform:uppercase;font-weight:400;text-align: left;"  class="my-0  ">I am Adrian Movileanu</h1>
+      <p style="font-size:45px" class="my-0 typewriter">And I am a <b>FrontEnd Developer</b></p>
+      <img src="img/avatar2.jpeg" class="hero-image">
+      <button class="scale-in-center"><a href="#portfolio">Portfolio</a></button>
+      <button class="scale-in-center"><a href="#contact">Contact Me</a></button>
+
+    </div>
+  </div>
+
+  <div class="d-block d-md-none text-center hero-background-mobile py-4  ">
+    <div class="hero-text-mobile">
+      <img src="img/avatar2.jpeg" class="hero-image-mobile mx-auto">
+      <h1 style="text-transform: uppercase;font-weight: 400;" class="my-3">I am Adrian Movileanu</h1>
+      <p class="my-0">And I am a <b>Frontend developer</b></p>
+      <button><a href="#portfolio">Portfolio</a></button>
+      <button><a href="#contact">Contact Me</a></button>
+
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4 px-md-5 about" id="about">
+    <div class="py-md-3"></div>
+    <div class="container py-5 px-md-5">
+      <h1><span class="y-h1 px-1 tracking-in-contract-bck-top">About me</span></h1>
+      <div class="row py-4">
+        <div class="col-12">
+          <h2 class="pt-4">Hi, I'm <u>Movileanu Adrian</u></h2>
+          <p class="">
+            I am a Frontend developer with about 2 years of experience with a passion for web development. I am a
+            sociable person, in an ongoing process of self development with a very high interest in everything IT.
+            Discipline, hardwork, punctuality and the ability to acumulate information very fast, but also beeing a team
+            player are only a few things that describe me.
+          </p>
+        </div>
+      </div>
+      <div class="row pb-4">
+        <div class="col-md-3 col-6">Name:<br><b>Adrian Movileanu</b></div>
+        <div class="col-md-3 col-6">Email:<br><a href="mailto:movifrontdev1993@gmail.com" class="text-black"><b
+              style="word-break: break-all;">movifrontdev1993@gmail.com</b></a></div>
+        <div class="col-md-3 col-6 pt-md-0 pt-3">Date of birth:<br><b>04.09.1993</b></div>
+        <div class="col-md-3 col-6 pt-md-0 pt-3">From:<br><b>Bucharest, Romania</b></div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid py-4 px-md-5 services" id="services">
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-md-4 pb-4"><span class="y-h1 px-1">Services</span></h1>
+      <p>
+        Do you need to create a website for your online business so you can get even more clients?
+      </p>
+      <p> I can help people bring their businesses online by creating eye catching websites that will make them reach
+        the next level!
+      </p>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6 col-12">
+          <ul class="b-on py-4">
+            <p class="mb-0 mx-0"><b><u>Sites I can develop for you</u></b></p>
+            <li>Portfolio or Resumes</li>
+            <li>Landing pages</li>
+            <li>Presentation websites</li>
+            <li>Medical or clinical</li>
+            <li>Restaurant or Food related</li>
+            
+          </ul>
+        </div>
+        <div class="col-md-6 col-12">
+          <ul class="b-on py-4">
+            <p class="mb-0 mx-0"><b><u>What I offer</u></b></p>
+            <li>I will make the best choices to optimise the website</li>
+            <li>Responsive design for mobile and small screens</li>
+            <li>Support after development</li>
+            <li>Always professional and results oriented</li>
+            <li>Attention to small details</li>
+          </ul>
+        </div>
+      </div>
+      <p><b>I mostly work on front-end part of the site, but if yours requires any kind of backend, please tell me and
+          we will make it work!</b></p>
+    </div>
+  </div>
+  
+  <!--Modals-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2 class="text-center py-2"><u>Pipe Medic Website</u></h2>
+       <div class="row p-4">
+        <div class="col-md-5 col-12 ">
+          <div class="pb-2">
+          <h3>Project Info:</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, reprehenderit, 
+            ut eaque maiores nemo blanditiis atque nulla doloremque vero, ullam cumque corporis sunt porro tempora dicta consequuntur deleniti laborum in.</p>
+            </div>
+            <h3>Project Details:</h3>
+            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Salient Theme</p>
+            <p class="brd-mod"><b>Industry:</b> Plumbing</p>
+            <p class="brd-mod"><b>Date:</b> 27th November 2023</p>
+            <p class="brd-mod"><b>URL:</b><a href="https://www.pipemedicwichita.com/" target="_blank" class="m-link"> pipemedicwichita.com</a></p> 
+        </div>
+        <div class="col-md-7 col-12 align-self-center" >
+          <div class="slideshow-container">
+            <div class="mySlides1">
+              <img src="img/pipe1.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides1">
+              <img src="img/pipe2.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides1">
+              <img src="img/pipe3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides1">
+              <img src="img/pipe4.png" style="width:100%">
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <!--Modals-->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2 class="text-center py-2"><u>Affiliate Website</u></h2>
+       <div class="row p-4">
+        <div class="col-md-5 col-12 ">
+          <div class="pb-2">
+          <h3>Project Info:</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, reprehenderit, 
+            ut eaque maiores nemo blanditiis atque nulla doloremque vero, ullam cumque corporis sunt porro tempora dicta consequuntur deleniti laborum in.</p>
+            </div>
+            <h3>Project Details:</h3>
+            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Elementor Theme</p>
+            <p class="brd-mod"><b>Industry:</b> Affiliate Marketing</p>
+            <p class="brd-mod"><b>Date:</b> 20th November 2022</p>
+            <p class="brd-mod"><b>URL:</b><a href="https://www.revenueriver.net/" target="_blank" class="m-link"> revenueriver.net</a></p> 
+        </div>
+        <div class="col-md-7 col-12 align-self-center" >
+          <div class="slideshow-container">
+            <div class="mySlides2">
+              <img src="img/rr1.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides2">
+              <img src="img/rr2.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides2">
+              <img src="img/rr3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides2">
+              <img src="img/rr4.png" style="width:100%">
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2 class="text-center py-2"><u>SEO Website</u></h2>
+      <div class="row p-4">
+        <div class="col-md-5 col-12 ">
+          <div class="pb-2">
+          <h3>Project Info:</h3>
+          <p>This project is a website made for a SEO agency. They are promoting web development, SEO and also Google, Facebook and Instagram ads. 
+            This site was done using HTML , CSS , vanilla JavaScript and Bootsrap 5.3.2 . 
+            It has a lot of features ( counters , scroll to top button , responsive navbar, multiple pages etc, social media bar, contact form ) . 
+            This kind of website can be done in a couple of days, without using any builders or cms ( Wordpress, etc)</p>
+            </div>
+            <h3>Project Details:</h3>
+            <p class="brd-mod"><b>Technologies:</b> HMTL, CSS, JavaScript, Boostrap</p>
+            <p class="brd-mod"><b>Industry:</b> SEO</p>
+            <p class="brd-mod"><b>Date:</b> 5th February 2022</p>
+            <p class="brd-mod"><b>URL:</b><a href="https://www.thefrontdev.ro/bboosters" target="_blank" class="m-link"> thefrontdev.ro/bboosters</a></p> 
+        </div>
+        <div class="col-md-7 col-12 align-self-center" >
+          <div class="slideshow-container">
+            <div class="mySlides3">
+              <img src="img/seo1.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides3">
+              <img src="img/seo2.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides3">
+              <img src="img/seo3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides3">
+              <img src="img/seo4.png" style="width:100%">
+            </div>
+
+            <div class="mySlides3">
+              <img src="img/seo5.png" style="width:100%">
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+          </div>
+        </div>
+       </div>
+  </div>
+  </div>
+
+
+
+  <div class="container-fluid py-4  resume" id="portfolio" >
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Portfolio</span></h1>
+      <h2 class="text-left py-2">A few examples of my work</h2>
+      </div>
+      <div class="row d-flex justify-content-center pt-md-4 px-md-5 py-md-5 py-3">
+        <div class="col-md-3 box-hover  col-12" id="img1">
+          <img src="img/pipe1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" >Pipe Medic Website
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-3 col-12 box-hover pt-md-0 pt-3" id="img2">
+          <img src="img/rr1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" >Affiliate Website
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-12 box-hover pt-md-0 pt-3" id="img3">
+          <img src="img/seo1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" >SEO Website
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      
+
+  <div class="container-fluid text-center hire-me-bg " style="border:1px solid black;">
+    <div class="py-md-3"></div>
+    <div class="py-md-3"></div>
+
+    <h1 class="py-5 text-white mb-0">Interested in working with me?</h1>
+    <a class="text-black" href="#contact"><button class="hire-me-button">Hire Me</button></a>
+    <div class="py-md-4"></div>
+    <div class="py-md-4 py-2"></div>
+  </div>
+
+ 
+
+  <div class="container-fluid py-4 px-md-5 services" id="resume" >
+    <div class="container py-5 px-md-5">
+      <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Resume</span></h1>
+      <h2 class="text-left pb-2 pt-4">My Skills</h2>
+      <div class="row gx-5 py-md-4 py-2" id="carDiv">
+      </div>
+      <h2 class="text-left py-2">My Experience</h2>
+      <div class="timeline d-none d-md-block py-4">
+        <div class="container-timeline left">
+          <div class="content">
+            <h2>2021 - Present Day</h2>
+            <p>Junior Frontend Developer at Apex Digital </p>
+          </div>
+        </div>
+        <div class="container-timeline right">
+          <div class="content">
+            <h2>2011 - 2021</h2>
+            <p>Professional basketball player at
+              CSU Asesoft Ploiesti, CSM Ploiesti, BCM Olimpic Baia Mare,
+              CS Cuza Sport Braila, CSM Miercurea Ciuc </p>
+          </div>
+        </div>
+        <div class="container-timeline left">
+          <div class="content">
+            <h2>2012 - 2015</h2>
+            <p>Informatics<br>
+              Petrol - Gaze University of Ploiesti </p>
+          </div>
+        </div>
+        <div class="container-timeline right">
+          <div class="content">
+            <h2>2008 - 2012</h2>
+            <p>Mathematics and Informatics-Intensive specialization
+              National College 'Alexandru Ioan Cuza', Ploiesti </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-mobile d-block d-md-none pt-3 pb-4">
+        <div class="row gy-3">
+          <div class="col-12">
+            <div class="white-bg px-3 py-2 ">
+              <h2 class="text-center">2021 - Present Day</h2>
+              <p>Junior Frontend Developer at Apex Digital </p>
+            </div>
+
+          </div>
+          <div class="col-12 ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2011 - 2021</h2>
+              <p>Professional basketball player at
+                CSU Asesoft Ploiesti, CSM Ploiesti, BCM Olimpic Baia Mare,
+                CS Cuza Sport Braila, CSM M. Ciuc </p>
+            </div>
+          </div>
+
+          <div class="col-12  ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2012 - 2015</h2>
+              <p>Informatics<br>
+                Petrol - Gaze University of Ploiesti </p>
+            </div>
+
+          </div>
+          <div class="col-12  ">
+            <div class="white-bg px-3 py-2">
+              <h2 class="text-center">2008 - 2012</h2>
+              <p>Mathematics and Informatics-intensive Specialization
+                National College 'Alexandru Ioan Cuza', Ploiesti </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <a href="MoviEng.pdf" download>
+      <div class="cv-button text-center mx-auto">Download CV</div>
+    </a>
+    <div class="py-md-4"></div>
+  </div>
+
+  
+  <div class="container-fluid px-md-5 py-4" id="faq">
+    <div class="container px-md-5 py-4">
+      <div class="py-md-3"></div>
+      <h1 class="py-4"><span class="y-h1 px-1">FAQ</span></h1>
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-9 col-12">
+          <div class="accordion-div">
+            
+            <button class="accordion"><span class="faq__question-heading">
+              <div class="row">
+                <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+                </div>
+                <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+                  <h3 class="my-0  acc"><b>What is frontend development?</b></h3>
+
+
+                </div>
+
+              </div>
+            </span>
+          </button>
+          <div class="panel">
+            <p class="acc  ml-md-4">Frontend development involves creating the user interface and user experience of a website or web application. It focuses on the client-side of development, dealing with the presentation and behavior of the site.
+            </p>
+          </div>
+
+          <button class="accordion"><span class="faq__question-heading">
+            <div class="row">
+              <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+              </div>
+              <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+                <h3 class="my-0  acc"><b>What are the essential skills for a frontend developer?</b></h3>
+
+
+              </div>
+
+            </div>
+          </span>
+        </button>
+        <div class="panel">
+          <p class="acc  ml-md-4">HTML, CSS, and JavaScript are fundamental. Knowledge of frameworks like React, Angular, or Vue.js is often required. Understanding responsive design, version control (e.g., Git), and basic graphic design principles can also be beneficial.
+          </p>
+        </div>
+
+        <button class="accordion"><span class="faq__question-heading">
+          <div class="row">
+            <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+            </div>
+            <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+              <h3 class="my-0  acc"><b>What is  the concept of responsive design?
+              </b></h3>
+
+
+            </div>
+
+          </div>
+        </span>
+      </button>
+      <div class="panel">
+        <p class="acc  ml-md-4">Responsive design ensures that a website adapts to different screen sizes and devices, providing an optimal user experience on desktops, tablets, and smartphones.
+        </p>
+      </div>
+
+      <button class="accordion"><span class="faq__question-heading">
+        <div class="row">
+          <div class="col text-right  mt-md-3 mt-0 faq-arrow">
+          </div>
+          <div class="col-11 col-md-11 toggle-headline pt-md-4 pb-md-2 pt-2 pb-2  px-md-0 ml-md-0 ml-2">
+
+            <h3 class="my-0  acc"><b>What is the difference between HTML, CSS, and JavaScript?</b></h3>
+
+
+          </div>
+
+        </div>
+      </span>
+    </button>
+    <div class="panel">
+      <p class="acc  ml-md-4">HTML is used for structuring content, CSS for styling, and JavaScript for adding interactivity to web pages.
+      </p>
+    </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="py-md-3"></div>
+
+    </div>
+  </div>
+  <div class="container-fluid py-5 px-md-5 contact" id="contact">
+
+    <div class="container py-4 px-md-5">
+      <div class="row gx-5">
+        <div class="col-md-6 col-12">
+          <h2 class="mid-mobile pb-4">Let's get in touch</h2>
+          <p class="mid-mobile pr-md-5">I enjoy discussing new projects and jobs. So if you want to get in touch with me
+            or get additional info please don't hesitate to contact me.</p>
+          <p class="mid-mobile pt-md-4 pt-2 my-0"><b>Located In:</b></p>
+          <p class="mid-mobile my-0 text-left ">Bucharest, Romania</p>
+          <p class="mid-mobile text-left  pt-2 my-0"><b>Phone:</b></p>
+          <p class="mid-mobile my-0 text-left"><a href="tel:+40747223614" style="color: black;">+40 747 223 614</a></p>
+          <div class="py-md-3"></div>
+          <div class="py-md-0 py-3"></div>
+        </div>
+
+        <div class="col-md-6 col-12">
+          <h2 class="mid-mobile pb-4">Send me an E-mail</h2>
+          <form action="https://formsubmit.co/movifrontdev1993@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your name here" id="name" class="contact-bg" required><br>
+            <input type="email" name="email" placeholder="Your email here" class="contact-bg" id="email" required><br>
+            <textarea placeholder="How can I help you?" id="message" name="message" rows="6" cols="50"
+              class="contact-bg" required style="resize: none;"></textarea><br>
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_subject" value="New submission!">
+            <input type="submit" id="submit" class="submit-button " name="submit" value="Send">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="copyright text-center"><u>Designed By Adrian Movileanu</u></p>
+  </footer>
+
+
+  <script src="functions.js"></script>
+
+
+</body>
+
+</html>
