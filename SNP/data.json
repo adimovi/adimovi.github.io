@@ -1,0 +1,33 @@
+{
+    "categories": [
+        {
+            "name": "confirmed",
+            "ideas": [
+                {"title": "Idea 1 Confirmed", 
+                "imageSrc": "dummy1.png", 
+                "progress": 25,
+                "content":"Lorem ipsum, dolor sit amet consectetur adipisicing elit.Nobis dignissimos nihil dicta fuga maxime nostrum,perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!"},
+                {"title": "Idea 2 Confirmed", "imageSrc": "dummy2.png", "progress": 50,"content":"some random content 2"},
+                {"title": "Idea 3 Confirmed", "imageSrc": "dummy3.png", "progress": 75,"content":"some random content 3"},
+                {"title": "Idea 4 Confirmed", "imageSrc": "dummy4.png", "progress": 75,"content":"some random content 3"}
+                
+            ]
+        },
+        {
+            "name": "doing",
+            "ideas": [
+                {"title": "Idea 1 Doing", "imageSrc": "dummy2.png", "progress": 25,"content":"some random content 112312313"},
+                {"title": "Idea 2 Doing", "imageSrc": "dummy1.png", "progress": 50,"content":"some random content 2dsa dasd asdasd"},
+                {"title": "Idea 3 Doing", "imageSrc": "dummy4.png", "progress": 75,"content":"some random content 3das asda sdasd"}
+            ]
+        },
+        {
+            "name": "done",
+            "ideas": [
+                {"title": "Idea 1 Done", "imageSrc": "dummy2.png", "progress": 25,"content":"some random content dasda das1"},
+                {"title": "Idea 2 Done", "imageSrc": "dummy4.png", "progress": 50,"content":"some random content da sdasda s"},
+                {"title": "Idea 3 Done", "imageSrc": "dummy3.png", "progress": 75,"content":"some random content da sdas dasd3"}
+            ]
+        }
+    ]
+}
