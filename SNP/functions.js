@@ -50,74 +50,126 @@ function updateContent(titleText, contentText, progressPercentage, imageSrc, tit
 
 
 
-function fetchData() {
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Get the data of the first idea
-            var firstCategory = data.categories[0];
-            if (firstCategory && firstCategory.ideas && firstCategory.ideas.length > 0) {
-                var firstIdea = firstCategory.ideas[0];
-                var titleText = firstIdea.title;
-                var contentText = firstIdea.content;
-                var progressPercentage = firstIdea.progress;
-                var imageSrc = firstIdea.imageSrc;
+    function fetchData() {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Variable to track the currently active category
+                var activeCategory = '';
+    
+                // Iterate over categories
+                data.categories.forEach(function (category, categoryIndex) {
+                    // Find the idea card corresponding to the category
+                    var desktopIdeaCard = document.getElementById(category.name);
+                    var mobileIdeaCard = document.getElementById('collapse' + category.name.charAt(0).toUpperCase() + category.name.slice(1)); // Generate mobile ID
+                    if (desktopIdeaCard && mobileIdeaCard) {
+                        // Iterate over ideas in the category
+                        category.ideas.forEach(function (idea, index) {
+                            // Create a button element for desktop
+                            var desktopButton = document.createElement('button');
+                            desktopButton.textContent = idea.title;
+                            // Assign data-index attribute
+                            desktopButton.setAttribute('data-index', index);
+                            // Add click event listener
+                            desktopButton.addEventListener('click', function () {
+                                // Remove active class from all buttons in other categories
+                                document.querySelectorAll('.idea-card button').forEach(btn => btn.classList.remove('active'));
+                                // Add active class to the clicked button
+                                desktopButton.classList.add('active');
+    
+                                // Update activeCategory to the current category
+                                activeCategory = category.name;
+    
+                                // Get idea data based on the clicked button
+                                var titleText = idea.title;
+                                var contentText = idea.content;
+                                var progressPercentage = idea.progress;
+                                var imageSrc = idea.imageSrc;
+                                // Call the updateContent function with the obtained data for desktop
+                                updateContent(titleText, contentText, progressPercentage, imageSrc, 'title', 'content', 'img');
+    
+                                // Update content for mobile
+                                var mobileTitle = document.querySelector('.accordion-body#' + mobileIdeaCard.id + ' h3');
+                                var mobileContent = document.querySelector('.accordion-body#' + mobileIdeaCard.id + ' p');
+                                var mobileProgressBar = document.querySelector('.accordion-body#' + mobileIdeaCard.id + ' .progress-bar');
+                                var mobileImage = document.querySelector('.accordion-body#' + mobileIdeaCard.id + ' img');
+                                if (mobileTitle && mobileContent && mobileProgressBar && mobileImage) {
+                                    mobileTitle.innerText = titleText;
+                                    mobileContent.innerText = contentText;
+                                    mobileProgressBar.style.width = progressPercentage + '%';
+                                    mobileProgressBar.innerHTML = progressPercentage + '%';
+                                    mobileProgressBar.setAttribute('aria-valuenow', progressPercentage);
+                                    mobileImage.src = imageSrc;
+                                }
+                            });
+    
+                            // Create a button element for mobile
+                            var mobileButton = document.createElement('button');
+                            mobileButton.textContent = idea.title;
+                            // Assign data-index attribute
+                            mobileButton.setAttribute('data-index', index);
+                            // Add click event listener
+                            mobileButton.addEventListener('click', function () {
 
-                // Call the updateContent function with the data of the first idea
-                updateContent(titleText, contentText, progressPercentage, imageSrc, 'title', 'content', 'img');
-            }
+                                var accordion = document.getElementById('accordionExample');
+                                var bsAccordion = new bootstrap.Collapse(accordion, { toggle: false });
+                                bsAccordion.hide();
+                            
+                                // Scroll to the top of the page
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Variable to track the currently active category
-            var activeCategory = '';
-
-            // Iterate over categories
-            data.categories.forEach(function (category, categoryIndex) {
-                // Find the idea card corresponding to the category
-                var ideaCard = document.getElementById(category.name);
-                if (ideaCard) {
-                    // Iterate over ideas in the category
-                    category.ideas.forEach(function (idea, index) {
-                        // Create a button element
-                        var button = document.createElement('button');
-                        button.textContent = idea.title;
-                        // Assign data-index attribute
-                        button.setAttribute('data-index', index);
-                        // Add click event listener
-                        button.addEventListener('click', function () {
-                            // Remove active class from all buttons in other categories
-                            document.querySelectorAll('.idea-card button').forEach(btn => btn.classList.remove('active'));
-                            // Add active class to the clicked button
-                            button.classList.add('active');
-
-                            // Update activeCategory to the current category
-                            activeCategory = category.name;
-
-                            // Get idea data based on the clicked button
-                            var titleText = idea.title;
-                            var contentText = idea.content;
-                            var progressPercentage = idea.progress;
-                            var imageSrc = idea.imageSrc;
-                            // Call the updateContent function with the obtained data
-                            updateContent(titleText, contentText, progressPercentage, imageSrc, 'title', 'content', 'img');
+                                document.querySelectorAll('.collapse button').forEach(btn => btn.classList.remove('mobile-active'));
+                             
+                                mobileButton.classList.add('mobile-active');
+                                // Update activeCategory to the current category
+                                activeCategory = category.name;
+    
+                                // Get idea data based on the clicked button
+                                var titleText = idea.title;
+                                var contentText = idea.content;
+                                var progressPercentage = idea.progress;
+                                var imageSrc = idea.imageSrc;
+                                // Call the updateContent function with the obtained data for mobile
+                                updateContent(titleText, contentText, progressPercentage, imageSrc, 'title', 'content', 'img');
+                            });
+    
+                            // Append the button to the idea cards for both desktop and mobile
+                            desktopIdeaCard.appendChild(desktopButton);
+                            mobileIdeaCard.appendChild(mobileButton);
+    
+                            // Add active class to the first idea button of the first category for desktop
+                            if (categoryIndex === 0 && index === 0) {
+                                desktopButton.classList.add('active');
+                            }
+    
+                            // Add active class to the first idea button of the first category for mobile
+                            if (categoryIndex === 0 && index === 0) {
+                                mobileButton.classList.add('mobile-active');
+                            }
                         });
-                        // Append the button to the idea card
-                        ideaCard.appendChild(button);
-
-                        // Add active class to the first idea button of the first category
-                        if (categoryIndex === 0 && index === 0) {
-                            button.classList.add('active');
-                        }
-
-                        // Hide long text
-                        hideLongText();
-                    });
+                    }
+                });
+    
+                // Load the content of the first idea on page load
+                var firstCategory = data.categories[0];
+                if (firstCategory && firstCategory.ideas && firstCategory.ideas.length > 0) {
+                    var firstIdea = firstCategory.ideas[0];
+                    var titleText = firstIdea.title;
+                    var contentText = firstIdea.content;
+                    var progressPercentage = firstIdea.progress;
+                    var imageSrc = firstIdea.imageSrc;
+    
+                    // Call the updateContent function with the data of the first idea for both desktop and mobile
+                    updateContent(titleText, contentText, progressPercentage, imageSrc, 'title', 'content', 'img');
                 }
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}
-
-fetchData();
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+    
+    fetchData();
+    
+    
+    
 
   
 
