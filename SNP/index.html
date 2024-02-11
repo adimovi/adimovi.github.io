@@ -15,7 +15,7 @@
         <div class="nav-bg py-2">
         <div class="container ">
         <div class="row d-flex justify-content-evenly text-center">
-        <div class="col-md-2 col-12">
+        <div class="col-md-2 d-none d-md-block col-12">
             <img src="logo.svg" style="width: 100px;" class="d-block mx-auto"> 
         </div>
         <div class="col-md-8 col-8 align-self-center">
@@ -33,9 +33,10 @@
         <div class="container ">
         <div class="row p-md-5 p-2">
             <div class="col-md-6 col-12 p-md-5 p-2">
-                <img src="dummy.png" id="img" class="d-block mx-auto" style="width: 100%;">
+                <img src="dummy.png" id="img" class="d-block mx-auto vh-mobile">
             </div>
             <div class="col-md-6 col-12 align-self-center">
+
                 <h2 class="pt-md-0 pt-4">Progress</h2>
                 <h2 class="pb-md-5 pb-3"><div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"> 75%</div>
@@ -65,29 +66,77 @@
                    </div>
                    </div>
                     </div>
-                
+        </div>   
             
-            <div class="py-md-4 py-2"></div>
-            <div class="col-md-4 col-12 mb-md-0 mb-3">
-                <div class="idea-card p-md-4 p-3" id="confirmed">
-                     <h3>Confirmed</h3>
-                    
-                </div>
-            </div>
-            <div class="col-md-4 col-12 mb-md-0 mb-3">
-                <div class="idea-card p-md-4 p-3" id="doing">
-                    <h3>Doing</h3>
-                    
-                </div>
 
+
+            <div class="container d-none d-md-block">
+                <div class="row">
+                    <div class="col-md-4 col-12 mb-md-0 mb-3">
+                        <div class="idea-card p-md-4 p-3" id="confirmed">
+                             <h3>Confirmed</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-12 mb-md-0 mb-3">
+                        <div class="idea-card p-md-4 p-3" id="doing">
+                            <h3>Doing</h3>
+                            
+                        </div>
+        
+                    </div>
+                    <div class="col-md-4 col-12 mb-md-0 mb-3">
+                        <div class="idea-card p-md-4 p-3" id="done">
+                            <h3>Done</h3>
+                           
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 col-12 mb-md-0 mb-3">
-                <div class="idea-card p-md-4 p-3" id="done">
-                    <h3>Done</h3>
-                   
+            
+           
+        </div>
+             <div class="container pt-4 d-md-none">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingConfirmed">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConfirmed" aria-expanded="true" aria-controls="collapseConfirmed">
+                            Confirmed
+                        </button>
+                    </h2>
+                    <div id="collapseConfirmed" class="accordion-collapse collapse" aria-labelledby="headingConfirmed" data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-none d-md-block" id="confirmed">
+                            <!-- Content for Confirmed -->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingDoing">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDoing" aria-expanded="false" aria-controls="collapseDoing">
+                            Doing
+                        </button>
+                    </h2>
+                    <div id="collapseDoing" class="accordion-collapse collapse" aria-labelledby="headingDoing" data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-none d-md-block" id="doing">
+                            <!-- Content for Doing -->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingDone">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDone" aria-expanded="false" aria-controls="collapseDone">
+                            Done
+                        </button>
+                    </h2>
+                    <div id="collapseDone" class="accordion-collapse collapse" aria-labelledby="headingDone" data-bs-parent="#accordionExample">
+                        <div class="accordion-body d-none d-md-block" id="done">
+                            <!-- Content for Done -->
+                        </div>
+                    </div>
                 </div>
             </div>
 
+        </div>
             
 
             <div class="col-12">
@@ -98,13 +147,18 @@
         </div>
         </div>
     </div>
-   
+    
+    
 <footer>
     <div class="container-fluid text-center  py-5 nav-bg">
         <p class="mb-0">Copyright SNP</p>
     </div>
 </footer>
 <script src="functions.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
+
+    
+    
