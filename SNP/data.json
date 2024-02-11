@@ -3,30 +3,82 @@
         {
             "name": "confirmed",
             "ideas": [
-                {"title": "Idea 1 Confirmed", 
-                "imageSrc": "dummy1.png", 
-                "progress": 25,
-                "content":"Lorem ipsum, dolor sit amet consectetur adipisicing elit.Nobis dignissimos nihil dicta fuga maxime nostrum,perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!perspiciatis reprehenderit tempora illum quis inventore, porro tenetur similique amet facilis magnam mollitia quia labore!"},
-                {"title": "Idea 2 Confirmed", "imageSrc": "dummy2.png", "progress": 50,"content":"some random content 2"},
-                {"title": "Idea 3 Confirmed", "imageSrc": "dummy3.png", "progress": 75,"content":"some random content 3"},
-                {"title": "Idea 4 Confirmed", "imageSrc": "dummy4.png", "progress": 75,"content":"some random content 3"}
-                
+                {
+                    "title": "Idea 1 Confirmed",
+                    "imageSrc": "dummy1.png",
+                    "progress": 25,
+                    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tempor feugiat sapien, nec fringilla felis vulputate eget. Proin pretium felis non velit feugiat, quis hendrerit nunc dictum. Integer lacinia, felis sed tincidunt volutpat, turpis est eleifend ligula, id fringilla tortor ipsum ut dui. Suspendisse at viverra velit. Ut eget libero condimentum, cursus elit at, facilisis turpis. Nam sed justo ac ex placerat condimentum. Vivamus pretium risus non nunc sollicitudin, sed viverra orci lacinia. Cras sodales mi vel arcu efficitur, nec lacinia odio volutpat. Vestibulum at rutrum sapien. Vivamus a felis sit amet sapien tincidunt hendrerit id vel mi. Maecenas ut nulla libero. Maecenas non odio metus. Nam nec tempor sem."
+                },
+                {
+                    "title": "Idea 2 Confirmed",
+                    "imageSrc": "dummy2.png",
+                    "progress": 50,
+                    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris suscipit, purus ac interdum dictum, libero purus tristique enim, a hendrerit quam odio et nulla. Sed vel gravida velit. Sed venenatis accumsan erat sit amet euismod. Quisque et justo nec ipsum lacinia faucibus. Aliquam mattis ex vel odio volutpat, vitae volutpat orci facilisis. Ut nec ligula sed augue vehicula dapibus. Integer pharetra leo sit amet est consectetur, eget convallis turpis posuere. In hac habitasse platea dictumst. Curabitur euismod ipsum eget vestibulum feugiat. Aliquam erat volutpat. Maecenas faucibus metus nec risus venenatis, eget accumsan risus convallis. Fusce luctus erat a nibh ultrices, vel varius quam lobortis. Cras ac leo ut nisl dapibus rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                },
+                {
+                    "title": "Idea 3 Confirmed",
+                    "imageSrc": "dummy3.png",
+                    "progress": 75,
+                    "content": "Fusce non nunc at turpis mollis sollicitudin. Ut quis mauris ut tellus rutrum aliquet. Maecenas finibus at odio ut pellentesque. Sed eget magna eget eros interdum convallis. Suspendisse potenti. Nullam vestibulum massa a semper pretium. Fusce gravida scelerisque ex, a tempus purus pulvinar eu. Curabitur pharetra est a felis egestas blandit. Nulla facilisi. Sed vel orci felis. Cras nec dictum dolor, id dignissim nunc. Integer non lorem id urna venenatis lobortis."
+                },
+                {
+                    "title": "Idea 4 Confirmed",
+                    "imageSrc": "dummy4.png",
+                    "progress": 75,
+                    "content": "Vestibulum malesuada consequat mi, vel venenatis ex vestibulum in. Aliquam auctor lacus in nisi cursus, et dapibus magna semper. Integer efficitur libero eget lacus vehicula lobortis. Vestibulum commodo odio nec lorem tincidunt, nec consequat elit condimentum. Morbi fermentum malesuada mi, in vehicula tortor. Cras ut eros nec metus rutrum consequat. Aliquam nec mi ac justo posuere malesuada. Integer nec justo nec tortor consequat fermentum. Aenean non commodo mauris, sit amet lacinia nisi. Cras ultrices, odio vel interdum fermentum, ipsum arcu aliquam odio, eget hendrerit felis nunc a libero."
+                }
             ]
         },
         {
             "name": "doing",
             "ideas": [
-                {"title": "Idea 1 Doing", "imageSrc": "dummy2.png", "progress": 25,"content":"some random content 112312313"},
-                {"title": "Idea 2 Doing", "imageSrc": "dummy1.png", "progress": 50,"content":"some random content 2dsa dasd asdasd"},
-                {"title": "Idea 3 Doing", "imageSrc": "dummy4.png", "progress": 75,"content":"some random content 3das asda sdasd"}
+                {
+                    "title": "Idea 1 Doing",
+                    "imageSrc": "dummy2.png",
+                    "progress": 25,
+                    "content": "Maecenas eget sapien felis. In eleifend tincidunt nisi, vel auctor risus dictum vel. Duis luctus mauris id tellus placerat pharetra. Ut convallis auctor orci, a hendrerit risus facilisis vel. Phasellus auctor eros ligula, non consectetur lorem efficitur eu. Donec sit amet dui sem. Morbi congue est nec mi maximus, non lobortis nisl tempor. Phasellus efficitur lacinia metus, at cursus velit blandit nec. Pellentesque in commodo ante. Aliquam luctus euismod vehicula. Duis ut ex id elit elementum interdum eget eget velit."
+                },
+                {
+                    "title": "Idea 2 Doing",
+                    "imageSrc": "dummy1.png",
+                    "progress": 50,
+                    "content": "Vestibulum eget tincidunt justo, nec condimentum lectus. Nullam malesuada nunc id velit congue, vel efficitur leo dictum. Proin malesuada augue sit amet felis pharetra, nec venenatis est convallis. In hac habitasse platea dictumst. Integer ac tortor sit amet sem congue varius. Fusce vestibulum magna vel tortor scelerisque, id facilisis libero fermentum. Vivamus convallis, justo non faucibus accumsan, elit ipsum hendrerit quam, id fermentum elit nulla eget justo. Nullam posuere, justo a malesuada pellentesque, lectus urna congue est, vel tempor libero nisl id odio. Nulla facilisi."
+                },
+                {
+                    "title": "Idea 3 Doing",
+                    "imageSrc": "dummy4.png",
+                    "progress": 75,
+                    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut a aliquam nisl. Duis accumsan odio in dui ultricies, nec sollicitudin lectus laoreet. Maecenas dapibus magna at purus dignissim hendrerit. Nunc aliquet hendrerit ex, a dapibus nulla elementum in. Vivamus nec vehicula nisl, id fringilla mi. Quisque commodo urna eget nisi pharetra, quis dapibus nisi varius. Integer faucibus laoreet convallis. Mauris in lorem nec nibh fermentum pulvinar eget nec orci. In ullamcorper risus eu nulla fermentum, id mattis metus bibendum."
+                }
             ]
         },
         {
             "name": "done",
             "ideas": [
-                {"title": "Idea 1 Done", "imageSrc": "dummy2.png", "progress": 25,"content":"some random content dasda das1"},
-                {"title": "Idea 2 Done", "imageSrc": "dummy4.png", "progress": 50,"content":"some random content da sdasda s"},
-                {"title": "Idea 3 Done", "imageSrc": "dummy3.png", "progress": 75,"content":"some random content da sdas dasd3"}
+                {
+                    "title": "Idea 1 Done",
+                    "imageSrc": "dummy2.png",
+                    "progress": 25,
+                    "content": "Fusce non nunc at turpis mollis sollicitudin. Ut quis mauris ut tellus rutrum aliquet. Maecenas finibus at odio ut pellentesque. Sed eget magna eget eros interdum convallis. Suspendisse potenti. Nullam vestibulum massa a semper pretium. Fusce gravida scelerisque ex, a tempus purus pulvinar eu. Curabitur pharetra est a felis egestas blandit. Nulla facilisi. Sed vel orci felis. Cras nec dictum dolor, id dignissim nunc. Integer non lorem id urna venenatis lobortis."
+                },
+                {
+                    "title": "Idea 2 Done",
+                    "imageSrc": "dummy4.png",
+                    "progress": 50,
+                    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris suscipit, purus ac interdum dictum, libero purus tristique enim, a hendrerit quam odio et nulla. Sed vel gravida velit. Sed venenatis accumsan erat sit amet euismod. Quisque et justo nec ipsum lacinia faucibus. Aliquam mattis ex vel odio volutpat, vitae volutpat orci facilisis. Ut nec ligula sed augue vehicula dapibus. Integer pharetra leo sit amet est consectetur, eget convallis turpis posuere. In hac habitasse platea dictumst. Curabitur euismod ipsum eget vestibulum feugiat. Aliquam erat volutpat. Maecenas faucibus metus nec risus venenatis, eget accumsan risus convallis. Fusce luctus erat a nibh ultrices, vel varius quam lobortis. Cras ac leo ut nisl dapibus rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+                },
+                {
+                    "title": "Idea 3 Done",
+                    "imageSrc": "dummy3.png",
+                    "progress": 75,
+                    "content": "Maecenas eget sapien felis. In eleifend tincidunt nisi, vel auctor risus dictum vel. Duis luctus mauris id tellus placerat pharetra. Ut convallis auctor orci, a hendrerit risus facilisis vel. Phasellus auctor eros ligula, non consectetur lorem efficitur eu. Donec sit amet dui sem. Morbi congue est nec mi maximus, non lobortis nisl tempor. Phasellus efficitur lacinia metus, at cursus velit blandit nec. Pellentesque in commodo ante. Aliquam luctus euismod vehicula. Duis ut ex id elit elementum interdum eget eget velit."
+                },
+                {
+                    "title": "Idea 4 Done",
+                    "imageSrc": "dummy3.png",
+                    "progress": 73,
+                    "content": "Maecenas eget sapien felis. In eleifend tincidunt nisi, vel auctor risus dictum vel. Duis luctus mauris id tellus placerat pharetra. Ut convallis auctor orci, a hendrerit risus facilisis vel. Phasellus auctor eros ligula, non consectetur lorem efficitur eu. Donec sit amet dui sem. Morbi congue est nec mi maximus, non lobortis nisl tempor. Phasellus efficitur lacinia metus, at cursus velit blandit nec. Pellentesque in commodo ante. Aliquam luctus euismod vehicula. Duis ut ex id elit elementum interdum eget eget velit."
+                }
             ]
         }
     ]
