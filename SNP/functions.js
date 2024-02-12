@@ -29,12 +29,12 @@ function updateContent(titleText, contentText, progressPercentage, imageSrc, tit
     if (modalTitle && modalBody) {
         modalTitle.innerText = titleText;
         modalBody.innerHTML = `
-        <div class="p-md-4 p-2">
+        <div class="px-lg-4 px-2">
             <img src="${imageSrc}" class="modal-image d-block mx-auto anim"> <!-- Added 'anim' class here -->
             <div class="progress my-4" role="progressbar" aria-label="Animated striped example" aria-valuenow="${progressPercentage}" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: ${progressPercentage}%">${progressPercentage}%</div>
             </div>
-            <p>${contentText}</p>
+            <p class="mb-0">${contentText}</p>
             </div>
             `;
     }
@@ -63,6 +63,7 @@ function hideLongText(maxLength) {
         }
     });
 }
+
 
 function fetchData() {
     fetch('data.json')
@@ -179,5 +180,7 @@ function fetchData() {
         })
         .catch(error => console.error('Error fetching data:', error));
 }
+
+
 
 fetchData();
