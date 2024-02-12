@@ -71,34 +71,45 @@
             
 
 
-            <div class="container d-none d-md-block" style="margin-bottom: -80px;">
-                <div class="row">
-                    <div class="col-md-4 col-12 mb-md-0 mb-3">
-                        <div class="idea-card p-md-4 p-3" id="confirmed">
-                             <h3><i class="bi bi-lightbulb"></i> Confirmed</h3>
-                            
+        <div class="container cards d-none d-lg-block" style="margin-bottom: -80px;">
+            <div class="row">
+                
+                <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+                    <h3 style=""><i class="bi bi-lightbulb"></i> Confirmed</h3>
+                    <div class="idea-card p-lg-3 p-1" id="confirmed">
+                       
+                        <div class="idea-list">
+                            <!-- Ideas will be dynamically generated here -->
                         </div>
                     </div>
-                    <div class="col-md-4 col-12 mb-md-0 mb-3">
-                        <div class="idea-card p-md-4 p-3" id="doing">
-                            <h3><i class="bi bi-gear-wide-connected"></i> Doing</h3>
-                            
+                </div>
+                
+                <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+                    <h3><i class="bi bi-gear-wide-connected"></i> Doing</h3>
+                    <div class="idea-card p-lg-3 p-1" id="doing">
+                        
+                        <div class="idea-list">
+                            <!-- Ideas will be dynamically generated here -->
                         </div>
-        
                     </div>
-                    <div class="col-md-4 col-12 mb-md-0 mb-3">
-                        <div class="idea-card p-md-4 p-3" id="done">
-                            <h3><i class="bi bi-check-circle"></i>
-                                Done</h3>
-                           
+                </div>
+                
+                <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+                    <h3><i class="bi bi-check-circle"></i> Done</h3>
+                    <div class="idea-card p-lg-3 p-1" id="done">
+                        
+                        <div class="idea-list">
+                            <!-- Ideas will be dynamically generated here -->
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        
             
            
         </div>
-             <div class="container pt-4 d-md-none">
+             <div class="container pt-4 d-lg-none">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingConfirmed">
@@ -107,7 +118,7 @@
                         </button>
                     </h2>
                     <div id="collapseConfirmed" class="accordion-collapse collapse" aria-labelledby="headingConfirmed" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-md-block" id="confirmed">
+                        <div class="accordion-body d-none d-lg-block" id="confirmed">
                             <!-- Content for Confirmed -->
                         </div>
                     </div>
@@ -119,7 +130,7 @@
                         </button>
                     </h2>
                     <div id="collapseDoing" class="accordion-collapse collapse" aria-labelledby="headingDoing" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-md-block" id="doing">
+                        <div class="accordion-body d-none d-lg-block" id="doing">
                             <!-- Content for Doing -->
                         </div>
                     </div>
@@ -131,7 +142,7 @@
                         </button>
                     </h2>
                     <div id="collapseDone" class="accordion-collapse collapse" aria-labelledby="headingDone" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-md-block" id="done">
+                        <div class="accordion-body d-none d-lg-block" id="done">
                             <!-- Content for Done -->
                         </div>
                     </div>
