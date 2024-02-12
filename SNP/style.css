@@ -132,6 +132,25 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
             }
     }
 
+@media (min-width: 2000px) {
+
+        .vh-mobile{
+            height:13vw;
+            width: auto;
+            margin:0px auto;
+            }
+        }
+
+        @media (min-width: 3000px) {
+
+            .vh-mobile{
+                height:10vw;
+                width: auto;
+                margin:0px auto;
+                }
+            }
+
+
 
     @-webkit-keyframes slide-in-fwd-left {
         0% {
