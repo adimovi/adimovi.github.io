@@ -1,4 +1,8 @@
 
+* {
+    --main-color:rgb(41,161,205);
+}
+
 .nav-bg{
     background-color:#e9f4fa;
     -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
@@ -14,13 +18,9 @@
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: 0.5s;
 }
 
-.idea-card:hover{
-    transition: 0.5s;
-    transform: scale(1.02);
-}
+
 @font-face {
     font-family: bold-font;
     src: url(Poppins-Bold.ttf);
@@ -46,7 +46,7 @@ a{
     text-decoration: none;
 }
 .main-bg{
-background: rgb(41,161,205);
+background:var(--main-color);
 background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 61%, rgba(233,244,250,1) 100%);
 }
 
@@ -63,17 +63,17 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
 }
 
 .idea-card button:hover {
-    background-color: #007bff; /* Change background color to blue */
+    background-color: var(--main-color); /* Change background color to blue */
     color: #fff; /* Change text color to white */
-    border-color: #007bff; /* Change border color to blue */
+    border-color: var(--main-color); /* Change border color to blue */
     border-radius: 5px ;
     transition: 0.4s;
 }
 
 .idea-card button.active {
-    background-color: #007bff; /* Change background color to blue */
+    background-color: var(--main-color); /* Change background color to blue */
     color: #fff; /* Change text color to white */
-    border-color: #007bff; /* Change border color to blue */
+    border-color: var(--main-color); /* Change border color to blue */
     border-radius: 5px ;
     transition: 0.4s;
 }
@@ -110,33 +110,35 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
 
 
 .collapse button.mobile-active {
-    background-color: #007bff; /* Change background color to blue */
+    background-color: var(--main-color); /* Change background color to blue */
     color: #fff!important; /* Change text color to white */
-    border-color: #007bff; /* Change border color to blue */
+    border-color: var(--main-color); /* Change border color to blue */
 }
 
 
 .vh-mobile{
-    height:18vw;
-    width: auto;
-    }
+    height:14vw;
+    margin:0px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+
+
+}
 
 
     @media (max-width: 992px) {
 
 
         .vh-mobile{
-            height:50vw;
-            width: auto;
+            height:45vw;
             margin:0px auto;
             }
     }
 
-@media (min-width: 2000px) {
+    @media (min-width: 2000px) {
 
         .vh-mobile{
-            height:13vw;
-            width: auto;
+            height:10vw;
             margin:0px auto;
             }
         }
@@ -229,6 +231,28 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
 
 }
 
+.idea-card {
+    scrollbar-color: var(--main-color) #FEFEFE;
+    height: 180px;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.idea-list {
+    padding-right: 15px; /* Add padding to avoid scrollbar overlay */
+}
+
+.cards h3{
+    color:#fff;
+    text-shadow: 2px 3px 2px rgba(0,0,0,0.70);
+}
+
+.progress-bar,.btn-primary{
+    background-color: var(--main-color)!important;
+    border:none;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+}
 
 
 
