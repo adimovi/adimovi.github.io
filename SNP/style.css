@@ -78,9 +78,7 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
     transition: 0.4s;
 }
 
-.accordion-item, .accordion-header, .accordion-body{
-    
-}
+
 
 
 
@@ -226,8 +224,15 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
 }
 
+.logo-img{
+    width: 250px;
+}
 
 @media (max-width: 660px) {
+
+    .logo-img{
+        width: 150px;
+    }
 
     h2{
      font-size:20px!important;
@@ -313,5 +318,20 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
     border-color: var(--main-color); /* Change border color to blue */
 }
 
+ .acc-active{
+    background-color:var(--main-color);
+    color:#fff!important;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+}
 
+.acc-active h3{
+    color:#fff!important;
+}
+.acc-active .arrow{
+   filter:invert(100%);
+}
 
+.bi-twitter-x, .bi-telegram {
+    margin-left:10px;
+    cursor: pointer;
+}
