@@ -79,41 +79,10 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
 }
 
 .accordion-item, .accordion-header, .accordion-body{
-    background: rgba(255, 255, 255, 0.50)!important;
-    border-radius: 5px!important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25)!important;
-    backdrop-filter: blur(5px)!important;
-    -webkit-backdrop-filter: blur(5px)!important;
-    border: 1px solid rgba(255, 255, 255, 0.3)!important;
-}
-
-.accordion-item{
-    margin-bottom: 20px;
-}
-
-.collapse button {
-    border: 0px;
-    background-color: transparent;
-    display: block;
-}
-
-.collapsing button {
-    border: 0px;
-    background-color: transparent;
-    display: block;
-}
-
-#collapseDone , #collapseConfirmed, #collapseDoing {
-    padding:10px;
+    
 }
 
 
-
-.collapse button.mobile-active {
-    background-color: var(--main-color); /* Change background color to blue */
-    color: #fff!important; /* Change text color to white */
-    border-color: var(--main-color); /* Change border color to blue */
-}
 
 
 .vh-mobile{
@@ -130,9 +99,11 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
 
 
         .vh-mobile{
-            height:45vw;
+            height:40vw;
             margin:0px auto;
             }
+
+
     }
 
     @media (min-width: 2000px) {
@@ -153,6 +124,7 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
             }
 
 
+           
 
     @-webkit-keyframes slide-in-fwd-left {
         0% {
@@ -254,6 +226,92 @@ background: linear-gradient(90deg, rgba(41,161,205,1) 29%, rgba(168,216,235,1) 6
     box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
 }
 
+
+@media (max-width: 660px) {
+
+    h2{
+     font-size:20px!important;
+    }  
+
+    h1{
+        font-size:23px;
+    }
+
+    p{
+        font-size: 14px;;
+    }
+
+    h3{
+        font-size: 18px
+    }
+
+         
+ }
+
+
+ button:focus {
+    outline: none;
+}
+
+
+
+
+
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+    font-family: medium-font;
+    color: #272727 !important;
+    
+
+}
+
+
+
+    .arrow {
+        background-image: url(arrow.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 15%;
+        cursor: pointer;
+    }
+
+    .accordion {
+        background-color: #EFEFEF;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        margin-bottom: 10px;
+        width: 100%;
+        border-radius: 11px;
+        outline: none;
+        transition: 0.4s;
+        font-size: 18px;
+        font-family: bold-font;
+        padding-left: 2px;
+        padding-right: 0px;
+        color: #272727 !important;
+
+    }
+
+
+
+.panel button{
+    background-color:transparent!important;
+    color:#031015;
+    border: none;
+    display: block;
+    font-family: regular-font;
+}
+
+.panel button.mobile-active{
+    background-color: var(--main-color)!important; /* Change background color to blue */
+    color: #fff!important; /* Change text color to white */
+    border-color: var(--main-color); /* Change border color to blue */
+}
 
 
 
