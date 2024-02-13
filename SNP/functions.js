@@ -5,13 +5,39 @@ var acc = document.getElementsByClassName("accordion");
 for (let i = 0; i < acc.length; i++) {
     acc[i].addEventListener("click", function(event) {
         // Check if the click occurred on a link within the accordion panel
-        if (event.target.tagName === 'A') {
+        if (event.target.tagName === 'BUTTON') {
             // Scroll to the top of the page
             window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Remove active class from all accordion titles
+            var accordionTitles = document.querySelectorAll('.accordion button');
+            accordionTitles.forEach(function(title) {
+                title.classList.remove('acc-active');
+            });
+
+            // Add active class to the clicked accordion title
+            this.querySelector('button').classList.add('acc-active');
+        }
+        
+        // Close all other accordion panels
+        var allPanels = document.querySelectorAll('.panel');
+        for (let j = 0; j < allPanels.length; j++) {
+            if (allPanels[j] !== this.nextElementSibling) {
+                // Check if the panel has an active link inside
+                if (!allPanels[j].querySelector('button.active')) {
+                    allPanels[j].previousElementSibling.classList.remove('acc-active');
+                }
+                
+                // Check if the panel is currently visible
+                if (allPanels[j].style.maxHeight) {
+                    // If yes, hide it
+                    allPanels[j].style.maxHeight = null;
+                }
+            }
         }
         
         // Toggle the active class to expand/collapse the panel
-        this.classList.toggle("active");
+        this.classList.toggle("acc-active");
         
         // Get the next sibling element, which is the panel
         var panel = this.nextElementSibling;
@@ -28,6 +54,10 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 
+
+
+
+
 function updateContent(titleText, contentText, progressPercentage, imageSrc, titleId, contentId, imgId) {
 
     // Close accordion panels
@@ -36,10 +66,7 @@ function updateContent(titleText, contentText, progressPercentage, imageSrc, tit
         panel.style.maxHeight = null;
     });
 
-    var activeAccordions = document.querySelectorAll('.accordion.active');
-    activeAccordions.forEach(function(accordion) {
-        accordion.classList.remove('active');
-    });
+   
 
     // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -124,6 +151,7 @@ function fetchData() {
         .then(data => {
             // Variable to track the currently active category
             var activeCategory = '';
+            var activeIdeaIndex = -1; // Initialize active idea index
 
             // Iterate over categories
             data.categories.forEach(function (category, categoryIndex) {
@@ -148,6 +176,7 @@ function fetchData() {
                            
                             // Update activeCategory to the current category
                             activeCategory = category.name;
+                            activeIdeaIndex = index; // Update active idea index
 
                             // Get idea data based on the clicked button
                             var titleText = idea.title;
@@ -187,6 +216,7 @@ function fetchData() {
                             mobileButton.classList.add('mobile-active');
                             // Update activeCategory to the current category
                             activeCategory = category.name;
+                            activeIdeaIndex = index; // Update active idea index
                             
                             // Get idea data based on the clicked button
                             var titleText = idea.title;
@@ -209,6 +239,15 @@ function fetchData() {
                         // Add active class to the first idea button of the first category for mobile
                         if (categoryIndex === 0 && index === 0) {
                             mobileButton.classList.add('mobile-active');
+                        }
+
+                        // Check if the current idea is the active one
+                        if (categoryIndex === 0 && index === activeIdeaIndex) {
+                            // Add 'acc-active' class to the corresponding accordion button
+                            var accordionButtons = document.querySelectorAll('.accordion button');
+                            if (accordionButtons && accordionButtons.length > activeIdeaIndex) {
+                                accordionButtons[activeIdeaIndex].classList.add('acc-active');
+                            }
                         }
                     });
                 }
