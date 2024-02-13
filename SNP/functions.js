@@ -1,10 +1,15 @@
-// Function to update the content and progress bar
-
+// Get all accordion buttons
 var acc = document.getElementsByClassName("accordion");
 
 // Loop through each accordion button
 for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+    acc[i].addEventListener("click", function(event) {
+        // Check if the click occurred on a link within the accordion panel
+        if (event.target.tagName === 'A') {
+            // Scroll to the top of the page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
         // Toggle the active class to expand/collapse the panel
         this.classList.toggle("active");
         
@@ -19,9 +24,6 @@ for (let i = 0; i < acc.length; i++) {
             // If no, show it by setting its max-height to its scroll height
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
-
-        // Scroll to the top of the page
-        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
