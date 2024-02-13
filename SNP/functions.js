@@ -1,5 +1,46 @@
 // Function to update the content and progress bar
+
+var acc = document.getElementsByClassName("accordion");
+
+// Loop through each accordion button
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        // Toggle the active class to expand/collapse the panel
+        this.classList.toggle("active");
+        
+        // Get the next sibling element, which is the panel
+        var panel = this.nextElementSibling;
+
+        // Check if the panel is currently visible
+        if (panel.style.maxHeight) {
+            // If yes, hide it
+            panel.style.maxHeight = null;
+        } else {
+            // If no, show it by setting its max-height to its scroll height
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+
+        // Scroll to the top of the page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+
 function updateContent(titleText, contentText, progressPercentage, imageSrc, titleId, contentId, imgId) {
+
+    // Close accordion panels
+    var panels = document.querySelectorAll('.panel');
+    panels.forEach(function(panel) {
+        panel.style.maxHeight = null;
+    });
+
+    var activeAccordions = document.querySelectorAll('.accordion.active');
+    activeAccordions.forEach(function(accordion) {
+        accordion.classList.remove('active');
+    });
+
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     // Update the content in the original location
     document.getElementById(titleId).innerText = titleText;
     document.getElementById(contentId).innerText = contentText;
@@ -51,7 +92,14 @@ function updateContent(titleText, contentText, progressPercentage, imageSrc, tit
     }
 
     // Hide long text after updating content
-    hideLongText(250);
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+
+    hideLongText(120);}
+      else {
+        hideLongText(250);
+    }
+    
+
 }
 
 // Function to hide long text
@@ -65,6 +113,9 @@ function hideLongText(maxLength) {
 }
 
 
+
+
+
 function fetchData() {
     fetch('data.json')
         .then(response => response.json())
@@ -76,7 +127,7 @@ function fetchData() {
             data.categories.forEach(function (category, categoryIndex) {
                 // Find the idea card corresponding to the category
                 var desktopIdeaCard = document.getElementById(category.name);
-                var mobileIdeaCard = document.getElementById('collapse' + category.name.charAt(0).toUpperCase() + category.name.slice(1)); // Generate mobile ID
+                var mobileIdeaCard = document.getElementById('panel' + category.name.charAt(0).toUpperCase() + category.name.slice(1)); // Generate mobile ID
                 if (desktopIdeaCard && mobileIdeaCard) {
                     // Iterate over ideas in the category
                     category.ideas.forEach(function (idea, index) {
@@ -126,19 +177,15 @@ function fetchData() {
                         mobileButton.setAttribute('data-index', index);
                         // Add click event listener
                         mobileButton.addEventListener('click', function () {
-                            var accordion = document.getElementById('accordionExample');
-                            var bsAccordion = new bootstrap.Collapse(accordion, { toggle: false });
-                            bsAccordion.hide();
-                            
-                            // Scroll to the top of the page
+
                             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-                            document.querySelectorAll('.collapse button').forEach(btn => btn.classList.remove('mobile-active'));
+                            document.querySelectorAll('.panel button').forEach(btn => btn.classList.remove('mobile-active'));
 
                             mobileButton.classList.add('mobile-active');
                             // Update activeCategory to the current category
                             activeCategory = category.name;
-
+                            
                             // Get idea data based on the clicked button
                             var titleText = idea.title;
                             var contentText = idea.content;
@@ -184,3 +231,5 @@ function fetchData() {
 
 
 fetchData();
+
+
