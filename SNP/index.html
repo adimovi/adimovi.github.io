@@ -15,7 +15,7 @@
         
         <div class="nav-bg py-2">
         <div class="container ">
-        <div class="row d-flex justify-content-evenly text-center">
+        <div class="row d-flex justify-content-evenly text-md-center text-start">
         <div class="col-md-2 d-none d-md-block col-12">
             <img src="logo.svg" style="width: 100px;" class="d-block "> 
         </div>
@@ -23,7 +23,7 @@
            
             <h1 class="mb-0 ">Roadmap Title</h1>
         </div>
-        <div class="col-2 align-self-center">
+        <div class=" col-2 align-self-center">
         <a href="http://snpad.snp.network">Home</a>
         </div>
         </div>
@@ -85,7 +85,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-12 mb-lg-0 mb-3">
-                    <h3><i class="bi bi-gear-wide-connected"></i> Doing</h3>
+                    <h3><i class="bi bi-gear-wide-connected"></i> Work In Progress</h3>
                     <div class="idea-card p-lg-3 p-1" id="doing">
                         
                         <div class="idea-list">
@@ -95,7 +95,7 @@
                 </div>
                 
                 <div class="col-lg-4 col-12 mb-lg-0 mb-3">
-                    <h3><i class="bi bi-check-circle"></i> Done</h3>
+                    <h3><i class="bi bi-check-circle"></i> Completed</h3>
                     <div class="idea-card p-lg-3 p-1" id="done">
                         
                         <div class="idea-list">
@@ -109,49 +109,71 @@
             
            
         </div>
-             <div class="container pt-4 d-lg-none">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingConfirmed">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseConfirmed" aria-expanded="true" aria-controls="collapseConfirmed">
-                            Confirmed
-                        </button>
-                    </h2>
-                    <div id="collapseConfirmed" class="accordion-collapse collapse" aria-labelledby="headingConfirmed" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-lg-block" id="confirmed">
-                            <!-- Content for Confirmed -->
+             <div class="container pt-4 d-lg-none px-4">
+                <div class="accordion-div">
+                <button class="accordion"><span class="faq__question-heading">
+                    <div class="row">
+        
+                        <div class=" col-9 col-md-11 toggle-headline py-md-4 py-2  px-md-4 ml-md-0 ml-2">
+        
+                            <h3 class="mb-0 ms-2"><i class="bi bi-check-circle"></i> Done</h3>
+        
+        
+                        </div>
+                        <div class="col text-right arrow">
                         </div>
                     </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingDoing">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDoing" aria-expanded="false" aria-controls="collapseDoing">
-                            Doing
-                        </button>
-                    </h2>
-                    <div id="collapseDoing" class="accordion-collapse collapse" aria-labelledby="headingDoing" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-lg-block" id="doing">
-                            <!-- Content for Doing -->
-                        </div>
+                </span></button>
+                <div id="panelConfirmed" class="panel">
+            <div class="accordion-body" id="confirmed">
+                
+            </div>
+            </div>
+
+            <button class="accordion"><span class="faq__question-heading">
+                <div class="row">
+    
+                    <div class=" col-9 col-md-11 toggle-headline py-md-4 py-2  px-md-4 ml-md-0 ml-2">
+    
+                        <h3 class="mb-0 ms-2"><i class="bi bi-gear-wide-connected"></i> Work In Progress</h3>
+    
+    
+                    </div>
+                    <div class="col text-right arrow">
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingDone">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDone" aria-expanded="false" aria-controls="collapseDone">
-                            Done
-                        </button>
-                    </h2>
-                    <div id="collapseDone" class="accordion-collapse collapse" aria-labelledby="headingDone" data-bs-parent="#accordionExample">
-                        <div class="accordion-body d-none d-lg-block" id="done">
-                            <!-- Content for Done -->
-                        </div>
-                    </div>
+            </span></button>
+            <div id="panelDoing" class="panel">
+                <div class="accordion-body" id="doing">
+                    
                 </div>
+                </div>
+
+        <button class="accordion"><span class="faq__question-heading">
+            <div class="row">
+
+                <div class=" col-9 col-md-11  py-md-4 py-2  px-md-4 ml-md-0 ml-2">
+
+                    <h3 class="mb-0 ms-2"><i class="bi bi-check-circle"></i> Completed</h3>
+
+
+                </div>
+                <div class="col text-right arrow">
+                </div>
+            </div>
+        </span></button>
+        <div id="panelDone" class="panel">
+            <div class="accordion-body" id="done">
+            </div>
             </div>
 
         </div>
             
+    </div>
 
+    <script>
+  
+        </script>
             <div class="col-12">
                 <img src="rmap.jpg" class="d-block pt-5" style="width:100%;">
             </div> 
@@ -162,11 +184,13 @@
     </div>
     
     
+    
 <footer>
     <div class="container-fluid text-center  py-5 nav-bg">
         <p class="mb-0">Copyright SNP</p>
     </div>
 </footer>
+
 <script src="functions.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
