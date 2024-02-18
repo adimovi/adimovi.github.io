@@ -2435,6 +2435,15 @@ ul.rounded li::before {
 }
 
 @media screen and (max-width: 767px) {
+
+    .modal .modal-content {
+     
+     padding:10px;
+    }
+
+    .no-margin{
+        padding:0px;  
+    }
     
 
     #contact h4 {
@@ -2714,6 +2723,7 @@ ul.rounded li::before {
     z-index: 1000;
     backdrop-filter: blur(13.4px);
     -webkit-backdrop-filter: blur(13.4px);
+    overflow: auto; 
   }
   .modal-content {
     background: #202020!important;
