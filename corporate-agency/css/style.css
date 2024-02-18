@@ -2237,6 +2237,44 @@ ul.rounded li::before {
     }
 }
 
+.feature-item{
+    padding:15px 20px!important;
+    width:auto;
+    background: #202020!important;
+    border-color: #202020!important;
+    margin-right:20px!important;
+}
+
+@media (max-width: 1700px)
+
+{
+ .feature-item h5 {
+  font-size: 16px!important;
+ }
+
+ .act-btn{
+    font-size: 14px;
+ }
+
+ .feature-item{
+    padding:10px 10px!important;
+ }
+
+ #heading-section h2{
+    font-size: 24px;
+ }
+
+ #heading-section p{
+    font-size: 14px;
+ }
+
+
+
+
+
+
+}
+
 @media (max-width: 1280px) and (min-width: 992px) {
     .navbar-simple .navbar-nav .nav-link {
         padding: 0.5rem 1.4rem;
@@ -2253,6 +2291,17 @@ ul.rounded li::before {
     .blog-bg {
         background-size: cover;
     }
+
+    .special-col .col-lg-3{
+
+        flex: 0 0 30%;
+        max-width: 30%;
+     }
+    
+     .special-col{
+        justify-content: center!important;
+     }
+
 }
 
 @media (max-width: 1280px) and (min-width: 992px) {
@@ -2663,13 +2712,7 @@ ul.rounded li::before {
     
 }
 
-.feature-item{
-    padding:15px 20px!important;
-    width:auto;
-    background: #202020!important;
-    border-color: #202020!important;
-    margin-right:20px!important;
-}
+
 
 .feature-item button {
 
