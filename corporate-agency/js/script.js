@@ -395,183 +395,180 @@ function openModal(id) {
     // Object mapping feature item titles to header content
     var headerContent = {
         'Info':{ 
-            'buttons':{
-                'btn1':{
-                    'name':"First Name (only for AI)",
-                    'content' :'Info about First Name (only for AI)',
-                    'active': true
-                },
-                'btn2':{
-                    'name':"Last Name (Onlt for AI)",
-                    'content' :'Info about Last Name (Onlt for AI)'
-                },
-                'btn3':{
-                    'name':"Preferred Gender",
-                    'content' :'Info about Gender'
-                },
-                'btn4':{
-                    'name':"Age",
-                    'content' :'Info about Age'
-                },
-                'btn5':{
-                    'name':"Address (Only for AI)",
-                    'content' :'Info about Address (Only for AI)'
-                },
-                'btn6':{
-                    'name':"Location",
-                    'content' :'Info about Location'
-                },
-                'btn7':{
-                    'name':"Height",
-                    'content' :'Info about Height'
-                },
-                'btn8':{
-                    'name':"Weight",
-                    'content' :'Info about Weight'
-                },
-                'btn9':{
-                    'name':"Clothing Size",
-                    'content' :'Info about Clothing Size'
-                },
-                'btn10':{
-                    'name':"Shoe Size",
-                    'content' :'Info about Shoe Size'
-                },
-                'btn11':{
-                    'name':"Dietary Preferences ",
-                    'content' :'Info about Dietary Preferences '
-                },
-                'btn12':{
-                    'name':"Physical Activity",
-                    'content' :'Info about Physical Activity'
-                },
-                'btn13':{
-                    'name':"Consumption Habits",
-                    'content' :'Info about Consumption Habits'
-                },
-            },
+            'buttons':[
+                
+                { 'name': "First Name (Only for AI)", 
+                  'content': 'Info about First Name (Only for AI)',
+                    },
+                
+                
+                    {'name':"Last Name (Only for AI)",
+                    'content' :'Info about Last Name (Onlt for AI)'},
+               
+                
+                    {'name':"Gender",
+                    'content' :'Info about Gender'},
+                
+                
+                    {'name':"Age",
+                    'content' :'Info about Age'},
+               
+                
+                    {'name':"Address (Only for AI)",
+                    'content' :'Info about Address (Only for AI)'},
+                
+                
+                    {'name':"Location",
+                    'content' :'Info about Location'},
+               
+                
+                    {'name':"Height",
+                    'content' :'Info about Height'},
+               
+                
+                    {'name':"Weight",
+                    'content' :'Info about Weight'},
+                
+                
+                    {'name':"Clothing Size",
+                    'content' :'Info about Clothing Size'},
+                
+                
+                    {'name':"Shoe Size",
+                    'content' :'Info about Shoe Size'},
+                
+                
+                    {'name':"Dietary Preferences",
+                    'content' :'Info about Dietary Preferences '},
+                
+                
+                    {'name':"Physical Activity",
+                    'content' :'Info about Physical Activity'},
+                
+                
+                    {'name':"Consumption Habits",
+                    'content' :'Info about Consumption Habits'},
+                
+            ],
         
         'heading':'Basic Information & Lifestyle',
         
         },
         
         'Pref': {
-            'buttons':{
-                'btn14':{
+            'buttons':[
+                {
                     'name':"Hobbies",
                     'content' :'Info about Hobbies',
                     
                 },
-                'btn15':{
+                {
                     'name':"Favorite Types of Movies",
                     'content' :'Info about Favorite Types of Movies'
                 },
-                'btn16':{
+                {
                     'name':"Preferred Genres of Books",
                     'content' :'Info about Preferred Genres of Books'
                 },
-                'btn17':{
+                {
                     'name':"Music (favorite music genres, artists)",
                     'content' :'Info about Music (favorite music genres, artists)'
                 },
-                'btn18':{
+                {
                     'name':"Cultural Events",
                     'content' :'Info about Cultural Events'
                 },
-                'btn19':{
+                {
                     'name':"Favorite Destinations",
                     'content' :'Info about Favorite Destinations'
                 },
-                'btn20':{
+                {
                     'name':"Types of Vacations",
                     'content' :'Info about Types of Vacations'
                 }
-            },
+            ],
           'heading':'Preferences & Interests',
         
         },
 
 
         'Tech': {
-            'buttons':{
-                'btn21':{
+            'buttons':[
+                {
                     'name':"Devices Used",
                     'content' :'Info about Devices Used',
                     
                 },
-                'btn22':{
+                {
                     'name':"Favorite Platforms and Apps",
-                    'content' :'Info about Favorite Platforms and Apps'
+                    'content':'Info about Favorite Platforms and Apps'
                 },
-                'btn23':{
+                {
                     'name':"Preferred Comunication Channels",
                     'content' :'Info about Preferred Comunication Channels'
                 },
-                'btn24':{
+                {
                     'name':"Desired Frequency of Notifications or Commercial Offers",
                     'content' :'Info about Desired Frequency of Notifications or Commercial Offers'
                 }
-            },
+            ],
         'heading':'Technology & Communication',
         },
 
         'Eco':{ 
-            'buttons':{
-                'btn25':{
+            'buttons':[
+                {
                     'name':"Salary Income",
                     'content' :'Info about salary income',
                     
                 },
-                'btn26':{
+                {
                     'name':"Career Goals",
                     'content' :'Info about Career Goals'
                 },
-                'btn27':{
+                {
                     'name':"Personal Aspirations",
                     'content' :'Info about personal aspiration'
                 }
-            },
+            ],
         'heading':'Economic Profile & Goals',
         }
 
 
     };
 
-    function changeHeader(title,btnID) {
-
-         // Get all buttons within the section
-    var buttons = document.querySelectorAll('.act-btn');
-
-    // Remove the 'active' class from all buttons
-    buttons.forEach(function(button) {
-        button.classList.remove('active');
-    });
-
-    // Add the 'active' class to the clicked button
-    var activeButton = document.getElementById(btnID);
-    console.log(activeButton);
-    activeButton.classList.add('active');
-
-        // Get the heading section
+    function changeHeader(btn) {
+        var category = btn.closest('.feature-item').dataset.category;
+        var btnID = btn.dataset.btn;
+        var categoryData = headerContent[category];
+    
+        // Update button classes
+        document.querySelectorAll('.act-btn').forEach(function(btn) {
+            btn.classList.remove('active');
+        });
+        btn.classList.add('active');
+    
+        // Update header content
         var headingSection = document.getElementById('heading-section');
-        // Retrieve the heading from the object based on the title
-        var newHeading = headerContent[title].heading;
-        // Retrieve the content from the object based on the title
-        var newBtn = headerContent[title].buttons[btnID].name;
-        var newBtnDesc = headerContent[title].buttons[btnID].content;
-        // Update the inner HTML of the heading section with new heading
-        headingSection.innerHTML = '<h2 class="text-white">' + newHeading + '</h2><h5 class="text-white">' + newBtn + '</h5>' + '<p class="text-white">' + newBtnDesc +  '</p>';
-
-      
-}
+        var buttonData = categoryData.buttons.find(function(button) {
+            return button.name === btn.textContent;
+        });
+        headingSection.innerHTML = '<h2 class="text-white">' + categoryData.heading + '</h2><h5 class="text-white">' + buttonData.name + '</h5><p class="text-white">' + buttonData.content + '</p>';
+    }
     
     window.onload = function() {
-        for (var title in headerContent) {
-            if (headerContent[title].buttons['btn1'].active) {
-                changeHeader(title,'btn1');
-                break;
-            }
-        }  
+        document.querySelectorAll('.act-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                changeHeader(this);
+            });
+        });
+    
+        // Find the first active button in the 'Info' category and trigger a click event on it
+        var firstActiveBtn = document.querySelector('.feature-item .first');
+        console.log(firstActiveBtn);
+        if (firstActiveBtn) {
+            firstActiveBtn.click();
+        }
     };
 
     
