@@ -2505,6 +2505,10 @@ ul.rounded li::before {
         margin-top:250px;
       }
 
+      .modal .container{
+        height: auto!important;
+      }
+
      
 
 
