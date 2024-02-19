@@ -2505,7 +2505,7 @@ ul.rounded li::before {
     }
 
     .mob-modal {
-        margin-top:250px;
+        margin-top:50px;
       }
 
       .modal .container{
@@ -2936,6 +2936,25 @@ ul.rounded li::before {
 
     .drop-arrow{
         right:2px!important;
+    }
+}
+
+.nav-item{
+    margin-bottom: 3px!important;
+}
+
+
+@media (max-height: 980px) {
+
+    .modal .container {
+        height: auto!important;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .modal .container {
+        height: auto!important;
     }
 }
 
