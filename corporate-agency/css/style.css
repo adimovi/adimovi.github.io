@@ -2849,6 +2849,7 @@ ul.rounded li::before {
     border-radius: 10px;
     
     
+    
 }
 
 .dropdown-menu a {
@@ -2881,3 +2882,13 @@ ul.rounded li::before {
 }
 
 
+.side-nav .navbar-nav .nav-link::after {
+
+    display: none;
+
+}
+
+.dropdown-menu .nav-link {
+    text-align: center;
+    
+}
