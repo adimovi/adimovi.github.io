@@ -22,7 +22,7 @@
     <!-- Style Sheet -->
     <link href="corporate-agency/css/navigation.css" rel="stylesheet">
     <link href="corporate-agency/css/line-awesome.min.css" rel="stylesheet">
-    <link href="corporate-agency/css/style.css" rel="stylesheet">
+    <link href="corporate-agency/css/style.css?2" rel="stylesheet">
     <link href="vendor/css/elements.css" rel="stylesheet">
     <link href="vendor/css/line-awesome.min.css" rel="stylesheet">
     <link href="vendor/css/megamenu.css" rel="stylesheet">
@@ -47,19 +47,43 @@
             </a>
 
             <!--Nav Links-->
-            <div class="collapse navbar-collapse" id="megaone">
+             <!--Nav Links-->
+             <div class="collapse navbar-collapse" id="megaone">
                 <div class="navbar-nav ml-auto">
                     <a class="nav-link scroll line" href="#slider-section">Home</a>
-                    <a class="nav-link scroll line" href="#about">About Us</a>
-                    <a class="nav-link scroll line" href="#portfolio">Our Work</a>
-                    <a class="nav-link scroll line" href="#pricing">Ad Interaction Types</a>
-                    <a class="nav-link scroll line" href="#blog">Blog</a>
+                    <div class="dropdown">
+                        <a class="nav-link scroll line dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            About SNPad <span class="drop-arrow">&#129171;</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                            <a class="dropdown-item" href="#about">About</a>
+                            <a class="dropdown-item" href="#portfolio">Targeting</a>
+                            <a class="dropdown-item" href="#pricing">AD Type</a>
+                            <a class="dropdown-item" href="#parallax">Feedbacks</a>
+                            <!-- Add more dropdown items as needed -->
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link scroll line dropdown-toggle" href="#" role="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Web3 <span class="drop-arrow">&#129171;</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Roadmap</a>
+                            <a class="dropdown-item" href="#">Tokenomics</a>
+                            <a class="dropdown-item" href="#">Lightpaper</a>
+                            <a class="dropdown-item" href="#">Explorer</a>
+                            <a class="dropdown-item" href="#">Sales</a>
+                            <!-- Add more dropdown items as needed -->
+                        </div>
+                    </div>
+                    <a class="nav-link scroll line" href="#">News</a>
+                    <a class="nav-link scroll line" href="#contact">Contact</a>
                 </div>
             </div>
         </div>
 
         <!--Side Menu Button-->
-        <div class="navigation-toggle">
+        <div class="navigation-toggle d-lg-none d-block">
             <ul class="slider-social toggle-btn my-0">
                 <li>
                     <a href="javascript:void(0);" class="sidemenu_btn" id="sidemenu_toggle">
@@ -99,10 +123,16 @@
                         <a class="nav-link scroll" href="#pricing">Ad Interaction Types</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#blog">Blog</a>
+                        <a class="nav-link scroll" href="#blog">Team</a>
                     </li>
-                    <li class="get-started-btn">
-                        <a href="" class="btn btn-medium btn-rounded btn-pink d-lg-none" data-animation-duration="500" data-fancybox data-src="#animatedModal">Get Started</a>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#blog">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#blog">Lightpaper</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#blog">News</a>
                     </li>
                 </ul>
             </nav>
@@ -231,7 +261,7 @@
                          data-textAlign="['left','center','center','center']"
                          data-responsive_offset="on" data-start="2000"
                          data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'>
-                        <p class="text-white alt-font font-18">Customers pick their ad preferences, receiving ads that resonate,<br>enabling advertisers to directly reach their perfect match.</p>
+                        <p class="text-white alt-font font-18">Customers pick their ad preferences, receiving ads that <br>resonate, enabling advertisers to directly reach their perfect match.</p>
                     </div>
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption tp-resizeme"
@@ -285,7 +315,7 @@
                          data-responsive_offset="on" data-start="2000"
                          data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:2;sY:2;skX:0;skY:0;opacity:0;s:1000;e:Power2.easeOut;"
                          data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;">
-                        <p class="text-white alt-font font-18">Explore innovative ad formats that engage, inform, and convert through interactive, <br>customizable, and dynamic viewer experiences.</p>
+                        <p class="text-white alt-font font-18">Explore innovative ad formats that engage, inform, and convert through<br>interactive, customizable, and dynamic viewer experiences.</p>
                     </div>
                     <!-- LAYER NR. 4 -->
                     <div class="tp-caption tp-resizeme"
@@ -477,9 +507,9 @@
                             <ul>
                                 <li><button class="act-btn first"  data-btn="btn1">First Name (Only for AI)</button></li>
                                 <li><button class="act-btn"  data-btn="btn2">Last Name (Only for AI)</button></li>
+                                <li><button  class="act-btn" data-btn="btn5">Address (Only for AI)</button></li>
                                 <li><button class="act-btn" data-btn="btn3">Gender</button></li>
                                 <li><button class="act-btn" data-btn="btn4">Age</button></li>
-                                <li><button  class="act-btn" data-btn="btn5">Address (Only for AI)</button></li>
                                 <li><button  class="act-btn" data-btn="btn6">Location</button></li>
                                 <li><button class="act-btn" data-btn="btn7">Height</button></li>
                                 <li><button class="act-btn" data-btn="btn8">Weight</button></li>
@@ -650,7 +680,7 @@
 <div id="modal1" class="modal mx-auto">
     <div class="container">
         <div class="row ">
-            <div class="col-md-8 mx-auto col-12 no-margin">
+            <div class="col-md-8 mx-auto col-12">
                 <div class="modal-content">
                     <h2 class="pb-2">QR Mode</h2>
                     <span style="transform: rotate(45deg);font-size:25px;" class="close-btn" onclick="closeModal('modal1')">+</span>
@@ -666,7 +696,8 @@
                 or app downloads with a simple scan. It shifts viewers from passive observation to active engagement, providing accurate engagement metrics 
                 to optimize campaign performance.</p>
                 <p>Step into the world of QR Mode and transform your advertising into immersive experiences that attract and engage your audience, ensuring you pay only for genuine interactions.</p>
-               
+                <button class="close-btn2" onclick="closeModal('modal1')">Close</button>
+
                 </div>
             </div>
         </div>
@@ -676,7 +707,7 @@
   <div id="modal2" class="modal">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto col-12 no-margin">
+            <div class="col-md-8 mx-auto col-12">
                 <div class="modal-content">
                     <h2 class="pb-2" >Store Mode</h2>
                     <span style="transform: rotate(45deg);font-size:25px;" class="close-btn" onclick="closeModal('modal2')">+</span>
@@ -692,7 +723,8 @@
                 at a cost that reflects the value of your initial ad spend, with additional costs only incurred upon actual user engagement.</p> 
                 <p>It's designed to seamlessly 
                     integrate with your advertising budget, ensuring that you only pay more when your ads perform better, and always benefiting from the direct sales STORE Mode can generate.</p>
-            
+                    <button class="close-btn2" onclick="closeModal('modal2')">Close</button>
+
                 </div>
             </div>
         </div>
@@ -702,7 +734,7 @@
   <div id="modal3" class="modal">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto col-12 no-margin">
+            <div class="col-md-8 mx-auto col-12">
                 <div class="modal-content">
                     <h2 class="pb-2">InfinityAds</h2>
             
@@ -721,7 +753,9 @@
             <p>"Interactive Content Layers" and "Sequential Messaging Flexibility" allow for creative storytelling that maintains viewer interest, while "Cross-Promotional Opportunities" and "Dynamic Content Adaptation" ensure your message remains relevant and engaging.
             </p>
             <p>Step into the realm of Multi-Ad mode — where your advertising strategy combines deep engagement with insightful analytics and cost-effective pricing, empowering your brand to shine brighter than ever.</p>
-                </div>
+            <button class="close-btn2" onclick="closeModal('modal3')">Close</button>
+        
+        </div>
             </div>
         </div>
     
@@ -763,7 +797,7 @@
                             <i class="fas fa-quote-right"></i>
                         </div>
                         <div class="description">
-                            <p class="text-white paragraph">As a leading advertising agency, Limitless has always sought innovative avenues to showcase our clients' brands. Our partnership with SNPad marks a significant milestone, as we now extend our repertoire to include television advertising — a domain previously beyond our reach. SNPad's revolutionary platform democratizes TV advertising, allowing our diverse client base to broadcast their messages to a broader audience. This collaboration is not just about adding TV ads to our services; it's about embracing a future where interactive and targeted TV advertising becomes accessible to all our clients, enhancing their visibility and impact. With SNPad, we're not just offering TV advertising; we're unlocking a world of possibilities for our clients to engage with their audiences in meaningful ways.
+                            <p class="text-white paragraph">SNPad's revolutionary platform democratizes TV advertising, allowing our diverse client base to broadcast their messages to a broader audience. This collaboration is not just about adding TV ads to our services; it's about embracing a future where interactive and targeted TV advertising becomes accessible to all our clients, enhancing their visibility and impact. With SNPad, we're not just offering TV advertising; we're unlocking a world of possibilities for our clients to engage with their audiences in meaningful ways.
  </p>
                         </div>
                         <div class="testimonial-img mt-4">
@@ -781,15 +815,32 @@
                             <i class="fas fa-quote-right"></i>
                         </div>
                         <div class="description">
+                            <p class="text-white paragraph">Delivering the brand message, in the right context, to the right audience in a cluttered and competitive advertising landscape has become exponentially challenging. SNPad has the potential to become THE game changer for us advertisers. The ability to intervene during TV commercial breaks by replacing standard TVCs with tailored video creations, based on consumer interests, is revolutionary. SNPad opens new ways to increase campaigns efficiency and effectiveness. SNPad is not just a platform, it's a strategic tool for advertisers to increase brand engagement and relevancy to target audience.
+ </p>
+                        </div>
+                        <div class="testimonial-img mt-4">
+                            <img src="corporate-agency/images/user-2.jpg" alt="Silviu Anghel Avon">
+                        </div>
+                        <div class="testimonial-tittle mt-3 mb-3">
+                            <h3 class="mb-0 text-white alt-font font-weight-normal font-24">Silviu Anghel</h3>
+                            <p class="text-white">Head of E-Commerce at Avon</p>
+                        </div>
+                    </div>
+                    <!-- Item-4-->
+                    <div class="item">
+                        <div class="icon-quotes mb-4">
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                        <div class="description">
                             <p class="text-white paragraph">In today's advertising world, where every impression counts, SNPad is a game-changer for medium-sized businesses aiming to break into TV advertising. With its cutting-edge technology, SNPad levels the playing field, offering us the unprecedented opportunity to affordably reach our target audience on television. Their platform goes beyond mere exposure; it engages viewers with interactive and personalized ads, ensuring our message is not only seen but resonates deeply. Partnering with SNPad empowers us to amplify our brand's presence and effectiveness on TV like never before, turning our advertising aspirations into tangible results.
  </p>
                         </div>
                         <div class="testimonial-img mt-4">
-                            <img src="corporate-agency/images/testimonial-3.png" alt="student img">
+                            <img src="corporate-agency/images/user-3.png" alt="Costinel Ilie">
                         </div>
                         <div class="testimonial-tittle mt-3 mb-3">
-                            <h3 class="mb-0 text-white alt-font font-weight-normal font-24">Nume Prenume</h3>
-                            <p class="text-white">AVON</p>
+                            <h3 class="mb-0 text-white alt-font font-weight-normal font-24">Costinel Ilie</h3>
+                            <p class="text-white">Manager VEXIO</p>
                         </div>
                     </div>
                 </div>
@@ -836,7 +887,7 @@
                     <!-- Phone-Box -->
                     <div class="col-12 col-md-6 pt-5 pt-md-0 wow fadeIn text-center text-lg-left" data-wow-delay="400ms">
                         <h4 class="main-font text-pink font-16 font-weight-600">Our Email</h4>
-                        <p class="alt-font font-14 text-white mt-3">marketing@website.com </p>
+                        <p class="alt-font font-14 text-white mt-3">marketing@snp.network </p>
                     </div>
                 </div>
 
@@ -921,6 +972,6 @@
 <script src="corporate-agency/js/jquery.hoverdir.js"></script>
 <!-- custom script -->
 <script src="vendor/js/contact_us.js"></script>
-<script src="corporate-agency/js/script.js"></script>
+<script src="corporate-agency/js/script.js?2"></script>
 </body>
 </html>
