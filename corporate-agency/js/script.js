@@ -62,49 +62,15 @@ jQuery(function ($) {
     if ($("#sidemenu_toggle").length) {
         $("#sidemenu_toggle").on("click", function () {
             $(".pushwrap").toggleClass("active");
-            $(".side-menu").addClass("side-menu-active");
-            $("#close_side_menu").fadeIn(700);
-        });
-    
-        $("#close_side_menu").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active");
-            $(this).fadeOut(200);
-            $(".pushwrap").removeClass("active");
-        });
-    
-        $(".side-nav .navbar-nav .nav-item.dropdown").on("click", function (event) {
-            event.stopPropagation(); // Prevent closing the menu on dropdown click
-            $(this).toggleClass("show"); // Toggle the 'show' class on the dropdown
-        });
-    
-        // Close dropdown when clicking outside
-        $(document).on("click", function (e) {
-            if (!$(e.target).closest('.side-nav .navbar-nav .nav-item.dropdown').length) {
-                $(".side-nav .navbar-nav .nav-item.dropdown").removeClass("show");
-            }
-        });
-    
-        // Close menu and navigate when clicking on regular links
-        $(".side-nav .navbar-nav .nav-item:not(.dropdown) .nav-link").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active");
-            $("#close_side_menu").fadeOut(200);
-            $(".pushwrap").removeClass("active");
-        });
-    
-        // Close menu when clicking on dropdown links
-        $(".side-nav .navbar-nav .nav-item.dropdown .dropdown-item").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active");
-            $("#close_side_menu").fadeOut(200);
-            $(".pushwrap").removeClass("active");
-        });
-    
-        $("#btn_sideNavClose").on("click", function () {
-            $(".side-menu").removeClass("side-menu-active");
-            $("#close_side_menu").fadeOut(200);
-            $(".pushwrap").removeClass("active");
+            $(".side-menu").addClass("side-menu-active"), $("#close_side_menu").fadeIn(700)
+        }), $("#close_side_menu").on("click", function () {
+            $(".side-menu").removeClass("side-menu-active"), $(this).fadeOut(200), $(".pushwrap").removeClass("active")
+        }), $(".side-nav .navbar-nav .nav-link").on("click", function () {
+            $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
+        }), $("#btn_sideNavClose").on("click", function () {
+            $(".side-menu").removeClass("side-menu-active"), $("#close_side_menu").fadeOut(200), $(".pushwrap").removeClass("active")
         });
     }
-    
     
     
 
