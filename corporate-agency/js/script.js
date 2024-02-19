@@ -601,7 +601,7 @@ let htmlContent = '';
   <div class="container-fluid">
   <div class="row ">
   <div class="col-12">
-      <div class="modal-content" style="padding:0px;>
+      <div class="modal-content mob-modal" style="padding:0px;>
 
       <div style="padding:10px;">
       <h2 style="font-size:20px;" class="py-3 my-0">${categoryData.heading}
@@ -654,23 +654,25 @@ document.body.style.overflow = 'hidden';
         if (firstActiveBtn) {
             firstActiveBtn.click();
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var modals = document.querySelectorAll('.modal');
+            console.log(modals);
+            modals.forEach(function(modal) {
+              centerModal(modal);
+              window.addEventListener('resize', function() {
+                centerModal(modal);
+              });
+            });
+          
+            function centerModal(modal) {
+              var modalContent = modal.querySelector('.modal-content');
+              var modalHeight = modalContent.offsetHeight;
+              modalContent.style.marginTop = -modalHeight / 2 + 'px';
+            }
+          });
     };
 
     }    
 
-    document.addEventListener("DOMContentLoaded", function() {
-        var modals = document.querySelectorAll('.modal');
-        console.log(modals);
-        modals.forEach(function(modal) {
-          centerModal(modal);
-          window.addEventListener('resize', function() {
-            centerModal(modal);
-          });
-        });
-      
-        function centerModal(modal) {
-          var modalContent = modal.querySelector('.modal-content');
-          var modalHeight = modalContent.offsetHeight;
-          modalContent.style.marginTop = -modalHeight / 2 + 'px';
-        }
-      });
+    
