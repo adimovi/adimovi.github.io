@@ -2433,6 +2433,9 @@ ul.rounded li::before {
     }
 }
 
+
+
+
 @media screen and (max-width: 767px) {
 
     .modal .modal-content {
@@ -2927,5 +2930,12 @@ ul.rounded li::before {
 .dropdown-menu .nav-link {
     text-align: center;
 
+}
+
+@media (max-width: 1281px) {
+
+    .drop-arrow{
+        right:2px!important;
+    }
 }
 
