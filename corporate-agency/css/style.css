@@ -2505,6 +2505,10 @@ ul.rounded li::before {
         margin-top:250px;
       }
 
+      .modal {
+        top: 40%;
+    }
+
 
     /* Font adjustment for small screens */
     .font-10 {font-size: 10px;}
