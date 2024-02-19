@@ -2501,13 +2501,11 @@ ul.rounded li::before {
         text-align: center;
     }
 
-    .modal-content {
+    .mob-modal {
         margin-top:250px;
       }
 
-      .modal {
-        top: 40%;
-    }
+     
 
 
     /* Font adjustment for small screens */
