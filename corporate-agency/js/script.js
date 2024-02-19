@@ -587,6 +587,7 @@ function openModal(id) {
 
         
         const maxWidth = 991;
+        document.body.style.overflow = 'auto';
         if (isScreenSmallerThan(maxWidth)){
 
             // Initialize an empty string to store the concatenated HTML
@@ -600,12 +601,19 @@ let htmlContent = '';
   <div class="container-fluid">
   <div class="row ">
   <div class="col-12">
-      <div class="modal-content">
-      <h2 style="font-size:20px;" class="pb-3">${categoryData.heading}</h2>
-      <h5 style="font-size:17px;" class="text-white pb-0">${buttonData.name}</h5>
-      <p  style="font-size:14px;" class="text-white">${buttonData.content}</p>
+      <div class="modal-content" style="padding:0px;>
+
+      <div style="padding:10px;">
+      <h2 style="font-size:20px;" class="py-3 my-0">${categoryData.heading}
+      </h2>
+      <hr style=" border-top: 1px solid #86c3d7;width:100%;margin:0px">
+      <h5 style="font-size:17px;" class="text-white text-center pb-2 pt-4">${buttonData.name}</h5>
+      <div style="border:1px solid #86c3d7;border-radius:5px;margin:0px 10px;padding:10px 5px">
+      <p style="font-size:14px;" class="text-white">${buttonData.content}</p>
+      </div>
       <span style="transform: rotate(45deg);font-size:25px;" class="close-btn" onclick="closeModal('modal')">+</span>
-      <button class="close-btn2" onclick="closeModal('modal')">Close</button>
+      <button class="close-btn2 my-3" onclick="closeModal('modal')">Close</button>
+      </div>
       </div>
       </div>
   </div>
@@ -617,6 +625,8 @@ let htmlContent = '';
 mobileModal.innerHTML = htmlContent;
 var modal = document.getElementById('modal');
 modal.style.display = "block";
+document.body.style.overflow = 'hidden';
+
     
             console.log('e pe mobil');
         }
@@ -647,3 +657,20 @@ modal.style.display = "block";
     };
 
     }    
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var modals = document.querySelectorAll('.modal');
+        console.log(modals);
+        modals.forEach(function(modal) {
+          centerModal(modal);
+          window.addEventListener('resize', function() {
+            centerModal(modal);
+          });
+        });
+      
+        function centerModal(modal) {
+          var modalContent = modal.querySelector('.modal-content');
+          var modalHeight = modalContent.offsetHeight;
+          modalContent.style.marginTop = -modalHeight / 2 + 'px';
+        }
+      });
