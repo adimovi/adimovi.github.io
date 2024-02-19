@@ -2440,6 +2440,12 @@ ul.rounded li::before {
      padding:10px;
     }
 
+    .modal h2{
+      padding-left: 10px;
+
+    }
+        
+    
     .no-margin{
         padding:0px;  
     }
@@ -2481,6 +2487,18 @@ ul.rounded li::before {
         padding:0px 10px!important;
         
     }
+
+    .mob{
+        margin-bottom: 20px!important;
+    }
+
+    #parallax p {
+        text-align: center;
+    }
+
+    .modal-content {
+        margin-top:250px;
+      }
 
 
     /* Font adjustment for small screens */
@@ -2720,12 +2738,12 @@ ul.rounded li::before {
 
 .modal {
     display: none;
-    position: fixed;
+    position: fixed!important;
     top: 50%!important;
     left: 50%!important;
     transform: translate(-50%, -50%)!important;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding: 10px 0px;
     border-radius: 10px;
     z-index: 1000;
     backdrop-filter: blur(13.4px);
@@ -2740,6 +2758,13 @@ ul.rounded li::before {
     color: #cfcece;
     text-align:left;
   }
+
+  .modal .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
   .close-btn {
   position: absolute;
   top: 10px;
@@ -2890,5 +2915,6 @@ ul.rounded li::before {
 
 .dropdown-menu .nav-link {
     text-align: center;
-    
+
 }
+
