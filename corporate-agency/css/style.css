@@ -1733,9 +1733,10 @@ header a.logo img {
     position:relative;
     text-align:center;
     padding: 200px 0 150px 0;
-    background:url("../images/standalone.jpg");
+    background:url();
     background-size: cover;
     background-position: top center;
+    background-color: #202020;
 }
 
 .page-title .auto-container{
@@ -1812,8 +1813,7 @@ header a.logo img {
 .blog-page-title{
     position:relative;
     text-align:center;
-    padding: 200px 0 150px 0;
-    background:url("../images/page-tittle.jpg");
+    padding: 155px 0 50px 0;
     background-size: cover;
     background-position: top center;
 }
@@ -2699,6 +2699,15 @@ ul.rounded li::before {
     .widget-blog h5 {
         text-align: center;
     }
+
+    .news_item .news_desc {
+        padding: 0px;
+    }
+    .blog-page-title {
+        
+        padding: 120px 0 10px 0;
+        
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -2903,13 +2912,7 @@ ul.rounded li::before {
     background-color: #86c3d7;
 }
 
-.drop-arrow{
-    font-size: 30px;
-    color:#fff;
-    position: absolute;
-    top:18px;
-    right:10px;
-}
+
 
 .dropdown-item.active{
     background-color: #86c3d7;
