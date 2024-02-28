@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Example</title>
+</head>
+<style>
+    body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.parallax {
+    background-image: url('./statics/img/despre.png');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.parallax-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+</style>
+
+<body>
+    <div class="parallax">
+        <div class="parallax-inner">
+            <h1>Welcome to Parallax Example</h1>
+            <p>Scroll down to see the effect</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2>This is some content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida, dui nec faucibus lacinia, mauris nisl semper lectus, vel gravida sapien eros ut est.</p>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+    const parallax = document.querySelector('.parallax');
+    let scrollPosition = window.pageYOffset;
+
+    parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+});
+
+    </script>
+</body>
+</html>
