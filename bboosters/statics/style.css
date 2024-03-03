@@ -596,10 +596,12 @@ text-align: left;
 @keyframes scale-in {
 	0% {
 		transform: scale(0);
+	        opacity:0;
 	}
 
 	100% {
 		transform: scale(1);
+                opacity:1;
 	}
 }
 
@@ -619,8 +621,8 @@ text-align: left;
   }
 
 .scale-in{
--webkit-animation: scale-in 2s ease 0s 1 normal forwards;
-  animation: scale-in 2s ease 0s 1 normal forwards;
+-webkit-animation: scale-in 1s ease 0s 1 normal forwards;
+  animation: scale-in 1s ease 0s 1 normal forwards;
 }
 
 
