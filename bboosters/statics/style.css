@@ -536,6 +536,10 @@ text-align: left;
     animation: myAnim 2s ease 0s infinite normal forwards;
   }
 
+.animate{
+	opacity:0;
+}
+
 
 
 
