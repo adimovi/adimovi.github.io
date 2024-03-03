@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-  
-var menu_bar = document.createRange().createContextualFragment(
+ var menu_bar = document.createRange().createContextualFragment(
             `
             <div class="fixed-top">
             <div class="container-fluid d-none d-md-block  header-bg py-2">
@@ -261,6 +250,32 @@ function topFunction() {
   document.body.scrollTop = 0; 
   document.documentElement.scrollTop = 0; 
 }
+
+
+// Function to animate elements on scroll
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.animate'); // Select elements with 'animate' class
+
+  // Loop through each element
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Check if the element is in the viewport
+    if (elementPosition < windowHeight) {
+      const animationType = element.getAttribute('data-animation'); // Get animation type from data attribute
+      element.classList.add('animated', animationType); // Add animation class based on data attribute
+    } else {
+      element.classList.remove('animated', animationType); // Remove animation class if element is out of viewport
+    }
+  });
+}
+
+// Event listener for scroll
+window.addEventListener('scroll', animateOnScroll);
+
+// Call the function once on page load to check initial state
+animateOnScroll();
 
 
 
