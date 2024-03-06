@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
   <link rel="icon" type="image/x-icon" href="/img/favicon.png">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MCD2MP3N4"></script>
@@ -20,7 +21,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-5MCD2MP3N4');
 </script>
 </head>
@@ -43,9 +43,10 @@
 <span class="tooltiptext">Socials</span>
 </div>
   <div class="container-fluid" id="home">
-    <div class="container"></div>
+    
     <div class="row dark-green-bg py-2 py-lg-0">
       <div class="container py-2 py-md-2" id="navbar">
+        <div class="container px-md-4">
         <section class="top-nav">
 
           <div class="d-block d-md-none">
@@ -55,9 +56,10 @@
           <label class='menu-button-container' for="menu-toggle">
             <div class='menu-button'></div>
           </label>
+          <img src="./img/favicon.png" class="d-lg-block d-none img-fluid code-img">
           <ul class="menu">
 
-            <img src="./img/favicon.png" class="d-block img-fluid mx-auto code-img">
+            
 
             <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
               <a onclick="hideMenu()" href="#home">HOME</a>
@@ -90,6 +92,7 @@
               <a onclick="hideMenu()" href="#contact">CONTACT</a>
             </li>
         </section>
+      </div>
         <script>
           function hideMenu() {
             document.getElementById("menu-toggle").checked = false;
@@ -102,27 +105,34 @@
 
 
   <div class="d-none d-md-block hero-background">
-    <div class="hero-text">
-      <h1 style="font-size:75px;text-transform:uppercase;font-weight:400;text-align: left;"  class="my-0  ">I am Adrian Movileanu</h1>
-      <p style="font-size:45px" class="my-0 typewriter">And I am a <b>FrontEnd Developer</b></p>
-      <img src="img/avatar2.jpeg" class="hero-image">
-      <button class="scale-in-center"><a href="#portfolio">Portfolio</a></button>
-      <button class="scale-in-center"><a href="#contact">Contact Me</a></button>
-
+    <div class="over-bg center">
+    <div class="hero-text text-center">
+      <h1 style="font-size:75px;text-transform:uppercase;font-weight:400;" class="my-0 anim-hero-left">I am Adrian Movileanu</h1>
+      <p style="font-size:45px" class="my-0 anim-hero-right">And I am  <b class="">a Front End Developer</b></p>
+      <div class="d-inline">
+        <a href="#portfolio"><button class="scale-in-center">Portfolio</button></a>
+        <a href="#contact"><button class="scale-in-center">Contact Me</button></a>
+    </div>
+    </div>
     </div>
   </div>
 
-  <div class="d-block d-md-none text-center hero-background-mobile py-4  ">
+  <div class="d-block d-md-none text-center hero-background-mobile">
+    <div class="over-bg center">
     <div class="hero-text-mobile">
-      <img src="img/avatar2.jpeg" class="hero-image-mobile mx-auto">
       <h1 style="text-transform: uppercase;font-weight: 400;" class="my-3">I am Adrian Movileanu</h1>
-      <p class="my-0">And I am a <b>Frontend developer</b></p>
-      <button><a href="#portfolio">Portfolio</a></button>
-      <button><a href="#contact">Contact Me</a></button>
+      <p class="my-0">And I am a <b class="typewriter">Frontend developer</b></p>
+      <div class="py-2"></div>
+      <a href="#portfolio"><button class="scale-in-center">Portfolio</button></a>
+      <div class="py-2"></div>
+        <a href="#contact"><button class="scale-in-center">Contact Me</button></a>
 
     </div>
   </div>
+</div>
 
+
+ 
 
 
   <div class="container-fluid py-4 px-md-5 about" id="about">
@@ -130,22 +140,25 @@
     <div class="container py-5 px-md-5">
       <h1><span class="y-h1 px-1 tracking-in-contract-bck-top">About me</span></h1>
       <div class="row py-4">
-        <div class="col-12">
+        <div class="col-lg-9 col-12 align-self-center">
           <h2 class="pt-4">Hi, I'm <u>Movileanu Adrian</u></h2>
-          <p class="">
+          <p class="pe-lg-5">
             I am a Frontend developer with about 2 years of experience with a passion for web development. I am a
             sociable person, in an ongoing process of self development with a very high interest in everything IT.
             Discipline, hardwork, punctuality and the ability to acumulate information very fast, but also beeing a team
             player are only a few things that describe me.
           </p>
         </div>
+        <div class="col-lg-3 col-12">
+          <img src="img/avatar2.jpeg" class="about-img mx-auto">
+        </div>
       </div>
       <div class="row pb-4">
-        <div class="col-md-3 col-6">Name:<br><b>Adrian Movileanu</b></div>
-        <div class="col-md-3 col-6">Email:<br><a href="mailto:movifrontdev1993@gmail.com" class="text-black"><b
+        <div class="col-lg-3  col-12">Name:<br><b>Adrian Movileanu</b></div>
+        <div class="col-lg-3 col-12 pt-md-0 pt-3">Email:<br><a href="mailto:movifrontdev1993@gmail.com" class="text-black"><b
               style="word-break: break-all;">movifrontdev1993@gmail.com</b></a></div>
-        <div class="col-md-3 col-6 pt-md-0 pt-3">Date of birth:<br><b>04.09.1993</b></div>
-        <div class="col-md-3 col-6 pt-md-0 pt-3">From:<br><b>Bucharest, Romania</b></div>
+        <div class="col-lg-3 col-12 pt-md-0 pt-3">Date of birth:<br><b>04.09.1993</b></div>
+        <div class="col-lg-3 col-12 pt-md-0 pt-3">From:<br><b>Bucharest, Romania</b></div>
 
       </div>
     </div>
@@ -197,11 +210,13 @@
         <div class="col-md-5 col-12 ">
           <div class="pb-2">
           <h3>Project Info:</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, reprehenderit, 
-            ut eaque maiores nemo blanditiis atque nulla doloremque vero, ullam cumque corporis sunt porro tempora dicta consequuntur deleniti laborum in.</p>
+          <p>This is a webpage made for a plumbing company from Wichita, it was my first project that I have worked on on Upwork. The design was made in Figma.
+            The client asked me to use additional CSS when necessary, or whenever I ran into some limitations given by the page builder. My work for this project included
+            only the landing page and the footer.
+          </p>
             </div>
             <h3>Project Details:</h3>
-            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Salient Theme</p>
+            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Salient Theme, Figma, WPbakery</p>
             <p class="brd-mod"><b>Industry:</b> Plumbing</p>
             <p class="brd-mod"><b>Date:</b> 27th November 2023</p>
             <p class="brd-mod"><b>URL:</b><a href="https://www.pipemedicwichita.com/" target="_blank" class="m-link"> pipemedicwichita.com</a></p> 
@@ -241,11 +256,13 @@
         <div class="col-md-5 col-12 ">
           <div class="pb-2">
           <h3>Project Info:</h3>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt, reprehenderit, 
-            ut eaque maiores nemo blanditiis atque nulla doloremque vero, ullam cumque corporis sunt porro tempora dicta consequuntur deleniti laborum in.</p>
+          <p>This is an Affiliate webpage, it's design is simple , yet effective. It is used by a publishing company.
+            It is using a lot of forms that the affiliates use to sign up and receive information about upcoming and current 
+            product launches.
+          </p>
             </div>
             <h3>Project Details:</h3>
-            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Elementor Theme</p>
+            <p class="brd-mod"><b>Technologies:</b> Wordpress, CSS, Elementor</p>
             <p class="brd-mod"><b>Industry:</b> Affiliate Marketing</p>
             <p class="brd-mod"><b>Date:</b> 20th November 2022</p>
             <p class="brd-mod"><b>URL:</b><a href="https://www.revenueriver.net/" target="_blank" class="m-link"> revenueriver.net</a></p> 
@@ -290,7 +307,7 @@
             This kind of website can be done in a couple of days, without using any builders or cms ( Wordpress, etc)</p>
             </div>
             <h3>Project Details:</h3>
-            <p class="brd-mod"><b>Technologies:</b> HMTL, CSS, JavaScript, Boostrap</p>
+            <p class="brd-mod"><b>Technologies:</b> HTML, CSS, JavaScript, Boostrap</p>
             <p class="brd-mod"><b>Industry:</b> SEO</p>
             <p class="brd-mod"><b>Date:</b> 5th February 2022</p>
             <p class="brd-mod"><b>URL:</b><a href="https://www.thefrontdev.ro/bboosters" target="_blank" class="m-link"> thefrontdev.ro/bboosters</a></p> 
@@ -325,15 +342,98 @@
   </div>
   </div>
 
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2 class="text-center py-2"><u>ZIP Cash Website</u></h2>
+      <div class="row p-4">
+        <div class="col-md-5 col-12 ">
+          <div class="pb-2">
+          <h3>Project Info:</h3>
+          <p>This is a Wordpress Site, made on Astra Theme with Elementor .
+            The websites serves as a landing page for a financial mobile app called "ZipCash" .
+            The client asked me to build the remaining pages for this project. The Feature pages, Product pages, About page and also to optimize the entire site for mobile devices.
+            The website's clean and simple design underscores its commitment to user-friendly functionality, allowing visitors to quickly find what they need without any clutter.</p>
+            </div>
+            <h3>Project Details:</h3>
+            <p class="brd-mod"><b>Technologies:</b> HMTL, CSS, JavaScript, Boostrap</p>
+            <p class="brd-mod"><b>Industry:</b> Finance </p>
+            <p class="brd-mod"><b>Date:</b> 17th February 2024</p>
+            <p class="brd-mod"><b>URL:</b><a href="https://usezipcash.com/" target="_blank" class="m-link"> usezipcash.com</a></p> 
+        </div>
+        <div class="col-md-7 col-12 align-self-center" >
+          <div class="slideshow-container">
+            <div class="mySlides4">
+              <img src="img/zip1.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides4">
+              <img src="img/zip2.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides4">
+              <img src="img/zip3.png" style="width:100%">
+            </div>
+
+            <div class="mySlides4">
+              <img src="img/zip4.png" style="width:100%">
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+          </div>
+        </div>
+       </div>
+  </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h2 class="text-center py-2"><u>SNpad Roadmap</u></h2>
+      <div class="row p-4">
+        <div class="col-md-5 col-12 ">
+          <div class="pb-2">
+          <h3>Project Info:</h3>
+          <p>This is a relatively simple project made for SNPad. The client asked me to create a roadmpap page for his upcoming TV app and 
+             also to get the data through a json file where he will make as many updates as he wants ( content, image sources, titles etc). 
+             He provided me with the wireframe for this project and we developed everything without using any template or design. 
+             P.S : This page is a work in progress and it will be soon included into the web3 landing page of their company.
+          </p>
+            </div>
+            <h3>Project Details:</h3>
+            <p class="brd-mod"><b>Technologies:</b> HTML, CSS, JavaScript, Boostrap, JSON</p>
+            <p class="brd-mod"><b>Industry:</b> Advertising, Crypto</p>
+            <p class="brd-mod"><b>Date:</b> 12th February 2024</p>
+            <p class="brd-mod"><b>URL:</b><a href="https://sale.snp.network/roadmap/" target="_blank" class="m-link"> sale.snp.network/roadmap</a></p> 
+        </div>
+        <div class="col-md-7 col-12 align-self-center" >
+          <div class="slideshow-container">
+            <div class="mySlides5">
+              <img src="img/snp1.png" style="width:100%">
+            </div>
+          
+            <div class="mySlides5">
+              <img src="img/snp2.png" style="width:100%">
+            </div>
+          
+            <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+          </div>
+        </div>
+       </div>
+  </div>
+  </div>
 
 
-  <div class="container-fluid py-4  resume" id="portfolio" >
+
+  <div class="container py-4  resume" id="portfolio" >
     <div class="container py-5 px-md-5">
       <h1 class="pt-lg-4 pb-4"><span class="y-h1 px-1">Portfolio</span></h1>
-      <h2 class="text-left py-2">A few examples of my work</h2>
+      <h2 class="text-left pt-2">A few examples of my work</h2>
       </div>
-      <div class="row d-flex justify-content-center pt-md-4 px-md-5 py-md-5 py-3">
-        <div class="col-md-3 box-hover  col-12" id="img1">
+      <div class="row d-flex justify-content-center  px-md-5 py-md-2 py-3">
+        <div class="col-md-4 box-hover  col-12 animate" data-animation="slide-in-left" id="img1">
           <img src="img/pipe1.png" class="d-block work img-fluid mx-auto">
           <div class="middle-box">
             <div class="text" >Pipe Medic Website
@@ -341,17 +441,35 @@
             
           </div>
         </div>
-        <div class="col-md-3 col-12 box-hover pt-md-0 pt-3" id="img2">
+        <div class="col-md-4 col-12 box-hover pt-md-0 pt-3 animate" data-animation="slide-in-top" id="img2">
           <img src="img/rr1.png" class="d-block work img-fluid mx-auto">
           <div class="middle-box">
             <div class="text" >Affiliate Website
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-12 box-hover pt-md-0 pt-3" id="img3">
+        <div class="col-md-4 col-12 box-hover pt-md-0 pt-3 animate" data-animation="slide-in-right" id="img3">
           <img src="img/seo1.png" class="d-block work img-fluid mx-auto">
           <div class="middle-box">
             <div class="text" >SEO Website
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center  px-md-5 pb-md-5 pb-3">
+        <div class="col-md-6 box-hover  col-12 animate" data-animation="slide-in-bottom" id="img4">
+          <img src="img/zip1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" >ZIP Cash Website
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-md-6 col-12 box-hover pt-md-0 pt-3 animate" data-animation="slide-in-bottom" id="img5">
+          <img src="img/snp1.png" class="d-block work img-fluid mx-auto">
+          <div class="middle-box">
+            <div class="text" >SNPad Roadmap
             </div>
           </div>
         </div>
