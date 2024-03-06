@@ -216,6 +216,8 @@ function closeModal(modalId) {
 openModal("img1", "modal1");
 openModal("img2", "modal2");
 openModal("img3", "modal3");
+openModal("img4", "modal4");
+openModal("img5", "modal5");
 
 
 
@@ -253,7 +255,7 @@ let htmlContent = '';
 cards.forEach(card => {
   htmlContent += `
   
-   <div class="col-md-4 col-12  mb-4">
+   <div class="col-md-4 col-12 animate mb-4" data-animation="scale-in-center">
     <div class="flip-card">
     <div class="flip-card-inner">
     <div class="flip-card-front">
@@ -278,11 +280,13 @@ carDiv.innerHTML = htmlContent;
 
 
 //slideshow functions
-let slideIndex = [1,1,1];
-let slideId = ["mySlides1", "mySlides2", "mySlides3"];
+let slideIndex = [1,1,1,1,1];
+let slideId = ["mySlides1", "mySlides2", "mySlides3","mySlides4","mySlides5"];
 showSlides(1, 0);
 showSlides(1, 1);
 showSlides(1, 2);
+showSlides(1, 3);
+showSlides(1, 4);
 
 function plusSlides(n, no) {
   showSlides(slideIndex[no] += n, no);
@@ -300,3 +304,37 @@ function showSlides(n, no) {
 }
 
 
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  if (window.scrollY > 300) { // Change 200 to the number of pixels scrolled when you want the color change to occur
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+
+// Function to animate elements on scroll
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.animate'); // Select elements with 'animate' class
+
+  // Loop through each element
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Check if the element is in the viewport
+    if (elementPosition < windowHeight) {
+      const animationType = element.getAttribute('data-animation'); // Get animation type from data attribute
+      element.classList.add('animated', animationType); // Add animation class based on data attribute
+    } else {
+      element.classList.remove('animated', animationType); // Remove animation class if element is out of viewport
+    }
+  });
+}
+
+// Event listener for scroll
+window.addEventListener('scroll', animateOnScroll);
+
+// Call the function once on page load to check initial state
+animateOnScroll();
