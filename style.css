@@ -70,10 +70,16 @@ a {
 }
 
 .hero-background {
-  background: #f5df4e;
-  min-height: 100vh;
-  position: relative;
-  animation: myAnim 1s linear 0s 1 normal none;
+  background-image: url('img/newbg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh; 
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes myAnim {
@@ -89,38 +95,34 @@ a {
 }
 
 .hero-background-mobile {
-  background: rgb(245, 223, 104);
+  background-image: url('img/newbg.png');
+  background-repeat: no-repeat;
+  background-position-x: center;
   min-height: 100vh;
+  background-size: cover;
 
 }
 
 .hero-text {
-  text-align: left;
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
+  color:#fff;
+  padding-top: 26px;
+}
+.hero-text-mobile{
+  padding:0px;
+  margin-top:-82px;
+  color:#fff;
 }
 
-.hero-image {
 
-  text-align: left;
-  position: absolute;
-  top: 35%;
-  left: 140%;
-  border-radius: 360px;
-  transform: translate(-50%, -50%);
-  border: white 9px solid;
-  width: 350px;
-}
 
 .hero-text button {
+  margin-top: 20px;
   border: none;
   outline: 0;
   display: inline-block;
   padding: 10px 25px;
-  color: white;
-  background-color: black;
+  color: #000!important;
+  background-color: rgb(245, 223, 104);
   text-align: center;
   cursor: pointer;
   font-weight: bold;
@@ -128,7 +130,23 @@ a {
   margin-right: 35px;
   height: 50px;
   border-radius: 25px;
+}
 
+.hero-text-mobile button {
+  margin-top: 20px;
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: #000!important;
+  background-color: rgb(245, 223, 104);
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-right: 35px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .hero-text button:hover {
@@ -137,31 +155,6 @@ a {
   
 }
 
-.hero-text-mobile button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 10px 25px;
-  color: white;
-  background-color: black;
-  text-align: center;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  margin-bottom: 25px;
-  height: 50px;
-
-}
-
-
-
-.hero-image-mobile {
-
-  border-radius: 360px;
-  border: white 9px solid;
-  width: 250px;
-  margin-top:80px;
-}
 
 footer {
   background-color: black;
@@ -389,9 +382,9 @@ hr {
 .hire-me-bg {
   background-image: url(img/home.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 @media(max-width:992px) {}
@@ -405,6 +398,7 @@ hr {
   font-weight: bold;
   animation: myAnim1 3s ease 0s infinite normal forwards;
   border-radius: 25px;
+  background-size: cover;
 }
 
 @keyframes myAnim1 {
@@ -421,16 +415,18 @@ hr {
   }
 }
 
+.about-img{
+  width:100%;
+  border-radius: 360px;
+  border:solid 8px;
+}
 
 .top-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  background-color: white;
-  background: inherit;
+  justify-content: space-between;
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: black;
   height: 50px;
   padding: 1em;
   position: sticky;
@@ -641,14 +637,18 @@ hr {
 }
 
 
-
-
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
-  background-color: black;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.sticky.scrolled{
+  background-color: #000;
+  transition: 0.3s ease;
 }
 
 .sticky+.spacing {
@@ -983,7 +983,6 @@ position: absolute;
   backface-visibility: hidden;
   opacity: 1;
   display: block;
-  border-radius: 20px;
 }
 
 .box-hover{
@@ -1047,7 +1046,6 @@ position: absolute;
   width: 70%;
   border-radius: 0px;
   padding:30px 40px;
-  border-radius: 25px;
 }
 
 /* Caption of Modal Image */
@@ -1176,20 +1174,7 @@ position: absolute;
   background-color: #717171;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.fade:not(.show) {
-   opacity: 1;
-}
 
 .modal p{
   font-size: 16px;
@@ -1238,42 +1223,17 @@ position: absolute;
   #skills  .white-bg {
     height:auto;
   }
-}
 
-
-
-.scale-in-center {
-	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.5s forwards;
-	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 4.5s forwards;
-          opacity: 0;
-}
-
-
-
- @-webkit-keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
+  .hero-background-mobile button{
+    margin: 0px;
+    width:50%;
+    color:#000;
   }
 }
-@keyframes scale-in-center {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-    opacity: 1;
-  }
-}
+
+
+
+
 
 .flip-card {
   background-color: transparent;
@@ -1340,3 +1300,12 @@ width:45px;
   animation-name: fade;
   animation-duration: 1.5s;
 }
+
+.over-bg
+  {
+    background-color: rgba(0, 0, 0, 0.7);
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  
