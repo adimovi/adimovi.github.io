@@ -70,7 +70,7 @@ a {
 }
 
 .hero-background {
-  background-image: url('img/newbg.png');
+  background-image: url('img/newbg.webp');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -96,7 +96,7 @@ a {
 }
 
 .hero-background-mobile {
-  background-image: url('img/newbg.png');
+  background-image: url('img/newbg.webp');
   background-repeat: no-repeat;
   background-position-x: center;
   min-height: 100vh;
