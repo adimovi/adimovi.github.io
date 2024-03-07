@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Address Finder</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(90deg, rgba(41, 161, 205, 1) 29%, rgba(168, 216, 235, 1) 61%, rgba(233, 244, 250, 1) 100%);
+    }
+    input[type="text"] {
+      padding: 10px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #resultParagraph {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .center
+    {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+    .idea-card {
+    background: rgba(255, 255, 255, 0.80);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);    
+}
+
+@media (max-width: 992px) {
+
+  #resultParagraph{
+    font-size: 13px;
+    word-break: break-all;
+  }
+  input[type="text"] {
+font-size: 14px;
+margin: 0px;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container center">
+  <div class="">
+  <div class="idea-card p-lg-5 p-2">
+<img src="logo.png" class="d-block img-fluid mx-auto pb-4" style="width: 100px;">
+  <input type="text" id="addressInput" placeholder="Enter your address">
+  <button onclick="fetchAndProcess()">See Total Contribution</button>
+  <p id="resultParagraph"></p>
+</div>
+</div>
+
+</div>
+  <script>
+    // Function to process the CSV data
+    function processData(csvData, address) {
+      const lines = csvData.split('\n');
+      let totalSum = 0;
+      let assetType = '';
+      let errorMessage ='';
+
+      lines.forEach(line => {
+        const values = line.split(',');
+        const currentAddress = values[6];
+        const currentAssetType = values[8];
+        
+        // Check if the current address matches the input address
+        if (currentAddress === address && currentAssetType !== "ETH") {
+          const sum = parseFloat(values[10]);
+          // Check if the value at index 10 is a valid number
+          if (!isNaN(sum)) {
+            totalSum += sum;
+          }
+          // Extract asset type
+          assetType = values[8];
+
+        }
+
+        
+      });
+
+// Check if no address is entered or no matching addresses are found
+if (address.trim() === '' || totalSum === 0) {
+    errorMessage = "<span style='color:red'>No addresses found matching the criteria.</span>";
+  }
+
+  const formattedTotalSum = totalSum.toFixed(2);
+
+
+  // Display the total sum, asset type, or error message in the DOM
+  const resultParagraph = document.getElementById('resultParagraph');
+  if (errorMessage !== '') {
+    resultParagraph.innerHTML = errorMessage;
+  } else {
+    resultParagraph.innerHTML = "<b>Address:</b><br>" + address + "<br> <b>Contribution:</b> " + formattedTotalSum +  " "  + assetType + "<br><b>SNPT:</b> " + (formattedTotalSum/0.0083).toFixed(2) ;
+  }
+
+      
+    }
+
+    // Function to fetch CSV file and process data
+    function fetchAndProcess() {
+      const addressInput = document.getElementById('addressInput').value;
+      fetch('history.csv')
+        .then(response => response.text())
+        .then(csvData => processData(csvData, addressInput))
+        .catch(error => console.error('Error fetching or processing CSV file:', error));
+    }
+
+  </script>
+</body>
+</html>
