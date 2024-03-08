@@ -53,6 +53,11 @@
     border: 1px solid rgba(255, 255, 255, 0.3);    
 }
 
+.small{
+  font-size: 14px;
+  color:#212121;
+}
+
 @media (max-width: 992px) {
 
   #resultParagraph{
@@ -63,6 +68,9 @@
 font-size: 14px;
 margin: 0px;
   }
+  .small{
+  font-size: 12px;
+}
 }
 
 
@@ -72,10 +80,24 @@ margin: 0px;
   <div class="container center">
   <div class="">
   <div class="idea-card p-lg-5 p-2">
-<img src="logo.png" class="d-block img-fluid mx-auto pb-4" style="width: 100px;">
-  <input type="text" id="addressInput" placeholder="Enter your address">
-  <button onclick="fetchAndProcess()">See Total Contribution</button>
-  <p id="resultParagraph"></p>
+    <div class="row px-lg-4 px-0">
+      <div class="col-lg-4 col-12">
+        <img src="logo.png" class="d-block img-fluid mx-auto pb-4" style="width: 90%;">
+      </div>
+      <div class="col-lg-8 col-12 align-self-center">
+        <p class="mb-1 ps-2">Available only for community contributions</p>
+        <input type="text" id="addressInput" placeholder="Enter your address">
+        <button onclick="fetchAndProcess()">See Total Contribution</button>
+        <p class="mb-0" id="resultParagraph"></p>
+      </div>
+      <div class="">
+     <p class="small mb-0 mt-3">*These tokens will be available for CLAIMING once the public contribution period concludes, which is estimated to occur in Q2 2024.
+      It's important to note that all SNPT tokens are free from any vesting period, allowing for immediate use upon claiming.
+      Please remember, SNPT is an ERC20 token. Regardless of the blockchain used for your contribution, claims must be made on the Ethereum (ETH) chain.
+      We're immensely grateful for your support!
+      </p>
+    </div>
+    </div>
 </div>
 </div>
 
@@ -94,7 +116,7 @@ margin: 0px;
         const currentAssetType = values[8];
         
         // Check if the current address matches the input address
-        if (currentAddress === address && currentAssetType !== "ETH") {
+        if (currentAddress === address.toLowerCase() && currentAssetType !== "ETH") {
           const sum = parseFloat(values[10]);
           // Check if the value at index 10 is a valid number
           if (!isNaN(sum)) {
