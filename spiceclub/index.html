@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <div class="container-fluid" id="home">
+    
+        <div class="row dark-green-bg py-2 py-lg-0">
+          <div class="container d-flex justify-content-center  py-2 py-md-2" id="navbar">
+            <div class= "px-md-4  ">
+            <section class="top-nav">
+              
+              <div class="d-block d-md-none">
+                <p class="pt-3 text-center" style="font-size: 22px;"><b class="text-white">Spice Club</b></p>
+              </div>
+              <input id="menu-toggle" type="checkbox" />
+              <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+              <ul class="menu">
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
+                  <a onclick="hideMenu()" href="about.html">About Us</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#about">Members News</a>
+                </li>
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#services">Design</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#portfolio">Club Locations</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#resume">Open Your own Spice Club</a>
+                </li>
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#faq">Make a booking</a>
+                </li>
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#contact">Become a member</a>
+                </li>
+
+                
+            </section>
+          </div>
+            <script>
+              function hideMenu() {
+                document.getElementById("menu-toggle").checked = false;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-none d-md-block hero-background">
+        <div class="over-bg center">
+        <div class="hero-text text-center">
+          <h1 style="font-size:75px;text-transform:uppercase;font-weight:400;color:#FFBB35!important;" class="my-0 anim-hero-left">Stylish Dating Clubs</h1>
+          
+          <p style="font-size:35px" class="my-0 anim-hero-right"><b>for classy, liberal, non judgemental and spontaneous people</b></p>
+          <p style="font-size:35px" class="my-0 anim-hero-right"><b>who are all interested in various types of dating arrangements worldwide.</b></p>
+          
+        </div>
+        </div>
+      </div>
+    
+      <div class="d-block d-md-none text-center hero-background-mobile">
+        <div class="over-bg center">
+        <div class="hero-text-mobile">
+          <h1 style="text-transform: uppercase;font-weight: 400;" class="my-3">Stylish Dating Clubs</h1>
+          <p class="my-0"><b>for classy, liberal, non judgemental and spontaneous people</b></p>
+          <p class="my-0"><b>who are all interested in various types of dating arrangements worldwide.</b></p>
+
+          
+        </div>
+      </div>
+    </div>
+    <div class="container py-5">
+      <h1>
+        <b>FAQ'S</b>
+      </h1>
+
+      <div class="row py-5">
+
+<div class="col-lg-6 col-12">
+ <h3 class="mb-0 bold">
+  What type of people join Spice Clubs?
+ </h3>
+ <ul>
+  <li>Classy</li>
+  <li>Intelligent</li>
+  <li>Non judgemental</li>
+  <li>Presentable</li>
+  <li>Respectful</li>
+  <li>Sociable</li>
+  <li>Approachable</li>
+ </ul>
+
+ <p class="mb-0">
+  One never knows who they will meet in a Spice club, but they can be sure they will be interesting.
+ </p>
+</div>
+
+<div class="col-lg-6 col-12">
+  <h3 class=" bold">
+    What types of relationships are members looking for?
+   </h3>
+   <p class="mb-0">
+    Who knows, or who cares. Ask fellow members when you join and visit. That’s part of the excitement that keeps it all interesting. In today's world, there is too much calculated online planning, which doesn’t always work out, tends to waste a lot of time, and leaves no room for spontaneity. 
+   </p>
+</div>
+        
+      </div>
+
+      <h3 class="pt-5 bold text-center">
+        What are the clubs common rules?
+       </h3>
+
+        <div class="row pt-5 d-flex justify-content-center">
+          <div class="col-lg-3 col-12 me-lg-5 yellow-bg p-4">
+            <img src="./img/respect.png" width="50">
+                 <p class="my-3">
+                  Always be respectful towards other members and staff. Simple as that.
+                 </p>
+          </div>
+
+          <div class="col-lg-3 col-12 me-lg-5 yellow-bg p-4">
+            <img src="./img/nocash.png" width="50">
+                 <p class="my-3">
+                  Never offer anyone sex for money or money for sex.
+                 </p>
+          </div>
+
+          <div class="col-lg-3 col-12  yellow-bg p-4">
+            <img src="./img/nomob.png" width="50">
+                 <p class="my-3">
+                  Mobile phones need to be on silent mode, and taking photos/videos is strictly forbidden.
+                 </p>
+          </div>
+        </div>
+
+        <div class="row pt-5 d-flex  justify-content-center">
+          <div class="col-lg-3 col-12 me-lg-5 yellow-bg p-4">
+            <img src="./img/suit.png" width="50">
+                 <p class="my-3">
+                  Casual business dress code at all times.
+                 </p>
+          </div>
+
+          <div class="col-lg-3 col-12 yellow-bg p-4">
+            <img src="./img/nosex.png" width="50">
+                 <p class="my-3">
+                  Sex is strictly forbidden at all times in the club.
+                 </p>
+          </div>
+
+          
+        </div>
+    </div>
+
+    <div class="container-fluid py-5" style="background-color: #fff;color:#000;">
+  
+      <div class="container py-5">
+        <div class="row py-5">
+          <div class="col-lg-6 col-12 align-self-center">
+            <h3 class="pt-5 bold">
+              Can couples join as members?
+             </h3>
+             <p class="mb-0">
+              Sure. Anyone can join subject to a 10 minute online video interview, as long as they are looking for some type of dating arrangement, and are respectful.
+             </p>
+          </div>
+          <div class="col-lg-6 col-12">
+            <img src="./img/couple1.jpg" style="width:  90%;">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-12">
+            <img src="./img/interviu.jpg" style="width:  90%;">
+          </div>
+
+          <div class="col-lg-6 col-12 align-self-center">
+            <h3 class="pt-5 bold">
+              How do you control the quality of members?
+             </h3>
+             <p class="mb-0">
+              Our very friendly staff conduct a 10 minute online video interview with all member applicants, only to find out if they are presentable, have good positive communication skills and have at least conversational English. They do not ask potential member’s about their education, profession or any other questions which have no relevance to us.
+             </p>
+          </div>
+          
+        </div>
+
+        <div class="row py-5">
+          <div class="col-lg-6 col-12 align-self-center">
+            <h3 class="pt-5 bold">
+              Can LGBHN members join as members?
+             </h3>
+             <p class="mb-0">
+              Sure. We don’t care what people are, we only care who they are?
+              (By the way LGBHN  is our term for Lesbian, Gay, Bisexual, Hetrosexual, Not sure)</p>
+          </div>
+          <div class="col-lg-6 col-12">
+            <img src="./img/lesbian.jpg" style="width: 90%;">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container py-5">
+
+      
+      <div class="row d-flex justify-content-between py-5">
+        <div class="col-lg-4 col-12  ">
+          <h3 class="bold pb-3">
+            What is the cost?
+           </h3> 
+          <div class="yellow-bg py-4 px-3">
+           
+            
+             <h4>
+              Annual Membership
+             </h4>
+             <p>
+              This includes members only online access to a lot of very interesting lifestyle and design content plus access to our club booking system
+             </p>
+             <h3>
+              25 Euro
+             </h3>
+                <h3>
+                  +
+                </h3>
+                <h3>
+                  20 Euro
+                 </h3>
+                 <p class="mb-0">
+                  equivalent for any club visit globally, which includes 2 free drinks
+                 </p>
+            
+           
+                </div>  
+        </div>
+        <div class="col-lg-7 col-12 align-self-center">
+          <h3 class="bold">
+            What age do you have to be to become a member?
+           </h3>
+           <p>
+            22 years or over..
+           </p>
+           <h3 class="bold pt-3">
+            Can people offering companionship or massage services join?
+           </h3>
+           <p class="mb-3">
+            That’s like asking can people offering legal or architecture services join. Of course they can, as long as they are not offering sexual services for reward.
+           </p>
+           <h3 class="bold pt-3">
+            Do Members have online profiles?
+           </h3>
+           <p class="mb-3">
+            No, but they do login to book a table for any club on any day.
+           </p>
+           <h3 class="bold pt-3">
+            What are the opening hours of the clubs?
+           </h3>
+           <p class="mb-3">
+            Check each club page in <a href="locations.html"><b>locations</b></a> for details, and some are open during the day to use as coworking spaces for members as well. 
+           </p>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="container-fluid px-0  gender-bg">
+      <div class="over-bg" style="min-height: auto;">
+      <div class="container py-5">
+        <div class="row py-5">
+          <div class="col-lg-6 col-12">
+            <h3 class="bold pt-3">
+              Do you keep a gender balance in clubs?
+             </h3>
+             <p class="">
+              Yes, and when you go to book a table online, you might well see a message saying we don’t have male/female capacity left for the day you selected, but please tick here if you want to be notified of changes on whatsapp. 
+              
+             </p>
+             <p class="mb-3">
+              (Members should always click this, because the situation changes very fast, and the message you get will simply say “Birchley”.)
+             </p>
+             <h3 class="bold pt-3">
+              Are some of your members married?
+             </h3>
+             <p class="mb-0">
+              None of our business.
+             </p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row py-5">
+      <div class="col-lg-4 col-12">
+       <img src="./img/qmark.png" class="d-block mx-auto"style="width: 50%;filter: invert(100%);">
+      </div>
+      <div class="col-lg-8 col-12 align-self-center">
+        <h3 class="bold pt-3">
+          Why would people use Spice clubs for dating instead of a dating app?
+         </h3>
+         <p class="mb-0">
+          Many, but not all members use a combination of both, but prefer to meet in person in a Spice club because they are very sociable and safe spaces. All Spice clubs are located so that they are convenient for business, professional and vacation travelers, as well as locals of course. 
+         </p>
+      </div>
+    </div>
+
+    <div class="row py-5">
+      
+      <div class="col-lg-8 col-12 align-self-center">
+        <h3 class="bold pt-3">
+          What are the busiest evenings in Spice Clubs?
+         </h3>
+         <p class="mb-0">
+          Due to the fact that a lot of our members are travelling for one reason or another, most evenings are busy, not like other weekend only clubs. </p>
+      </div>
+
+      <div class="col-lg-4 col-12">
+        <img src="./img/busy.png" class="d-block mx-auto"style="width: 50%;filter: invert(100%);">
+       </div>
+
+    </div>
+
+    <div class="row py-5">
+      <div class="col-lg-4 col-12">
+       <img src="./img/guest.png" class="d-block mx-auto"style="width: 50%;filter: invert(100%);">
+      </div>
+      <div class="col-lg-8 col-12 align-self-center">
+        <h3 class="bold pt-3">
+          Can a member invite a guest?
+         </h3>
+         <p class="mb-0">
+          Yes, subject to the receptionists approval upon arrival, but a guest must apply to become a member to enter any club a second time.</p>
+      </div>
+    </div>
+    
+    </div>
+
+    <div class="container-fluid" style="background-color: #fff;color:#000;">
+      <div class="container  py-5">
+        <h3 class="bold pt-3">
+          What happens when a member enters a Spice club?
+         </h3>
+
+         <div class="row d-flex justify-content-center py-5">
+          <div class="col-lg-6 col-12 pe-5 align-self-center">
+            <p>
+              <span class="huge-step">Step 1.</span>
+              <br>
+              If you enter as a solo member, you will be directed to either a bar stool at the counter, or given a table for two.
+            </p>
+          </div>
+          <div class="col-lg-4 col-12">
+            <img src="./img/step1.jpg" class="d-block mx-auto"style="width: 100%;">
+          </div>
+         </div>
+
+         <div class="row d-flex justify-content-center py-5">
+          <div class="col-lg-6 col-12 pe-5 align-self-center">
+            <p>
+              <span class="huge-step">Step 2.</span>
+              <br>
+              Members can tell who is still up for being approached if the small light on their table is on.
+            </p>
+          </div>
+          <div class="col-lg-4 col-12">
+            <img src="./img/step2.jpg" class="d-block mx-auto"style="width: 100%;">
+          </div>
+         </div>
+
+         <div class="row d-flex justify-content-center py-5">
+          <div class="col-lg-6 col-12 pe-5 align-self-center">
+            <p>
+              <span class="huge-step">Step 3.</span>
+              <br>
+              Simply approach any table with the small light on, and ask the occupant if they would like a drink.
+            </p>
+          </div>
+          <div class="col-lg-4 col-12">
+            <img src="./img/step3.jpg" class="d-block mx-auto"style="width: 100%;">
+          </div>
+         </div>
+
+         <div class="row d-flex justify-content-center py-5">
+          <div class="col-lg-6 col-12 pe-5 align-self-center">
+            <p>
+              <span class="huge-step">Step 4.</span>
+              <br>
+              If they say yes, sit down with them and they should then turn the small light on their table off for as long as you are happy chatting, or leave the light on if you are both happy to attract other company as well.
+            </p>
+          </div>
+          <div class="col-lg-4 col-12">
+            <img src="./img/step4.jpg" class="d-block mx-auto"style="width: 100%;">
+          </div>
+         </div>
+      </div>
+    </div>
+
+    <div class="container-fluid py-5">
+      <h1 class="text-center">
+        <b>Meet our Management Team</b>
+      </h1>
+
+      <div class="row d-flex justify-content-center gap-2 overflow-hidden pt-5 pb-2">
+           <div class="col-lg-2 px-0 white-bg2  col-12">
+            <img src="./img/avt1.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Barry Murphy <br> Founder, CEO and bottle washer!</b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2 col-12">
+            <img src="./img/avt5.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Irina Dukes<br>
+              Chief architect</b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2 col-12">
+            <img src="./img/avt3.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>David Timmons <br>
+              Head of franchise licencing
+              </b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2 col-12">
+            <img src="./img/avt7.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Valentine Wynne<br>
+              CITO
+              </b>
+           </p>
+          </div>
+
+          
+      </div>
+
+      <div class="row d-flex justify-content-center gap-2 overflow-hidden pt-5 pb-2">
+        <div class="col-lg-2 px-0 white-bg2  col-12">
+          <img src="./img/avt2.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Mike Sullivan <br>
+            CMO
+            </b>
+         </p>
+        </div>
+        <div class="col-lg-2 px-0 white-bg2 col-12">
+          <img src="./img/avt4.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Arnold Day <br>
+            CLO</b>
+         </p>
+        </div>
+        <div class="col-lg-2 px-0 white-bg2 col-12">
+          <img src="./img/avt6.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Susan Dunne <br>
+            CFO</b>
+         </p>
+        </div>
+   </div>
+    </div>
+    <footer>
+      <div class="container py-5">
+        <p class="mb-0 text-center">
+          Copyright spiceclubsdating.com
+        </p>
+      </div>
+    </footer>
+</body>
+</html>
