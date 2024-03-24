@@ -25,14 +25,7 @@ function animateOnScroll() {
 
 
 
-  window.addEventListener('scroll', function() {
-    var navbar = document.getElementById('navbar');
-    if (window.scrollY > 300) { // Change 200 to the number of pixels scrolled when you want the color change to occur
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+ 
 
   // Get all the links in the navigation
 const links = document.querySelectorAll('.top-nav a');
@@ -87,3 +80,27 @@ window.addEventListener('scroll', function() {
         previewImage.src = galleryImages[currentImageIndex].src;
     });
 });
+
+
+// Get the button:
+let scrollbutton = document.getElementById("scroll-button");
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    scrollbutton.style.display = "block";
+  } else {
+    scrollbutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+//Nav Functions + scroll to top trigger
+
+window.onscroll = function () {
+   scrollFunction()
+};
