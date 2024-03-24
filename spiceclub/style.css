@@ -6,10 +6,6 @@
   --main:#2d669d ;
 }
 
-.container {
-  padding-left: 100px;
-  padding-right: 100px;
-}
 
 
 body{
@@ -126,28 +122,32 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2e8ff",endCo
   }
 }
 
-.hero-background-mobile {
-  background-image: url('img/newbg.jpg');
-  background-repeat: no-repeat;
-  background-position-x: center;
-  min-height: 100vh;
-  background-size: cover;
 
-}
 
 .hero-text {
   color:#fff;
-  padding:150px 0px;
 }
 
 
 
 footer {
-  background: rgb(210,232,255);
-background: -moz-linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-background: linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2e8ff",endColorstr="#2d669d",GradientType=1);  
+  background: var(--main);
+  
+}
+
+footer ul {
+  padding-left: 0px;
+}
+
+footer li{
+  font-size: 18px;
+  list-style-type: none;
+}
+
+.social-img{
+  width: 35px;
+  filter: invert(100%);
+  margin-bottom: 10px;
 }
 
 .special {
@@ -246,8 +246,128 @@ hr {
   color:var(--main);
 }
 
+.gallery {
+  position: relative;
+}
 
-@media(max-width:992px) {}
+.gallery-image {
+  width: 100%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.gallery-image:hover{
+transform: scale(1.05);
+transition: 0.4s;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gallery-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.preview-image {
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.img-row img{
+  margin-bottom: 42px;
+}
+
+@media screen and (max-width: 1400px) and (min-width: 993px){
+
+  h2{
+    font-size:25px;
+   }
+   h3{
+    font-size: 20px;
+   }
+   p{
+    font-size: 17px;
+   }
+
+   .menu>li {
+    margin: 0 20px!important;
+    overflow: hidden;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 1200px) and (min-width: 993px) {
+ 
+ .hero-img{
+  width: 376px!important;
+  margin-left: -84px!important;
+ }
+ .menu>li a{
+  font-size: 17px!important;
+ }
+ .sp-width{
+  width: 395px!important;
+ }
+ .img-row img{
+  margin-bottom: 120px;
+}
+}
+
+@media (max-width: 992px){
+  .hero-img{
+    width: 100%!important;
+    margin:20px auto!important;
+    padding:0px 80px;
+   }
+
+   .hero-text{
+    text-align: center;
+   }
+
+}
 
 
 
@@ -287,7 +407,7 @@ hr {
 }
 
 .menu>li {
-  margin: 0 1rem;
+  margin: 0 2rem;
   overflow: hidden;
 }
 
@@ -794,37 +914,7 @@ position: absolute;
 
 
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  z-index: 101; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
 
-/* Modal Content (image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 70%;
-  border-radius: 0px;
-  padding:30px 40px;
-}
-
-/* Caption of Modal Image */
-
-/* Add Animation */
-.modal-content {  
-  -webkit-animation-name: zoom;
-  -webkit-animation-duration: 0.6s;
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
 
 @-webkit-keyframes zoom {
   from {-webkit-transform:scale(0)} 
@@ -836,28 +926,7 @@ position: absolute;
   to {transform:scale(1)}
 }
 
-/* The Close Button */
-.close {
-  position: absolute;
-  top: 5px;
-  right: 35px;
-  color: #000000;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  z-index: 10000;
-}
 
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#portfolio #img1,#img2,#img3 {
-  cursor: pointer;
-}
 
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px){
@@ -879,86 +948,7 @@ position: absolute;
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 10px;
-  color: #272727;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: #eaeaea;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-  color:#ffffff;
-}
-
-/* Caption text */
-.modal-text {
-  color: #000;
-  font-size: 15px;
-  padding: 8px 12px;
-  bottom: 0px;
-  width: 100%;
-  text-align: center;
-  margin-bottom: -20px;
-}
-
-
-
-/* The dots/bullets/indicators */
-.modal-dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.modal-active, .modal-dot:hover {
-  background-color: #717171;
-}
-
-
-
-.modal p{
-  font-size: 16px;
-  margin-bottom: 0px;
-  padding:12px 0px;
-}
-
-.modal h3{
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 0px; 
-}
-
-.modal-work{
-  width: 100%;
-}
 
 .brd-mod {
   border-bottom: 1px solid #eaeaea;
@@ -1065,6 +1055,12 @@ filter: invert(100%);
 width:45px;
 }
 
+.s-media .social-img {
+  filter: none;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
 .mySlides1, .mySlides2, .mySlides3 {display: none}
 
 .slideshow-container img {
@@ -1079,6 +1075,29 @@ width:45px;
     background-color: rgba(0, 0, 0, 0.7);
     background-size: cover;
     min-height: 100vh;
+  }
+
+  .more{
+    border:none;
+    font-weight: bold;
+    color:#fff;
+    background-color: var(--main);
+    padding: 10px;
+    transition: 0.5s;
+    border:solid 1px #fff;
+    
+  }
+
+  .more:hover{
+    color:var(--main);
+    background-color: #fff;        
+    transition: 0.5s;
+    border:solid 1px var(--main);
+  }
+
+  .no-space{
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   
