@@ -55,3 +55,35 @@ window.addEventListener('scroll', function() {
       navbar.classList.remove('scrolled');
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const galleryImages = document.querySelectorAll('.gallery-image');
+    const overlay = document.querySelector('.overlay');
+    const previewImage = overlay.querySelector('.preview-image');
+    const closeButton = overlay.querySelector('.close');
+    const prevButton = overlay.querySelector('.prev');
+    const nextButton = overlay.querySelector('.next');
+    let currentImageIndex = 0;
+
+    galleryImages.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            currentImageIndex = index;
+            previewImage.src = image.src;
+            overlay.style.display = 'flex';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        overlay.style.display = 'none';
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        previewImage.src = galleryImages[currentImageIndex].src;
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        previewImage.src = galleryImages[currentImageIndex].src;
+    });
+});
