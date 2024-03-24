@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+    <div class="container-fluid" id="home">
+    
+        <div class="row dark-green-bg py-2 py-lg-0">
+          <div class="container d-flex justify-content-center  py-2 py-md-2" id="navbar">
+            <div class= "px-md-4  ">
+            <section class="top-nav">
+              
+              <div class="d-block d-md-none">
+                <p class="pt-3 text-center" style="font-size: 22px;"><b class="text-white">Spice Club</b></p>
+              </div>
+              <input id="menu-toggle" type="checkbox" />
+              <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+              <ul class="menu">
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
+                  <a onclick="hideMenu()" href="#home">About Us</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#about">Members News</a>
+                </li>
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#services">Design</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#portfolio">Club Locations</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#resume">Open Your own Spice Club</a>
+                </li>
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#faq">Make a booking</a>
+                </li>
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="#contact">Become a member</a>
+                </li>
+
+                
+            </section>
+          </div>
+            <script>
+              function hideMenu() {
+                document.getElementById("menu-toggle").checked = false;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
+
+      
+    
+    <div class="container">
+    
+
+      <h1 class="text-center my-5">
+        Spice Clubs Designs
+      </h1>
+
+      <p class="text-dark bold">
+        Spice Clubs have been designed very carefully by Barry Murphy from Ireland so that they create a mix of rustic and yet modern contemporary class, which transcends all global cultures.
+      </p>
+
+      <p>
+        The rustic part of the story is designed to create an atmosphere which encourages drink sales, and the contemporary elegant class touches are designed to attract the right type of members.
+      </p>
+      <p>
+        We believe that we have come up with a good subtle balance to create a 300 square meters (3,000 square feet) of elegant space where up to 170 members can socialise freely in a warm and friendly safe environment.
+      </p>
+
+    </div>
+</body>
+<footer>
+
+  <div class="container py-5" >
+    <p class="mb-0 text-center">
+      Copyright spiceclubsdating.com
+    </p>
+  
+</div>
+</footer>
+</html>
