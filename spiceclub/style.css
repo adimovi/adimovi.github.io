@@ -35,18 +35,21 @@ h1,h2,h3,h4,h5,h6{
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 45px;
   font-weight: 500;
 }
 
+.bold{
+  font-weight: bold;
 
+}
 
 h2 {
-  font-size: 40px;
+  font-size: 35px;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .nav-item {
