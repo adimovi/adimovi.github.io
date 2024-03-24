@@ -463,7 +463,7 @@ transition: 0.4s;
 
 .menu>li a {
   color: #000;
-  font-size: 19px;
+  font-size: 17px;
   font-family: "Fjalla One", sans-serif;
 }
 
@@ -1058,7 +1058,8 @@ width:45px;
 .s-media .social-img {
   filter: none;
   margin-right: 15px;
-  margin-top: 5px;
+  width: 25px;
+  margin-bottom: 0px ;
 }
 
 .mySlides1, .mySlides2, .mySlides3 {display: none}
