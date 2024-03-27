@@ -99,7 +99,7 @@ a {
   background-image: url('img/newbg.webp');
   background-repeat: no-repeat;
   background-position-x: center;
-  min-height: 100vh;
+  min-height: 100dvh;
   background-size: cover;
 
 }
