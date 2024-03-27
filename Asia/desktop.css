@@ -2,8 +2,8 @@
 
 
 :root{
-    --main-color:#0d3b2a;
-    --secondary-color:#cdffec;
+    --main-color:#2d669d;
+    --secondary-color:#e7f2fc;
     --white-color:#fff;
     --main-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -54,6 +54,7 @@ p.bigger{
 }
 
 
+
 .nav-link{
     color:#000;
     margin-right: 25px;
@@ -74,7 +75,10 @@ p.bigger{
 
 .nav-item{
     align-self: center;
+  
 }
+
+
 
 
 .btn-main{
