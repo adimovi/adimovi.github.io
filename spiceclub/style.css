@@ -312,7 +312,7 @@ transition: 0.4s;
 }
 
 .img-row img{
-  margin-bottom: 38px;
+  margin-bottom: 120px;
 }
 
 @media screen and (max-width: 1400px) and (min-width: 993px){
@@ -350,7 +350,7 @@ transition: 0.4s;
   width: 395px!important;
  }
  .img-row img{
-  margin-bottom: 120px;
+  margin-bottom: 180px;
 }
 }
 
