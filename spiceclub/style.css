@@ -1,1144 +1,654 @@
-@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <div class="container-fluid d-lg-block d-none pt-3 bg-white">
+    <div class="container">
+      <div class="row d-flex justify-content-between">
+        <div class="col"></div>
 
-
-:root{
-  --main:#2d669d ;
-}
-
-
-
-body{
-  font-family: "Heebo", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 300;
-  background-color: #fafafa;
-  color:#000;
-
-}
-html {
-  height: 100%;
-  font-family: Poppins;
-  margin: 0;
-}
-
-h1,h2,h3,h4,h5,h6{
-  font-family: "Fjalla One", sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  color:#2d669d;
-}
-
-h1 {
-  font-size: 45px;
-  font-weight: 500;
-}
-
-.bold{
-  font-weight: bold;
-
-}
-
-h2 {
-  font-size: 35px;
-}
-
-h3 {
-  font-size: 25px;
-}
-
-.nav-item {
-  padding-left: 37px;
-}
-
-p {
-  font-size: 20px;
-  line-height: 1.5;
-}
-
-.b-on {
-  list-style-type: none;
-  padding-left: 0rem;
-  font-size: 22px;
-}
-
-
-.socials {
-  max-width: 50px;
-  transition: 0.4s;
-
-}
-
-.socials:hover {
-  transform: scale(1.05);
-  transition: 0.4s;
-}
-
-.nav-link:hover {
-  text-decoration: underline;
-  text-decoration-color: rgb(241, 223, 104);
-  text-decoration-style: solid;
-  transition: 0.5s;
-}
-
-u {
-  text-decoration-color: rgb(241, 223, 104);
-
-}
-
-a {
-  color: white;
-  text-decoration: none;
-}
-
-.hero-background {
-  background: rgb(210,232,255);
-background: -moz-linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-background: -webkit-linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-background: linear-gradient(90deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2e8ff",endColorstr="#2d669d",GradientType=1);  
-}
-
-
-
-.center{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes myAnim {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-.hero-text {
-  color:#fff;
-}
-
-
-
-footer {
-  background: var(--main);
+        <div class="col align-self-center">
+          <a href="index.html"><h1 class="mb-0 text-center">
+            Spice Clubs 
+          </h1></a>
+          </div>
+        <div class="col d-flex head justify-content-end align-self-center">
+          <a href="login.html">
+            <button class="more">Login</button>
+          </a>
+        
   
-}
+        </div>
+        
+      </div>
+      
 
-footer ul {
-  padding-left: 0px;
-}
+      
+    </div>
+  </div>
 
-footer li{
-  font-size: 18px;
-  list-style-type: none;
-}
+  <a href="#home"><img class="scroll-button" title="Go to top" id="scroll-button" src="./img/arrow-up.png"></a>
 
-.social-img{
-  width: 35px;
-  filter: invert(100%);
-  margin-bottom: 10px;
-}
 
-.special {
-  font-size: 95px;
-  color: rgb(76, 77, 77);
-  text-align: center;
-  font-weight: 300;
-
-}
-
-.exp {
-  text-align: center;
-  margin-top: -50px;
-}
-
-.copyright {
-  color: rgb(245, 223, 104);
-  font-size: 16px;
-  padding: 50px 25px 50px 25px;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease-in-out;
-
-}
-
-.timeline.active {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-@keyframes myAnim1 {
-  0% {
-    opacity: 0;
-    transform: rotateX(70deg);
-    transform-origin: top;
-  }
-
-  100% {
-    opacity: 1;
-    transform: rotateX(0deg);
-    transform-origin: top;
-  }
-}
-
-
-
-.white-bg {
-  box-shadow: 10px 10px 30px -22px rgba(0,0,0,0.75);
-    border-radius: 25px;
-  background-color: white;
-  transition: 0.5s;
-
-}
-
-.services {
-  background-color: #f7f7f7;
-}
-
-ul {
-  padding-left: 22px;
-  font-size: 22px;
-  margin:15px 0px;
-}
-
-
-
-.card-image {
-  height: 105px;
-}
-
-hr {
-  margin: 0px;
-
-}
-
-
-.yellow-bg{
-  background-color: var(--main);
-  color:#000;
-  font-weight: 400;
-  text-align: center;
-  font-size: 18px!important;
-}
-
-
-.huge-step{
-  font-size: 30px;
-  font-weight: bold;
-  color:var(--main);
-}
-
-.gallery {
-  position: relative;
-}
-
-.gallery-image {
-  width: 100%;
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.gallery-image:hover{
-transform: scale(1.05);
-transition: 0.4s;
-}
-
-.overlay {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.gallery-preview {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.preview-image {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.prev {
-  left: 20px;
-}
-
-.next {
-  right: 20px;
-}
-
-.img-row img{
-  margin-bottom: 120px;
-}
-
-@media screen and (max-width: 1400px) and (min-width: 993px){
-
-  h2{
-    font-size:25px;
-   }
-   h3{
-    font-size: 20px;
-   }
-   p{
-    font-size: 17px;
-   }
-
-   .menu>li {
-    margin: 0 20px!important;
-    overflow: hidden;
-  }
-
-}
-
-
-
-
-@media screen and (max-width: 1200px) and (min-width: 993px) {
- 
- .hero-img{
-  width: 376px!important;
-  margin-left: -84px!important;
- }
- .menu>li a{
-  font-size: 17px!important;
- }
- .sp-width{
-  width: 395px!important;
- }
- .img-row img{
-  margin-bottom: 180px;
-}
-}
-
-.s-box{
-  margin-left: 15px;
-}
-.s-button{
-  color:#fff;
-  font-weight: bold;
-  background-color: var(--main);
-  border: none;
-}
-
-@media (max-width: 992px){
-  .hero-img{
-    width: 100%!important;
-    margin:20px auto!important;
-    padding:0px 80px;
-   }
-
-   .hero-text{
-    text-align: center;
-   }
-
-   .search{
-    flex-direction: column;
-   }
-
-   .s-box{
-    margin-left: 0px;
-    margin-bottom: 20px;
-   }
-
-}
-
-
-
-@keyframes myAnim1 {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-
-.top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 50px;
-  padding: 1em;
-}
-
-.menu {
-  display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu>li {
-  margin: 0 2rem;
-  overflow: hidden;
-}
-
-.menu-button-container {
-  display: none;
-  height: 100%;
-  width: 30px;
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#menu-toggle {
-  display: none;
-}
-
-.menu-button,
-.menu-button::before,
-.menu-button::after {
-  display: block;
-  background-color: #fff;
-  position: absolute;
-  height: 4px;
-  width: 30px;
-  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  border-radius: 2px;
-}
-
-.menu-button::before {
-  content: '';
-  margin-top: -8px;
-}
-
-.menu-button::after {
-  content: '';
-  margin-top: 8px;
-}
-
-#menu-toggle:checked+.menu-button-container .menu-button::before {
-  margin-top: 0px;
-  transform: rotate(405deg);
-}
-
-#menu-toggle:checked+.menu-button-container .menu-button {
-  background: rgba(255, 255, 255, 0);
-}
-
-#menu-toggle:checked+.menu-button-container .menu-button::after {
-  margin-top: 0px;
-  transform: rotate(-405deg);
-}
-
-.menu>li a {
-  color: #000;
-  font-size: 17px;
-  font-family: "Fjalla One", sans-serif;
-}
-
-.menu>li a:hover {
-  text-decoration: none;
-}
-
-@media (max-width: 992px) {
-  .menu-button-container {
-    display: flex;
-    position: fixed;
-    right: 4%;
-    background: var(--main);
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    z-index: 999999999;
-  }
-
-  .menu {
-    position: fixed;
-    z-index: 99999999;
-    top: 0;
-    margin-top: 0px !important;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    justify-content: start;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  #menu-toggle~.menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  #menu-toggle:checked~.menu li {
-    height: 3.5em;
-    padding: 0.5em;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  #menu-toggle:checked~.menu li a {
-    color: black;
-    text-align: left;
-    font-size: 19px;
-  }
-
-  .menu>li {
-    display: flex;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: #000;
-    background-color: white;
-  }
-
-  .menu>li a {
-    padding-left: 5px;
-  }
-
-  .menu>li:not(:last-child) {
-    border-bottom: 1px solid #007953;
-  }
-
-}
-
-@media (max-width: 860px) {
-  .menu {
-    margin-top: 90px;
-  }
-}
-
-@media (max-width: 481px) {
-  .menu {
-    margin-top: 80px;
-  }
-}
-
-.dark-green-bg{
-  background-color: #fff;
-}
-
-
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff !important;
-  font-size: 19px;
-  padding-left: 20px;
-}
-
-.hamburger-menu {
-  position: relative;
-  right: 0;
-}
-
-
-
-@media (max-width:992px) {
-  .sticky {
-    position: unset;
-  }
-
-  .mid-mobile {
-    text-align: center;
-  }
-
-  .contact-bg {
-    background-color: transparent;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: solid 1px black;
-    margin-bottom: 25px;
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .hire-me-bg {
-    background-color: black !important;
-    background-image: none;
-  }
-
-  h1 {
-    font-size: 40px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  h3 {
-    font-size: 20px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .b-on {
-    font-size: 16px;
-  }
-
-}
-
-
-#navbar a:hover{
-  color:var(--main);
-  transition: 0.5s;
-}
-
-#navbar a{
-  
-  transition: 0.5s;
-}
-
-
-#navbar a.active1 {
-  color:var(--main);
-}
-
-
-
-button:focus {
-  outline: none;
-}
-
-.faq-arrow {
-  background-image: url(img/arrow.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 20%;
-  cursor: pointer;
-}
-
-
-
-
-.accordion {
-  background-color: white;
-  border-top: white;
-  border-left: white;
-  border-right: white;
-  cursor: pointer;
-  text-align: left;
-  margin-bottom: 20px;
-  width: 100%;
-  outline: none;
-  transition: 0.4s;
-  font-size: 25px;
-  padding-left: 5px;
-  padding-right: 20px;
-}
-
-
-.accordion:hover {
-  transition: 0.4s;
-}
-
-.panel {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
-
-}
-
-@media (max-width: 993px) {
-  .arrow {
-    background-image: url(img/arrow.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 50%;
-    cursor: pointer;
-  }
-
-  .accordion {
-    background-color: white;
-    border-top: white;
-    border-left: white;
-    border-right: white;
-    cursor: pointer;
-    text-align: left;
-    margin-bottom: 10px;
-    width: 100%;
-    outline: none;
-    transition: 0.4s;
-    font-size: 18px;
-    padding-left: 2px;
-    padding-right: 0px;
-    color:#000;
-  }
-}
-
-
-.scroll-button {
-  animation: arrow-top 2s linear 0s  normal forwards;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 2;
-  cursor: pointer;
-  opacity: 0.5;
-  transition: 0.4s;
-  background-color: #fff;
-  border-radius: 90px;
-  width:35px;
-  overflow-x: hidden;
-  display: none;
-}
-
-.scroll-button:hover {
-  opacity: 1;
-  transition: 0.4s;
-
-}
-
-
-.icon-bar {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  z-index: 1;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 50%;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
-
-.openbtn{
-  position: fixed;
-  top: 50%;
-  z-index: 2;
-  left:0px;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: 0.4s;
-  width:70px;
-  height: 78px;
-  margin-top: -8px;
-  opacity: 0.5;
-}
-
-
-.icon-bar a {
-  display: block;
-  text-align: center;
-  padding: 10px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 15px;
- 
-}
-
-.icon-bar a:hover {
-  background-color: #000;
-} 
-
-.facebook {
-  border-top-right-radius:10px;
-  background: #3B5998;
-  color: white;
-}
-
-.instagram {
-  background: #bc2a8d;
-  color: white;
-}
-
-.linkedin {
-  background: #007bb5;
-  color: white;
-}
-
-.phone {
-  background: #075e54;
-  color: white;
-}
-
-.mail {
-  background: #c71610;
-  color: white;
-  border-bottom-right-radius:10px;
-}
-
-
-
-@keyframes arrow-left {
-	0% {
-		opacity: 0;
-		transform: translateX(-20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-@keyframes arrow-right {
-	0% {
-		opacity: 0;
-		transform: translateX(20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-
-@keyframes arrow-top {
-	0% {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 0.5;
-		transform: translateY(0);
-	}
-}
-
-.arrow{
-  animation: arrow-left 2s linear 0s infinite normal forwards;
-  filter: invert(100%);
-  width:20px;
-  margin: 28px 0px 0px 19px;
-}
-
-
-.arrow-right{
-  animation: arrow-right 2s linear 0s infinite normal forwards;
-  
-}
-
-.tooltiptext {
-  visibility: hidden;
-  height:auto;
-  background-color: #fff;
-  color: #000000;
-  text-align: center;
-  /* Position the tooltip */
-  top:33px;
-left:120%; 
-position: absolute;
-  z-index: 1;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-}
-
-.work{
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  transition: .5s ease;
-  backface-visibility: hidden;
-  opacity: 1;
-  display: block;
-}
-
-.box-hover{
-  position: relative;
-}
-
-
-.middle-box {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.box-hover:hover .work {
-  opacity: 0.3;
-}
-
-.box-hover:hover .middle-box {
-  opacity: 1;
-}
-
-.text {
-  background-color: #f5df4e;
-  color: black;
-  font-size: 16px;
-  padding: 10px 15px;
-  font-weight: bold;
-  border-radius: 25px;
-  cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-@-webkit-keyframes zoom {
-  from {-webkit-transform:scale(0)} 
-  to {-webkit-transform:scale(1)}
-}
-
-@keyframes zoom {
-  from {transform:scale(0)} 
-  to {transform:scale(1)}
-}
-
-
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-    width: 100%;
-  }
-  .close {
-    top: 0px;
-    right: 13px;
-    font-size: 29px;
-   
-  }
-}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
-
-
-.brd-mod {
-  border-bottom: 1px solid #eaeaea;
-}
-
-.m-link{
-  color:#000000;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-#skills .white-bg {
-  height:380px;
-}
-
-.white-bg2{
-  background-color: #fff;
-  color:#000;
-}
-
-
-
-
-
-
-
-.flip-card {
-  background-color: transparent;
-  height: 300px;
-  perspective: 1000px;
-  
-  
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.4s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 25px;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-flex-wrap: wrap;
-flex-direction: column;
-}
-
-.flip-card-front {
-  background-color: #ffffff;
-  color: black;
-  border-radius: 25px;
-  
-}
-
-.flip-card-back {
-  background-color: #f5df4e;
-  color: black;
-  transform: rotateY(180deg);
-  border-radius: 25px;
-  border:2px solid black;
-  font-size:20px;
-}
-
-.code-img{
-filter: invert(100%);
-width:45px;
-}
-
-.s-media .social-img {
-  filter: none;
-  margin-right: 15px;
-  width: 25px;
-  margin-bottom: 0px ;
-}
-
-.mySlides1, .mySlides2, .mySlides3 {display: none}
-
-.slideshow-container img {
-  border:1px solid #272727;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-.over-bg
-  {
-    background-color: rgba(0, 0, 0, 0.7);
-    background-size: cover;
-    min-height: 100vh;
-  }
-
-  .more{
-    border:none;
-    font-weight: bold;
-    color:#fff;
-    background-color: var(--main);
-    padding: 10px;
-    transition: 0.5s;
-    border:solid 1px #fff;
+    <div class="container-fluid" id="home">
     
-  }
+        <div class="row dark-green-bg py-2 py-lg-0">
+          <div class="container d-flex justify-content-center  py-2 py-md-2" id="navbar">
+            <div class= "px-md-4  ">
+            <section class="top-nav">
+              
+              <div class="d-block d-md-none">
+                <h1 class="pt-3 text-center">Spice Club</h1>
+              </div>
+              <input id="menu-toggle" type="checkbox" />
+              <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+              </label>
+              <ul class="menu">
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0 " for="menu-toggle">
+                  <a onclick="hideMenu()" href="about.html">About Us</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="news.html">Members News</a>
+                </li>
+    
+                
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="design.html">Design</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="locations.html">Club Locations</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="open.html">Open Your own Spice Club</a>
+                </li>
+    
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="book.html">Make a booking</a>
+                </li>
+                <li class="justify-content-sm-start align-self-md-center pl-4 pl-lg-0">
+                  <a onclick="hideMenu()" href="join.html">Become a member</a>
+                </li>
 
-  .more:hover{
-    color:var(--main);
-    background-color: #fff;        
-    transition: 0.5s;
-    border:solid 1px var(--main);
-  }
+                <li class="justify-content-sm-start d-lg-none d-block align-self-md-center pl-4 pl-lg-0">
+                  <a href="login.html">
+                    <button class="more">Login</button>
+                  </a>
+                </li>
 
-  .head .more{
-    font-size:14px;
-  }
+                
+            </section>
+          </div>
+            <script>
+              function hideMenu() {
+                document.getElementById("menu-toggle").checked = false;
+              }
+            </script>
+          </div>
+        </div>
+      </div>
 
-  
+      <div class="hero-background">
 
-  input{
-    padding:10px;
-    font-size:20px;
-    font-family: "Heebo", sans-serif;
-}
+        <div class="container py-lg-5 ">
+          <h2 class="bold text-center anim-hero-left">Stylish offline Dating Clubs Worldwide</h2>
 
-select{
-    padding:10px;
-}
+       <div class="row d-flex justify-content-center py-5">
+          
 
-button[type="submit"]{
-    font-size:25px;
-}
+            <div class="col-lg-4 col-12 align-self-center">
+              <img src="./img/hero.webp" style="width: 100%;" class="anim-hero-right ">
+             </div>
+            <div class="col-lg-4 col-12 align-self-center">
+              <img src="./img/couple.jpg" style="width: 100%;" class="anim-hero-right ">
+             </div>
+        
+        <div class="col-lg-4 col-12 align-self-center">
+         <img src="./img/3girls.jpg" style="width: 100%;" class="anim-hero-right">
+        </div>
+      </div>
+      
 
-@media (min-width: 993px)
-{
-  .no-space{
-    padding-left: 0px;
-    padding-right:0px;
-  }
-}
+          <div class="text-center">
+        <p class="bold anim-hero-right mt-3  " style="color: #000;"></p>
+        <h3 class=" anim-hero-left ">For classy, liberal, adventurous and spontaneous people</h3>
+        <p class="bold anim-hero-right mt-3 " style="color: #000;">Who </p>
+        <h3 class=" anim-hero-left mb-3">are all interested in various types of dating arrangements.</h3>
+      </div>
+    </div>
+      </div>
+    <div class="container py-5 ">
+      <h1 class="text-center">
+        <b>Frequently Asked Questions</b>
+      </h1>
 
-@media (max-width: 993px) {
+          <!-- Desktop view -->
 
-  .hero-background{
-  background: rgb(210,232,255);
-  background: -moz-linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  background: linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2e8ff",endColorstr="#2d669d",GradientType=1);  
-}
 
-input{
-  font-size:16px;
-}
+      <div class="d-lg-block d-none">
 
-button[type="submit"]{
-  font-size:20px;
-}
+      <div class="row d-flex justify-content-center py-5">
 
-.hero-img{
-  padding:0px 40px;
-}
-}
+<div class="col-lg-8 col-12">
+ <h3>
+  What type of people join Spice Clubs?
+ </h3>
+ 
+ <p>
+  Classy, Intelligent, Adventurous, Open-minded, Presentable, Respectful, Sociable, and Approachable.
+ </p>
 
-  
+ <p>
+  One never knows who they will meet in a Spice club, but they can be sure they will be interesting.
+ </p>
+
+ <h3>
+  What types of relationships are members looking for?
+ </h3>
+ <p>
+  Who knows, or who cares. Ask fellow members when you join and visit. That’s part of the excitement that keeps it all interesting. In today's world, there is too much calculated online planning, which doesn’t always work out, tends to waste a lot of time, and leaves no room for spontaneity. 
+ </p>
+
+ <h3>
+  What are the clubs common rules?
+ </h3>
+
+ <p>
+  Always be respectful towards other members and staff. Simple as that.
+Never offer anyone sex for money or money for sex.
+Casual business dress code at all times.
+Mobile phones need to be on silent mode, and taking photos/videos is strictly forbidden.
+ </p>
+
+ <h3>
+  Can couples join as members?
+ </h3>
+ <p>
+  Sure. Anyone can join subject to a 10 minute online video interview, as long as they are looking for some type of dating arrangement, and are respectful.
+ </p>
+
+ <h3 >
+  How do you control the quality of members?
+ </h3>
+ <p >
+  Our very friendly staff conduct a 10 minute online video interview with all member applicants, only to find out if they are presentable, have good positive communication skills and have at least conversational English. They do not ask potential member’s about their education, profession or any other questions which have no relevance to us.
+ </p>
+
+ <h3>
+  Can LGBHN members join as members?
+ </h3>
+ <p >
+  Sure. We don’t care what people are, we only care who they are?
+  (By the way LGBHN  is our term for Lesbian, Gay, Bisexual, Hetrosexual, Not sure)</p>
+
+  <h3>
+    Can people offering companionship or massage services join?
+  </h3>
+  <p>
+    That’s like asking can people offering legal or architecture services join. Of course they can, as long as they are not offering sexual services for reward.
+  </p>
+
+  <h3>
+    What age do you have to be to become a member?
+  </h3>
+  <p>
+    22 years or over..
+  </p>
+
+  <h3>
+    What is the cost?
+  </h3>
+  <p>
+    25 Euro Annual Membership fee. (This includes members only online access to a lot of very interesting lifestyle and design content plus access to our club booking system). 
+20 Euro equivalent for any club visit globally, which includes 2 free drinks. 
+  </p>
+  <h3>
+    Do Members have online profiles?
+  </h3>
+  <p>
+    No, but they do login to our app to book a table for any club on any day.
+  </p>
+
+  <h3>
+    What are the opening hours of the clubs?
+  </h3>
+  <p>
+    Spice clubs usually close by 1 am in most locations on weekdays, and all members must enter before 8 pm on any night. Members can however leave a club and return a second time free of charge on any evening. 
+  </p>
+  <h3>
+    Do you keep a gender balance in clubs?
+  </h3>
+  <p>
+    Yes, and when you go to book a table online, you might well see a message saying we don’t have male/female capacity left for the day you selected, but please tick here if you want to be notified of changes on whatsapp. 
+(Members should always click this, because the situation changes very fast, and the message you get will simply say “Birchley”. If you get this message, you will have 15 minutes to take the available space)
+  </p>
+  <h3>
+    Are some of your members married?
+  </h3>
+  <p>
+    None of our business.
+  </p>
+  <h3>
+    Why would people use Spice clubs for dating instead of a dating app?
+  </h3>
+  <p>
+    Many, but not all members use a combination of both, but prefer to meet in person in a Spice club because they are very sociable and safe spaces. All Spice clubs are located so that they are convenient for business, professional and vacation travelers, as well as locals of course.
+  </p>
+  <h3>
+    What are the busiest evenings in Spice Clubs?
+  </h3>
+  <p>
+    Due to the fact that a lot of our members are travelling for one reason or another, most evenings are busy, not like other weekend only clubs.
+  </p>
+  <h3>
+    Can a member invite a guest?
+  </h3>
+  <p>
+    Yes, subject to the receptionists approval upon arrival, but a guest must apply to become a member to enter any club a second time.
+  </p>
+  <h3>
+    What happens when a member enters a Spice club?
+  </h3>
+  <p>
+    If you enter as a solo member, you will be directed to either a bar stool at the counter, or given a table for two.
+Members can tell who is still up for being approached if the small light on their table is on. 
+Simply approach any table with the small light on, and ask the occupant if they would like a drink. If they say yes, sit down with them and they should then turn the small light on their table off for as long as you are happy chatting, or leave the light on if you are both happy to attract other company as well.
+  </p>
+</div>
+
+
+
+<div class="col-lg-4 col-12 img-row align-self-center">
+  <img src="./img/couple1.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+  <img src="./img/ap.jpg" style="width: 100%" class="img-fluid d-block mx-auto">
+  <img src="./img/beach.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+  <img src="./img/classy.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+  <img src="./img/kiss.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+</div>
+        
+      </div>
+
+    </div>
+
+    <!-- Mobile view -->
+    <div class="d-lg-none d-block">
+      <div class="row">
+        <div class="col-12">
+
+          <h3 class="mt-5">
+            What type of people join Spice Clubs?
+           </h3>
+           
+           <p>
+            Classy, Intelligent, Adventurous, Open-minded, Presentable, Respectful, Sociable, and Approachable.
+           </p>
+          
+           <p>
+            One never knows who they will meet in a Spice club, but they can be sure they will be interesting.
+           </p>
+          
+           <h3>
+            What types of relationships are members looking for?
+           </h3>
+           <p>
+            Who knows, or who cares. Ask fellow members when you join and visit. That’s part of the excitement that keeps it all interesting. In today's world, there is too much calculated online planning, which doesn’t always work out, tends to waste a lot of time, and leaves no room for spontaneity. 
+           </p>
+          
+           <h3>
+            What are the clubs common rules?
+           </h3>
+          
+           <p>
+            Always be respectful towards other members and staff. Simple as that.
+          Never offer anyone sex for money or money for sex.
+          Casual business dress code at all times.
+          Mobile phones need to be on silent mode, and taking photos/videos is strictly forbidden.
+           </p>
+
+           <img src="./img/couple.jpg" style="width: 100%" class="img-fluid d-block mx-auto">
+
+          
+           <h3 class="mt-4">
+            Can couples join as members?
+           </h3>
+           <p>
+            Sure. Anyone can join subject to a 10 minute online video interview, as long as they are looking for some type of dating arrangement, and are respectful.
+           </p>
+          
+           <h3 >
+            How do you control the quality of members?
+           </h3>
+           <p >
+            Our very friendly staff conduct a 10 minute online video interview with all member applicants, only to find out if they are presentable, have good positive communication skills and have at least conversational English. They do not ask potential member’s about their education, profession or any other questions which have no relevance to us.
+           </p>
+          
+           <h3>
+            Can LGBHN members join as members?
+           </h3>
+           <p >
+            Sure. We don’t care what people are, we only care who they are?
+            (By the way LGBHN  is our term for Lesbian, Gay, Bisexual, Hetrosexual, Not sure)</p>
+
+            <img src="./img/3girls.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+            <h3 class="mt-4">
+              Can people offering companionship or massage services join?
+            </h3>
+            <p>
+              That’s like asking can people offering legal or architecture services join. Of course they can, as long as they are not offering sexual services for reward.
+            </p>
+          
+            <h3>
+              What age do you have to be to become a member?
+            </h3>
+            <p>
+              22 years or over..
+            </p>
+          
+            <h3>
+              What is the cost?
+            </h3>
+            <p>
+              25 Euro Annual Membership fee. (This includes members only online access to a lot of very interesting lifestyle and design content plus access to our club booking system). 
+          20 Euro equivalent for any club visit globally, which includes 2 free drinks. 
+            </p>
+
+            <img src="./img/couple1.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+            <h3 class="mt-4"> 
+              Do Members have online profiles?
+            </h3>
+            <p>
+              No, but they do login to our app to book a table for any club on any day.
+            </p>
+          
+            <h3>
+              What are the opening hours of the clubs?
+            </h3>
+            <p>
+              Spice clubs usually close by 1 am in most locations on weekdays, and all members must enter before 8 pm on any night. Members can however leave a club and return a second time free of charge on any evening. 
+            </p>
+            <h3>
+              Do you keep a gender balance in clubs?
+            </h3>
+            <p>
+              Yes, and when you go to book a table online, you might well see a message saying we don’t have male/female capacity left for the day you selected, but please tick here if you want to be notified of changes on whatsapp. 
+          (Members should always click this, because the situation changes very fast, and the message you get will simply say “Birchley”. If you get this message, you will have 15 minutes to take the available space)
+            </p>
+
+            <img src="./img/ap.jpg" style="width: 100%" class="img-fluid d-block mx-auto mb-4">
+
+            <img src="./img/beach.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+            <h3 class="mt-4">
+              Are some of your members married?
+            </h3>
+            <p>
+              None of our business.
+            </p>
+            <h3>
+              Why would people use Spice clubs for dating instead of a dating app?
+            </h3>
+            <p>
+              Many, but not all members use a combination of both, but prefer to meet in person in a Spice club because they are very sociable and safe spaces. All Spice clubs are located so that they are convenient for business, professional and vacation travelers, as well as locals of course.
+            </p>
+            <h3>
+              What are the busiest evenings in Spice Clubs?
+            </h3>
+            <p>
+              Due to the fact that a lot of our members are travelling for one reason or another, most evenings are busy, not like other weekend only clubs.
+            </p>
+
+
+            <img src="./img/classy.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+
+            <h3 class="mt-4">
+              Can a member invite a guest?
+            </h3>
+            <p>
+              Yes, subject to the receptionists approval upon arrival, but a guest must apply to become a member to enter any club a second time.
+            </p>
+
+            <img src="./img/kiss.jpg" style="width: 100%" class="img-fluid d-block mx-auto ">
+
+
+            <h3 class="mt-4">
+              What happens when a member enters a Spice club?
+            </h3>
+            <p>
+              If you enter as a solo member, you will be directed to either a bar stool at the counter, or given a table for two.
+          Members can tell who is still up for being approached if the small light on their table is on. 
+          Simply approach any table with the small light on, and ask the occupant if they would like a drink. If they say yes, sit down with them and they should then turn the small light on their table off for as long as you are happy chatting, or leave the light on if you are both happy to attract other company as well.
+            </p>
+
+            
+
+
+        </div>
+      </div>
+    </div>
+
+      <div class="row py-5">
+        <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+          <img src="./img/jetskinew.jpg" style="width: 100%" class="img-fluid d-block mx-auto">
+        </div>
+        <div class="col-lg-4 col-12 mb-lg-0 mb-3">
+          <img src="./img/lesbnew1.png" style="width: 100%" class="img-fluid d-block mx-auto sp-width">
+        </div>
+        <div class="col-lg-4 col-12">
+          <img src="./img/snow.jpg" style="width: 100%" class="img-fluid d-block mx-auto">
+        </div>
+      </div>
+        
+    </div>
+             
+
+
+    <div class="container py-5">
+      <h1 class="mb-0 text-center">Blog Posts</h1>
+
+      
+
+      <div class="row my-5 bg-white ">
+        <div class="col-lg-7 col-12 align-self-center">
+          
+          <div class="py-3 px-3">
+           <p class="">
+            <b>We are two best friends, Kate and Samantha</b>, who visit our local Spice club in Birmingham at least a few times per week over the past couple of months, and it has completely changed our lives.</p>
+
+          <p>We were sick of messing around on our phones at home on our own, and every time we go to the Spice Club, we always bump into very interesting people who are all looking for something different.</p> 
+
+           <p class="mb-0">Some of the laughs we have had would kill an elephant, and it never costs us much for a night out.</p>
+           </p>
+           <a href="news.html">
+           <button class="more">Read More</button></a>
+          </div>
+           
+      </div>
+        <div class="col-lg-5 col-12 no-space align-self-center">
+          <img src="./img/lesbian.jpg" class="img-fluid d-block me-0">
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8 col-12">
+          <div class="row my-5 bg-white ">
+            <div class="col-lg-7 col-12 align-self-center">
+              
+              <div class="py-3 px-3">
+               <p class="">
+                <b>I am Garry from Ireland</b>, and I am always travelling worldwide for business purposes.</p>
+    
+              <p>The biggest challenge is what to do in the evenings, because the choices anywhere are limited between having a few drinks in the hotel bar on your own, or trying to find a local pub or club, but you also end up sitting on your own in most cases, watching groups of local friends enjoying themselves.</p> 
+    
+               <p class="mb-0">Since I have discovered the Spice Club chain of venues, it has made travelling 100 times more colourful and interesting.</p>
+               </p>
+               <a href="news.html">
+                <button class="more">Read More</button></a>
+              </div>
+               
+          </div>
+            <div class="col-lg-5 col-12 no-space align-self-center">
+              <img src="./img/garry.jpg" class="img-fluid d-block me-0">
+            </div>
+          </div>
+          <div class="row my-5 bg-white ">
+            <div class="col-lg-7 col-12 align-self-center">
+              
+              <div class="py-3 px-3">
+               <p class="">
+                <b>I am Lisa from Bucharest</b>, and as a young architect who was struggling with my living expenses, I decided to see if I could make a few Euro offering companion services in my local Spice Club a few months ago.</p>
+    
+              <p>I always made it very clear to others that I was not offering sexual services, but the funny thing is that a lot of those I met were so hot I was very happy to end up making out with them anyway, but of my own free will only at all times, which had nothing to do with any agreed companionship arrangement.</p> 
+    
+               <p class="mb-0">Then something I never expected happened. I fell in love!</p>
+               </p>
+               <a href="news.html">
+                <button class="more">Read More</button></a>
+              </div>
+               
+          </div>
+            <div class="col-lg-5 col-12 no-space align-self-center">
+              <img src="./img/lisa.jpg" class="img-fluid d-block me-0">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid py-5">
+      <h1 class="text-center">
+        <b>Meet our Management Team</b>
+      </h1>
+
+      <div class="row d-flex justify-content-center gap-2 overflow-hidden mx-lg-0 mx-4 pt-5 pb-2">
+           <div class="col-lg-2 px-0 white-bg2  col-12">
+            <img src="./img/avt1.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Barry Murphy <br> Founder, CEO and bottle washer!</b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2  col-12">
+            <img src="./img/avt5.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Irina Dukes<br>
+              Chief architect</b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2  col-12">
+            <img src="./img/avt3.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>David Timmons <br>
+              Head of franchise licencing
+              </b>
+           </p>
+          </div>
+          <div class="col-lg-2 px-0 white-bg2 col-12">
+            <img src="./img/avt7.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+           
+           <p class="mb-0 p-2 text-center">
+            <b>Valentine Wynne<br>
+              CITO
+              </b>
+           </p>
+          </div>
+
+          
+      </div>
+
+      <div class="row d-flex justify-content-center gap-2 overflow-hidden mx-lg-0 mx-4 pt-5 pb-2">
+        <div class="col-lg-2 px-0 white-bg2   col-12">
+          <img src="./img/avt2.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Mike Sullivan <br>
+            CMO
+            </b>
+         </p>
+        </div>
+        <div class="col-lg-2 px-0 white-bg2 col-12">
+          <img src="./img/avt4.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Arnold Day <br>
+            CLO</b>
+         </p>
+        </div>
+        <div class="col-lg-2 px-0 white-bg2  col-12">
+          <img src="./img/avt6.jpg" class="avt-img d-block mx-auto"style="width: 100%;">
+         
+         <p class="mb-0 p-2 text-center">
+          <b>Susan Dunne <br>
+            CFO</b>
+         </p>
+        </div>
+   </div>
+    </div>
+
+    <div class="container py-5">
+      <h2>The message of Spice Clubs is very simple for those interested in any type of dating relationship/arrangement.</h2>
+      <div class="py-4"></div>
+      <h2>Forget about messing around wasting time online at home on your own, and enjoy your time meeting real interesting people in person.</h2>
+    </div>
+    <footer>
+      <div class="container py-5 text-white text-center">
+        <div class="row">
+          <div class="col-lg-4 col-12">
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="news.html">Members News</a></li>
+              <li><a href="design.html">Designs</a></li>
+              <li><a href="location.html">Club Locations</a></li>
+              <li><a href="open.html">Open Your own Spice Club</a></li>
+              <li><a href="book.html">Make a booking</a></li>
+              <li><a href="join.html">Become a member</a></li>
+              <li><a href="login.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-12 align-self-center">
+            <ul>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="privacy.html">Privacy Policy</a></li>
+              <li><a href="cookie.html">Cookie Policy</a></li>
+              <li><a href="terms.html">Terms and Conditions</a></li>
+            </ul>
+          </div>
+        
+          <div class="col-lg-4 col-12 align-self-center">
+            <img src="./img/fb.png" class="social-img d-block mx-auto" >
+            <img src="./img/insta.png" class="social-img d-block mx-auto">   
+            <img src="./img/tw.png" class="social-img d-block mx-auto" >         
+            <img src="./img/ytb.png" class="social-img d-block mx-auto" >
+            <img src="./img/pin.png" class="social-img d-block mx-auto">
+          </div>
+        </div>
+        <p class="mt-5 text-center">
+          Copyright spiceclubsdating.com
+        </p>
+      </div>
+      
+    </footer>
+    <script src="functions.js"></script>
+
+</body>
+</html>
