@@ -1121,11 +1121,7 @@ button[type="submit"]{
 @media (max-width: 993px) {
 
   .hero-background{
-  background: rgb(210,232,255);
-  background: -moz-linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  background: linear-gradient(180deg, rgba(210,232,255,1) 60%, rgba(45,102,157,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d2e8ff",endColorstr="#2d669d",GradientType=1);  
+  background: rgb(210, 232, 255); 
 }
 
 input{
