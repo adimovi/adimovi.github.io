@@ -85,7 +85,7 @@ var footer_bar = document.createRange().createContextualFragment(
       </div>
     </div>
     <p class="mt-5 text-center">
-      Copyright asiacompanionrelocations.com
+      Copyright <a href="index.html">asiacompanionrelocations.com</a>
     </p>
   </div>
   
