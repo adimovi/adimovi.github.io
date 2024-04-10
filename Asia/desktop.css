@@ -68,7 +68,7 @@ p.bigger{
 
 .nav-link{
     color:#000;
-    margin-right: 25px;
+    margin: 0px 50px;
     font-weight: 500;
     transition: 0.5s;
 }
