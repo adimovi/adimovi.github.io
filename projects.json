@@ -36,5 +36,19 @@
       "Javascript",
       "Figma"
     ]
+  },
+  {
+    "id": 1774786463806,
+    "title": "Athletic Hub",
+    "url": "https://athletichub.ro",
+    "image": "https://thefrontdev.ro/img/ahub.png",
+    "tags": [
+      "Wordpress",
+      "Learnpress",
+      "Woocommerce",
+      "CSS",
+      "PHP",
+      "Javascript"
+    ]
   }
 ]
