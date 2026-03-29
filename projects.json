@@ -63,5 +63,17 @@
       "PHP",
       "CSS"
     ]
+  },
+  {
+    "id": 1774786581499,
+    "title": "Dubai Vampires",
+    "url": "https://dubaivampires.com",
+    "image": "https://thefrontdev.ro/img/dubai.png",
+    "tags": [
+      "Wordpress",
+      "CSS",
+      "Javascript",
+      "Elementor Pro"
+    ]
   }
 ]
