@@ -1,37 +1,47 @@
 [
   {
-    "id": 1,
-    "title": "Pipe Medic Website",
-    "url": "https://www.pipemedicwichita.com/",
-    "image": "https://thefrontdev.ro/img/pipe1.png",
-    "tags": ["WordPress", "Figma", "CSS"]
-  },
-  {
     "id": 2,
     "title": "Affiliate Website",
     "url": "https://www.revenueriver.net/",
     "image": "https://thefrontdev.ro/img/rr1.png",
-    "tags": ["WordPress", "Elementor"]
+    "tags": [
+      "WordPress",
+      "Elementor"
+    ]
   },
   {
     "id": 3,
     "title": "SEO Agency Website",
     "url": "https://www.thefrontdev.ro/bboosters",
     "image": "https://thefrontdev.ro/img/seo1.png",
-    "tags": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ]
   },
   {
     "id": 4,
     "title": "ZIP Cash App",
     "url": "https://usezipcash.com/",
     "image": "https://thefrontdev.ro/img/zip1.png",
-    "tags": ["WordPress", "Astra", "Elementor"]
+    "tags": [
+      "WordPress",
+      "Astra",
+      "Elementor"
+    ]
   },
   {
     "id": 5,
     "title": "SNpad Roadmap",
     "url": "https://sale.snp.network/roadmap/",
     "image": "https://thefrontdev.ro/img/snp1.png",
-    "tags": ["HTML", "CSS", "JavaScript", "JSON"]
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "JSON"
+    ]
   }
 ]
