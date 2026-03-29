@@ -370,23 +370,40 @@
     justify-content: space-between;
     margin-bottom: 20px;
   }
-
-  .inf-track-wrap {
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  .proj-nav {
+    display: flex;
+    gap: 8px;
+    align-items: center;
   }
-  .inf-track {
+  .proj-arrow {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s, border-color .2s, transform .15s, opacity .2s;
+    flex-shrink: 0;
+  }
+  .proj-arrow:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    transform: scale(1.08);
+  }
+  .proj-arrow:active { transform: scale(.95); }
+  .proj-arrow:disabled { opacity: .3; cursor: not-allowed; transform: none; background: var(--surface2); border-color: var(--border); color: var(--text); }
+
+  .proj-viewport {
+    overflow: hidden;
+    border-radius: 14px;
+  }
+  .proj-track {
     display: flex;
     gap: 14px;
-    width: max-content;
-    animation: hscroll 22s linear infinite;
+    transition: transform .45s cubic-bezier(.25,.8,.25,1);
     will-change: transform;
-  }
-  .inf-track:hover { animation-play-state: paused; }
-  @keyframes hscroll {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
   }
   .proj-card {
     background: var(--surface2);
@@ -396,7 +413,7 @@
     transition: border-color .3s, transform .3s;
     cursor: pointer;
     flex-shrink: 0;
-    width: 280px;
+    width: calc(25% - 11px);
     text-decoration: none;
     color: inherit;
   }
@@ -414,9 +431,7 @@
     pointer-events: none;
   }
   .proj-card:hover img { filter: grayscale(0); }
-  .proj-info {
-    padding: 14px;
-  }
+  .proj-info { padding: 14px; }
   .proj-info .title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 14px;
@@ -428,6 +443,27 @@
     color: var(--muted);
     font-family: 'DM Mono', monospace;
   }
+  .proj-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 18px;
+  }
+  .proj-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background .3s, transform .3s;
+  }
+  .proj-dot.active {
+    background: var(--accent);
+    transform: scale(1.5);
+  }
+  @media (max-width: 900px) { .proj-card { width: calc(50% - 7px); } }
+  @media (max-width: 600px) { .proj-card { width: 100%; } }
 
   /* ── EXPERIENCE ─────────────────────────── */
   .card-exp {
@@ -1001,16 +1037,21 @@
   <!-- PORTFOLIO -->
   <div class="card card-portfolio col-12">
     <div class="tag">Work</div>
-    <h2 style="margin-bottom:20px">Selected projects</h2>
-
-    <div class="inf-track-wrap" id="projectsTrackWrap">
-      <div class="inf-track" id="projectsTrack">
-        <div class="proj-card" style="background:var(--surface2);border:1px solid var(--border);opacity:.4">
-          <div style="width:100%;aspect-ratio:16/10;background:var(--border)"></div>
-          <div class="proj-info"><div class="title">Loading...</div></div>
-        </div>
+    <div class="portfolio-header">
+      <h2>Selected projects</h2>
+      <div class="proj-nav">
+        <button class="proj-arrow" id="projPrev" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="proj-arrow" id="projNext" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
+    <div class="proj-viewport">
+      <div class="proj-track" id="projectsTrack"></div>
+    </div>
+    <div class="proj-dots" id="projDots"></div>
   </div>
 
   <!-- SKILLS -->
@@ -1426,10 +1467,20 @@
     setTimeout(tick, 600);
   })();
 
-  // ── LOAD PROJECTS FROM JSON ───────────────
+  // ── PROJECTS CAROUSEL ─────────────────────
   (function () {
-    const track = document.getElementById('projectsTrack');
-    const wrap  = document.getElementById('projectsTrackWrap');
+    const track   = document.getElementById('projectsTrack');
+    const dotsEl  = document.getElementById('projDots');
+    const prevBtn = document.getElementById('projPrev');
+    const nextBtn = document.getElementById('projNext');
+    let projects  = [];
+    let current   = 0;
+
+    function perView() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 900) return 2;
+      return 4;
+    }
 
     function cardHTML(p) {
       const tags = (p.tags || []).join(' · ');
@@ -1442,20 +1493,59 @@
       </a>`;
     }
 
+    function cardWidth() {
+      const first = track.querySelector('.proj-card');
+      return first ? first.offsetWidth + 14 : 0;
+    }
+
+    function maxIndex() {
+      return Math.max(0, projects.length - perView());
+    }
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, maxIndex()));
+      track.style.transform = `translateX(-${current * cardWidth()}px)`;
+      prevBtn.disabled = current === 0;
+      nextBtn.disabled = current >= maxIndex();
+      dotsEl.querySelectorAll('.proj-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function buildDots() {
+      dotsEl.innerHTML = '';
+      const count = maxIndex() + 1;
+      for (let i = 0; i < count; i++) {
+        const d = document.createElement('button');
+        d.className = 'proj-dot' + (i === 0 ? ' active' : '');
+        d.addEventListener('click', () => goTo(i));
+        dotsEl.appendChild(d);
+      }
+    }
+
+    function render() {
+      track.innerHTML = projects.map(cardHTML).join('');
+      buildDots();
+      goTo(0);
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+    window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxIndex())); });
+
+    // touch / swipe
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const delta = e.changedTouches[0].clientX - startX;
+      if (Math.abs(delta) > 50) goTo(delta < 0 ? current + 1 : current - 1);
+    });
+
     fetch('/projects.json?v=' + Date.now())
-      .then(r => { if (!r.ok) throw new Error('not found'); return r.json(); })
-      .then(projects => {
-        if (!projects.length) return;
-        // render original + clone for seamless loop
-        const html = projects.map(cardHTML).join('');
-        track.innerHTML = html + html;
-        // recalculate animation duration based on number of cards
-        const duration = Math.max(15, projects.length * 4) + 's';
-        track.style.animationDuration = duration;
-      })
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(data => { projects = data; render(); })
       .catch(() => {
-        // fallback: keep skeleton or show message
-        track.innerHTML = `<div style="color:var(--muted);font-size:13px;padding:20px">Could not load projects.json</div>`;
+        track.innerHTML = `<p style="color:var(--muted);font-size:13px">Could not load projects.json</p>`;
       });
   })();
 
