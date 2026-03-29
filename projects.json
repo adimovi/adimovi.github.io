@@ -50,5 +50,18 @@
       "PHP",
       "Javascript"
     ]
+  },
+  {
+    "id": 1774786526027,
+    "title": "Noria Atelier",
+    "url": "https://noriaatelier.ro",
+    "image": "https://thefrontdev.ro/img/noria.png",
+    "tags": [
+      "Wordpress",
+      "Elementor Pro",
+      "Woocommerce",
+      "PHP",
+      "CSS"
+    ]
   }
 ]
