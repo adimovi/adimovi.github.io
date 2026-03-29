@@ -21,5 +21,20 @@
       "JavaScript",
       "JSON"
     ]
+  },
+  {
+    "id": 1774786290715,
+    "title": "Mo-haus Shop",
+    "url": "https://mo-haus.ro",
+    "image": "https://thefrontdev.ro/img/mo-haus.png",
+    "tags": [
+      "Wordrpess",
+      "WooCommerce",
+      "Elementor",
+      "PHP",
+      "CSS",
+      "Javascript",
+      "Figma"
+    ]
   }
 ]
