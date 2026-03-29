@@ -1,15 +1,5 @@
 [
   {
-    "id": 2,
-    "title": "Affiliate Website",
-    "url": "https://www.revenueriver.net/",
-    "image": "https://thefrontdev.ro/img/rr1.png",
-    "tags": [
-      "WordPress",
-      "Elementor"
-    ]
-  },
-  {
     "id": 3,
     "title": "SEO Agency Website",
     "url": "https://www.thefrontdev.ro/bboosters",
