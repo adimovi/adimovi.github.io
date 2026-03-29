@@ -1,17 +1,5 @@
 [
   {
-    "id": 3,
-    "title": "SEO Agency Website",
-    "url": "https://www.thefrontdev.ro/bboosters",
-    "image": "https://thefrontdev.ro/img/seo1.png",
-    "tags": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Bootstrap"
-    ]
-  },
-  {
     "id": 4,
     "title": "ZIP Cash App",
     "url": "https://usezipcash.com/",
