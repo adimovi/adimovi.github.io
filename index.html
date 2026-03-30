@@ -1217,52 +1217,7 @@
 
     <div class="tcarousel-viewport" id="tViewport">
       <div class="tcarousel-track" id="tTrack">
-
-        <div class="testimonial-item">
-          <blockquote>"Adrian delivered a <em>clean, fast landing page</em> that exceeded our expectations. He communicated clearly and handled every revision with professionalism."</blockquote>
-          <div class="testimonial-meta">
-            <div class="testimonial-avatar">JD</div>
-            <div>
-              <div class="testimonial-name">John D.</div>
-              <div class="testimonial-role">Pipe Medic · Wichita, US</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-item">
-          <blockquote>"Great attention to detail and <em>mobile responsiveness</em>. The site looks polished on every device. Would definitely work with Adrian again."</blockquote>
-          <div class="testimonial-meta">
-            <div class="testimonial-avatar">SM</div>
-            <div>
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-role">Revenue River · Affiliate Marketing</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- clones for seamless loop -->
-        <div class="testimonial-item">
-          <blockquote>"Adrian delivered a <em>clean, fast landing page</em> that exceeded our expectations. He communicated clearly and handled every revision with professionalism."</blockquote>
-          <div class="testimonial-meta">
-            <div class="testimonial-avatar">JD</div>
-            <div>
-              <div class="testimonial-name">John D.</div>
-              <div class="testimonial-role">Pipe Medic · Wichita, US</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-item">
-          <blockquote>"Great attention to detail and <em>mobile responsiveness</em>. The site looks polished on every device. Would definitely work with Adrian again."</blockquote>
-          <div class="testimonial-meta">
-            <div class="testimonial-avatar">SM</div>
-            <div>
-              <div class="testimonial-name">Sarah M.</div>
-              <div class="testimonial-role">Revenue River · Affiliate Marketing</div>
-            </div>
-          </div>
-        </div>
-
+        <!-- loaded dynamically from testimonials.json -->
       </div>
     </div>
   </div>
@@ -1465,6 +1420,33 @@
       }
     }
     setTimeout(tick, 600);
+  })();
+
+  // ── LOAD TESTIMONIALS FROM JSON ───────────
+  (function () {
+    const track = document.getElementById('tTrack');
+
+    function cardHTML(t) {
+      return `<div class="testimonial-item">
+        <blockquote>"${t.quote}"</blockquote>
+        <div class="testimonial-meta">
+          <div class="testimonial-avatar">${t.initials}</div>
+          <div>
+            <div class="testimonial-name">${t.name}</div>
+            <div class="testimonial-role">${t.role}</div>
+          </div>
+        </div>
+      </div>`;
+    }
+
+    fetch('/testimonials.json?v=' + Date.now())
+      .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+      .then(data => {
+        if (!data.length) return;
+        const html = data.map(cardHTML).join('');
+        track.innerHTML = html + html; // original + clone for seamless loop
+      })
+      .catch(() => {});
   })();
 
   // ── PROJECTS CAROUSEL ─────────────────────
