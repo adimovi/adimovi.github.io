@@ -3,299 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Portfolio Projects</title>
+<title>Admin — Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0d0d;
-    --surface: #141414;
-    --surface2: #1a1a1a;
-    --border: #252525;
-    --accent: #E8622A;
-    --text: #f0ede8;
-    --muted: #888;
-    --success: #4ade80;
-    --error: #f87171;
-    --radius: 14px;
+    --bg: #0d0d0d; --surface: #141414; --surface2: #1a1a1a;
+    --border: #252525; --accent: #E8622A; --text: #f0ede8;
+    --muted: #888; --success: #4ade80; --error: #f87171; --radius: 14px;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     background-image:
       radial-gradient(ellipse 70% 40% at 10% 0%, rgba(232,98,42,.15) 0%, transparent 60%),
       radial-gradient(ellipse 50% 30% at 90% 100%, rgba(232,98,42,.1) 0%, transparent 55%);
-    color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    min-height: 100vh;
+    color: var(--text); font-family: 'Space Grotesk', sans-serif; min-height: 100vh;
   }
+  .shell { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
 
-  /* ── LAYOUT ── */
-  .shell {
-    display: grid;
-    grid-template-columns: 260px 1fr;
-    min-height: 100vh;
-  }
-
-  /* ── SIDEBAR ── */
   .sidebar {
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    padding: 32px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
+    background: var(--surface); border-right: 1px solid var(--border);
+    padding: 32px 24px; display: flex; flex-direction: column; gap: 28px;
+    position: sticky; top: 0; height: 100vh; overflow-y: auto;
   }
-  .sidebar-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .sidebar-logo .dot {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    background: var(--accent);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    flex-shrink: 0;
-  }
-  .sidebar-logo span {
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  .sidebar-logo small {
-    display: block;
-    font-size: 11px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-  .sidebar nav {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 12px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--muted);
-    cursor: pointer;
-    transition: background .2s, color .2s;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo .dot { width: 32px; height: 32px; border-radius: 8px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .logo span { font-size: 15px; font-weight: 700; }
+  .logo small { display: block; font-size: 11px; color: var(--muted); font-family: 'DM Mono', monospace; }
+
+  .nav-section { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; padding: 0 4px; margin-bottom: 4px; margin-top: 8px; }
+  nav { display: flex; flex-direction: column; gap: 2px; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; font-size: 14px; font-weight: 500; color: var(--muted); cursor: pointer; transition: background .2s, color .2s; border: none; background: none; width: 100%; text-align: left; }
   .nav-item:hover { background: var(--surface2); color: var(--text); }
   .nav-item.active { background: rgba(232,98,42,.15); color: var(--accent); }
-  .nav-item svg { flex-shrink: 0; }
+  .sidebar-footer { margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 8px; font-size: 12px; font-family: 'DM Mono', monospace; color: var(--muted); }
+  .conn-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); flex-shrink: 0; }
 
-  .sidebar-footer {
-    margin-top: auto;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-  }
-  .token-status {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-  }
-  .token-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--error);
-    flex-shrink: 0;
-  }
-  .token-dot.ok { background: var(--success); }
-
-  /* ── MAIN ── */
-  main {
-    padding: 40px;
-    max-width: 900px;
-  }
-
+  main { padding: 40px; max-width: 920px; }
   .page { display: none; }
   .page.active { display: block; }
+  .page-header { margin-bottom: 32px; }
+  .page-header h1 { font-size: 28px; font-weight: 700; margin-bottom: 6px; }
+  .page-header p { font-size: 14px; color: var(--muted); }
 
-  .page-header {
-    margin-bottom: 32px;
-  }
-  .page-header h1 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 6px;
-  }
-  .page-header p {
-    font-size: 14px;
-    color: var(--muted);
-  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; margin-bottom: 20px; }
+  .card-title { font-size: 16px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .badge { background: rgba(232,98,42,.15); color: var(--accent); border-radius: 6px; padding: 2px 8px; font-size: 12px; font-family: 'DM Mono', monospace; }
 
-  /* ── CARD ── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 28px;
-    margin-bottom: 20px;
-  }
-  .card h2 {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .card h2 span {
-    background: rgba(232,98,42,.15);
-    color: var(--accent);
-    border-radius: 6px;
-    padding: 2px 8px;
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-  }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+  .stat-num { font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+  .stat-lbl { font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace; }
 
-  /* ── FORM ── */
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .form-group.full { grid-column: span 2; }
-  .form-group label {
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-  }
-  .form-group label .req { color: var(--accent); }
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 11px 14px;
-    color: var(--text);
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: border-color .2s;
-    resize: none;
-    width: 100%;
-  }
-  .form-group input:focus,
-  .form-group textarea:focus,
-  .form-group select:focus { border-color: var(--accent); }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: var(--muted); opacity: .5; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .fg { display: flex; flex-direction: column; gap: 8px; }
+  .fg.full { grid-column: span 2; }
+  .fg label { font-size: 11px; font-weight: 600; color: var(--muted); font-family: 'DM Mono', monospace; text-transform: uppercase; letter-spacing: .05em; }
+  .fg label .req { color: var(--accent); }
+  .fg input, .fg textarea, .fg select { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 11px 14px; color: var(--text); font-family: 'Space Grotesk', sans-serif; font-size: 14px; outline: none; transition: border-color .2s; resize: none; width: 100%; }
+  .fg input:focus, .fg textarea:focus { border-color: var(--accent); }
+  .fg input::placeholder, .fg textarea::placeholder { color: var(--muted); opacity: .5; }
 
-  /* tags input */
-  .tags-wrap {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 8px 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    align-items: center;
-    transition: border-color .2s;
-    cursor: text;
-  }
+  .tags-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; transition: border-color .2s; cursor: text; }
   .tags-wrap:focus-within { border-color: var(--accent); }
-  .tag-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: rgba(232,98,42,.15);
-    color: var(--accent);
-    border-radius: 6px;
-    padding: 3px 8px;
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-  }
-  .tag-pill button {
-    background: none;
-    border: none;
-    color: inherit;
-    cursor: pointer;
-    padding: 0;
-    font-size: 14px;
-    line-height: 1;
-    opacity: .6;
-  }
+  .tag-pill { display: inline-flex; align-items: center; gap: 5px; background: rgba(232,98,42,.15); color: var(--accent); border-radius: 6px; padding: 3px 8px; font-size: 12px; font-family: 'DM Mono', monospace; font-weight: 500; }
+  .tag-pill button { background: none; border: none; color: inherit; cursor: pointer; padding: 0; font-size: 14px; line-height: 1; opacity: .6; }
   .tag-pill button:hover { opacity: 1; }
-  .tags-input {
-    background: none !important;
-    border: none !important;
-    padding: 3px 4px !important;
-    outline: none;
-    color: var(--text);
-    font-size: 13px;
-    flex: 1;
-    min-width: 80px;
-  }
+  .tags-input { background: none !important; border: none !important; padding: 3px 4px !important; outline: none; color: var(--text); font-size: 13px; flex: 1; min-width: 80px; }
 
-  /* image preview */
-  .img-preview {
-    width: 100%;
-    height: 140px;
-    border: 1px dashed var(--border);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--muted);
-    font-size: 13px;
-    overflow: hidden;
-    background: var(--surface2);
-    margin-top: 8px;
-  }
-  .img-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
-  }
+  .img-preview { width: 100%; height: 140px; border: 1px dashed var(--border); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; overflow: hidden; background: var(--surface2); }
+  .img-preview img { width: 100%; height: 100%; object-fit: cover; display: none; }
 
-  /* ── BUTTONS ── */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 22px;
-    border-radius: 100px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    border: none;
-    transition: transform .2s cubic-bezier(.34,1.56,.64,1), opacity .2s;
-  }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 22px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; border: none; transition: transform .2s cubic-bezier(.34,1.56,.64,1), opacity .2s; }
   .btn:hover { transform: scale(1.04) translateY(-1px); }
   .btn:active { transform: scale(.97); }
   .btn-primary { background: var(--accent); color: #fff; }
@@ -303,323 +83,173 @@
   .btn-danger { background: rgba(248,113,113,.15); color: var(--error); border: 1px solid rgba(248,113,113,.2); }
   .btn-sm { padding: 7px 14px; font-size: 12px; }
   .btn:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+  .form-actions { display: flex; gap: 10px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
 
-  .form-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 24px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-  }
+  .item-list { display: flex; flex-direction: column; gap: 12px; }
+  .item-row { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; gap: 16px; transition: border-color .2s; }
+  .item-row:hover { border-color: #333; }
+  .item-thumb { width: 72px; height: 46px; border-radius: 8px; object-fit: cover; background: var(--border); flex-shrink: 0; }
+  .item-avatar { width: 46px; height: 46px; border-radius: 50%; background: rgba(232,98,42,.15); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+  .item-info { flex: 1; min-width: 0; }
+  .item-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .item-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .item-tag { font-size: 10px; font-family: 'DM Mono', monospace; background: rgba(232,98,42,.12); color: var(--accent); border-radius: 4px; padding: 2px 6px; }
+  .item-actions { display: flex; gap: 8px; flex-shrink: 0; }
 
-  /* ── TOAST ── */
-  .toast {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity .3s, transform .3s;
-    z-index: 999;
-    max-width: 340px;
-  }
-  .toast.show { opacity: 1; transform: translateY(0); }
-  .toast.success { border-color: rgba(74,222,128,.3); color: var(--success); }
-  .toast.error { border-color: rgba(248,113,113,.3); color: var(--error); }
-  .toast-icon { font-size: 18px; flex-shrink: 0; }
+  .empty-state { text-align: center; padding: 48px 20px; color: var(--muted); }
+  .empty-state p { font-size: 14px; margin-top: 12px; }
 
-  /* ── PROJECT LIST ── */
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .project-row {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    transition: border-color .2s;
-  }
-  .project-row:hover { border-color: #333; }
-  .project-thumb {
-    width: 72px;
-    height: 46px;
-    border-radius: 8px;
-    object-fit: cover;
-    background: var(--border);
-    flex-shrink: 0;
-  }
-  .project-info { flex: 1; min-width: 0; }
-  .project-title {
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .project-tag {
-    font-size: 10px;
-    font-family: 'DM Mono', monospace;
-    background: rgba(232,98,42,.12);
-    color: var(--accent);
-    border-radius: 4px;
-    padding: 2px 6px;
-  }
-  .project-actions { display: flex; gap: 8px; flex-shrink: 0; }
-
-  .empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--muted);
-  }
-  .empty-state svg { margin-bottom: 16px; opacity: .3; }
-  .empty-state p { font-size: 14px; }
-
-  /* ── SETTINGS ── */
-  .setting-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-  }
+  .setting-row { display: flex; align-items: flex-start; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); }
   .setting-row:last-child { border-bottom: none; }
   .setting-info { flex: 1; }
   .setting-info strong { font-size: 14px; font-weight: 600; display: block; margin-bottom: 4px; }
-  .setting-info small { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .setting-control { flex-shrink: 0; width: 260px; }
-  .setting-control input {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 10px 14px;
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    outline: none;
-    width: 100%;
-    transition: border-color .2s;
-  }
-  .setting-control input:focus { border-color: var(--accent); }
-  .setting-control input[type="password"] { letter-spacing: .1em; }
+  .setting-info small { font-size: 12px; color: var(--muted); line-height: 1.6; }
+  .setting-control { flex-shrink: 0; width: 240px; }
+  .setting-control input { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; color: var(--text); font-family: 'DM Mono', monospace; font-size: 13px; outline: none; width: 100%; }
 
-  /* ── STATS ── */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 20px 24px;
-  }
-  .stat-card .num {
-    font-size: 36px;
-    font-weight: 700;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-card .lbl {
-    font-size: 12px;
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-  }
-
-  /* ── SPINNER ── */
-  .spinner {
-    width: 16px; height: 16px;
-    border: 2px solid rgba(255,255,255,.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin .7s linear infinite;
-    flex-shrink: 0;
-  }
+  .spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; flex-shrink: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── EDIT MODAL ── */
-  .modal-overlay {
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,.75);
-    backdrop-filter: blur(6px);
-    z-index: 100;
-    display: flex; align-items: center; justify-content: center;
-    padding: 20px;
-    opacity: 0; pointer-events: none;
-    transition: opacity .3s;
-  }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.75); backdrop-filter: blur(6px); z-index: 100; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity .3s; }
   .modal-overlay.active { opacity: 1; pointer-events: all; }
-  .modal-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 32px;
-    width: 100%; max-width: 600px;
-    transform: translateY(20px);
-    transition: transform .3s cubic-bezier(.25,.8,.25,1);
-    position: relative;
-  }
+  .modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; width: 100%; max-width: 620px; transform: translateY(20px); transition: transform .3s cubic-bezier(.25,.8,.25,1); position: relative; }
   .modal-overlay.active .modal-box { transform: translateY(0); }
-  .modal-close {
-    position: absolute; top: 16px; right: 16px;
-    width: 32px; height: 32px;
-    border-radius: 50%; border: 1px solid var(--border);
-    background: var(--surface2); color: var(--muted);
-    cursor: pointer; display: flex; align-items: center; justify-content: center;
-    transition: border-color .2s, color .2s;
-  }
+  .modal-close { position: absolute; top: 16px; right: 16px; width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color .2s, color .2s; }
   .modal-close:hover { border-color: var(--accent); color: var(--accent); }
   .modal-box h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+  .toast { position: fixed; bottom: 28px; right: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 20px; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 10px; opacity: 0; transform: translateY(12px); transition: opacity .3s, transform .3s; z-index: 999; max-width: 340px; }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.success { border-color: rgba(74,222,128,.3); color: var(--success); }
+  .toast.error { border-color: rgba(248,113,113,.3); color: var(--error); }
 </style>
 </head>
 <body>
 
 <div class="shell">
-
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="sidebar-logo">
+    <div class="logo">
       <div class="dot">A</div>
-      <div>
-        <span>Portfolio Admin</span>
-        <small>adimovi.github.io</small>
-      </div>
+      <div><span>Portfolio Admin</span><small>thefrontdev.ro</small></div>
     </div>
-
     <nav>
+      <div class="nav-section">Overview</div>
       <button class="nav-item active" data-page="dashboard">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        Dashboard
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard
       </button>
+      <div class="nav-section">Projects</div>
       <button class="nav-item" data-page="projects">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        Projects
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>All Projects
       </button>
-      <button class="nav-item" data-page="add">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-        Add Project
+      <button class="nav-item" data-page="add-project">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Add Project
       </button>
+      <div class="nav-section">Testimonials</div>
+      <button class="nav-item" data-page="testimonials">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>All Testimonials
+      </button>
+      <button class="nav-item" data-page="add-testimonial">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="10" y1="11" x2="14" y2="11"/></svg>Add Testimonial
+      </button>
+      <div class="nav-section">System</div>
       <button class="nav-item" data-page="settings">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
-        Settings
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>Settings
       </button>
     </nav>
-
     <div class="sidebar-footer">
-      <div class="token-status">
-        <div class="token-dot ok" id="tokenDot"></div>
-        <span id="tokenLabel" style="color:var(--muted)">Connected to GitHub</span>
-      </div>
+      <div class="conn-dot"></div>
+      Connected via CF Proxy
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main>
 
     <!-- DASHBOARD -->
     <div class="page active" id="page-dashboard">
-      <div class="page-header">
-        <h1>Dashboard</h1>
-        <p>Overview of your portfolio projects.</p>
-      </div>
-
+      <div class="page-header"><h1>Dashboard</h1><p>Overview of your portfolio content.</p></div>
       <div class="stats-grid">
-        <div class="stat-card">
-          <div class="num" id="statTotal">—</div>
-          <div class="lbl">Total projects</div>
-        </div>
-        <div class="stat-card">
-          <div class="num" id="statTags">—</div>
-          <div class="lbl">Unique tags</div>
-        </div>
-        <div class="stat-card">
-          <div class="num" id="statLast">—</div>
-          <div class="lbl">Last updated</div>
-        </div>
+        <div class="stat-card"><div class="stat-num" id="statP">—</div><div class="stat-lbl">Projects</div></div>
+        <div class="stat-card"><div class="stat-num" id="statT">—</div><div class="stat-lbl">Testimonials</div></div>
+        <div class="stat-card"><div class="stat-num" id="statTags">—</div><div class="stat-lbl">Unique tags</div></div>
+        <div class="stat-card"><div class="stat-num" id="statAll">—</div><div class="stat-lbl">Total items</div></div>
       </div>
-
       <div class="card">
-        <h2>Recent projects</h2>
-        <div class="project-list" id="dashRecent"></div>
+        <div class="card-title">Recent projects</div>
+        <div class="item-list" id="dashProjects"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Recent testimonials</div>
+        <div class="item-list" id="dashTestimonials"></div>
       </div>
     </div>
 
-    <!-- PROJECTS -->
+    <!-- PROJECTS LIST -->
     <div class="page" id="page-projects">
-      <div class="page-header">
-        <h1>All Projects</h1>
-        <p>Manage your portfolio projects. Changes are saved directly to GitHub.</p>
-      </div>
+      <div class="page-header"><h1>All Projects</h1><p>Manage your portfolio projects.</p></div>
       <div class="card">
-        <h2>Projects <span id="projectCount">0</span></h2>
-        <div class="project-list" id="projectList"></div>
+        <div class="card-title">Projects <span class="badge" id="pCount">0</span></div>
+        <div class="item-list" id="projectList"></div>
       </div>
     </div>
 
     <!-- ADD PROJECT -->
-    <div class="page" id="page-add">
-      <div class="page-header">
-        <h1>Add Project</h1>
-        <p>Fill in the details below. The project will be saved to your GitHub repo.</p>
-      </div>
+    <div class="page" id="page-add-project">
+      <div class="page-header"><h1>Add Project</h1><p>Saves directly to GitHub — live on your site after CF Pages redeploys (~30s).</p></div>
       <div class="card">
-        <h2>Project details</h2>
-        <form id="addForm">
+        <div class="card-title">Project details</div>
+        <form id="addProjectForm">
           <div class="form-grid">
-            <div class="form-group full">
-              <label>Title <span class="req">*</span></label>
-              <input type="text" id="f-title" placeholder="My Awesome Project" required>
-            </div>
-            <div class="form-group">
-              <label>Project URL <span class="req">*</span></label>
-              <input type="url" id="f-url" placeholder="https://example.com" required>
-            </div>
-            <div class="form-group">
-              <label>Image URL <span class="req">*</span></label>
-              <input type="url" id="f-img" placeholder="https://..." required>
-            </div>
-            <div class="form-group full">
-              <label>Image preview</label>
-              <div class="img-preview" id="imgPreview">
-                <span>Enter an image URL above to preview</span>
-                <img id="previewImg" alt="preview">
-              </div>
-            </div>
-            <div class="form-group full">
-              <label>Tags <span style="opacity:.5;font-weight:400">(press Enter or comma to add)</span></label>
-              <div class="tags-wrap" id="tagsWrap">
-                <input class="tags-input" id="tagsInput" placeholder="WordPress, CSS, JS...">
-              </div>
+            <div class="fg full"><label>Title <span class="req">*</span></label><input type="text" id="p-title" placeholder="My Awesome Project" required></div>
+            <div class="fg"><label>Project URL <span class="req">*</span></label><input type="url" id="p-url" placeholder="https://example.com" required></div>
+            <div class="fg"><label>Image URL <span class="req">*</span></label><input type="url" id="p-img" placeholder="https://..." required></div>
+            <div class="fg full"><label>Image preview</label><div class="img-preview" id="imgPreview"><span>Enter an image URL to preview</span><img id="previewImg" alt="preview"></div></div>
+            <div class="fg full">
+              <label>Tags <span style="opacity:.5;font-weight:400">(Enter or comma to add)</span></label>
+              <div class="tags-wrap" id="pTagsWrap"><input class="tags-input" id="pTagsInput" placeholder="WordPress, CSS, JS..."></div>
             </div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" id="saveBtn">
+            <button type="submit" class="btn btn-primary" id="saveProjBtn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
               Save to GitHub
             </button>
-            <button type="button" class="btn btn-ghost" onclick="resetForm()">Clear</button>
+            <button type="button" class="btn btn-ghost" onclick="resetProjForm()">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS LIST -->
+    <div class="page" id="page-testimonials">
+      <div class="page-header"><h1>All Testimonials</h1><p>Manage client testimonials shown on your portfolio.</p></div>
+      <div class="card">
+        <div class="card-title">Testimonials <span class="badge" id="tCount">0</span></div>
+        <div class="item-list" id="testimonialList"></div>
+      </div>
+    </div>
+
+    <!-- ADD TESTIMONIAL -->
+    <div class="page" id="page-add-testimonial">
+      <div class="page-header"><h1>Add Testimonial</h1><p>Appears in the auto-scrolling section on your portfolio.</p></div>
+      <div class="card">
+        <div class="card-title">Testimonial details</div>
+        <form id="addTestimonialForm">
+          <div class="form-grid">
+            <div class="fg"><label>Client name <span class="req">*</span></label><input type="text" id="t-name" placeholder="John D." required></div>
+            <div class="fg"><label>Role / Company <span class="req">*</span></label><input type="text" id="t-role" placeholder="Pipe Medic · Wichita, US" required></div>
+            <div class="fg"><label>Initials <span class="req">*</span></label><input type="text" id="t-initials" placeholder="JD" maxlength="3" required></div>
+            <div class="fg full">
+              <label>Quote <span class="req">*</span></label>
+              <textarea id="t-quote" rows="4" placeholder='Write the testimonial. Wrap highlights in &lt;em&gt; tags, e.g. "Adrian delivered a &lt;em&gt;clean, fast page&lt;/em&gt; that exceeded expectations."' required></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="saveTestBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              Save to GitHub
+            </button>
+            <button type="button" class="btn btn-ghost" onclick="document.getElementById('addTestimonialForm').reset()">Clear</button>
           </div>
         </form>
       </div>
@@ -627,51 +257,31 @@
 
     <!-- SETTINGS -->
     <div class="page" id="page-settings">
-      <div class="page-header">
-        <h1>Settings</h1>
-        <p>Configure your GitHub connection. Token is stored only in your browser.</p>
+      <div class="page-header"><h1>Settings</h1><p>System info and danger zone.</p></div>
+      <div class="card">
+        <div class="card-title">Connection</div>
+        <div class="setting-row">
+          <div class="setting-info"><strong>API Proxy</strong><small>All GitHub requests route through <code>/api/projects</code> — a Cloudflare Pages Function. Your token lives as a CF environment variable and is never sent to the browser.</small></div>
+          <div class="setting-control"><input value="/api/projects" readonly style="opacity:.5"></div>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><strong>Repository</strong></div>
+          <div class="setting-control"><input value="adimovi/adimovi.github.io" readonly style="opacity:.5"></div>
+        </div>
+        <div class="setting-row">
+          <div class="setting-info"><strong>Branch</strong></div>
+          <div class="setting-control"><input value="main" readonly style="opacity:.5"></div>
+        </div>
       </div>
       <div class="card">
-        <h2>GitHub connection</h2>
+        <div class="card-title">Danger zone</div>
         <div class="setting-row">
-          <div class="setting-info">
-            <strong>Personal Access Token</strong>
-            <small>Token is hardcoded in this file and protected by Cloudflare Access. No action needed.</small>
-          </div>
-          <div class="setting-control">
-            <input type="text" value="••••••••••••••••••••" readonly style="opacity:.4;letter-spacing:.1em">
-          </div>
+          <div class="setting-info"><strong>Reset projects.json</strong><small>Overwrites with an empty array. Cannot be undone.</small></div>
+          <div class="setting-control"><button class="btn btn-danger btn-sm" onclick="resetFile('projects.json','Projects')">Reset projects</button></div>
         </div>
         <div class="setting-row">
-          <div class="setting-info">
-            <strong>Repository</strong>
-            <small>The repo where projects.json will be stored.</small>
-          </div>
-          <div class="setting-control">
-            <input type="text" value="adimovi/adimovi.github.io" readonly style="opacity:.5">
-          </div>
-        </div>
-        <div class="setting-row">
-          <div class="setting-info">
-            <strong>Branch</strong>
-            <small>Branch to commit changes to.</small>
-          </div>
-          <div class="setting-control">
-            <input type="text" value="main" readonly style="opacity:.5">
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Danger zone</h2>
-        <div class="setting-row">
-          <div class="setting-info">
-            <strong>Reset projects.json</strong>
-            <small>Overwrites projects.json on GitHub with an empty array. Cannot be undone.</small>
-          </div>
-          <div class="setting-control">
-            <button class="btn btn-danger btn-sm" id="resetJson">Reset projects.json</button>
-          </div>
+          <div class="setting-info"><strong>Reset testimonials.json</strong><small>Overwrites with an empty array. Cannot be undone.</small></div>
+          <div class="setting-control"><button class="btn btn-danger btn-sm" onclick="resetFile('testimonials.json','Testimonials')">Reset testimonials</button></div>
         </div>
       </div>
     </div>
@@ -679,79 +289,66 @@
   </main>
 </div>
 
-<!-- EDIT MODAL -->
-<div class="modal-overlay" id="editModal">
+<!-- EDIT PROJECT MODAL -->
+<div class="modal-overlay" id="editProjModal">
   <div class="modal-box">
-    <button class="modal-close" id="closeEdit">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-    </button>
+    <button class="modal-close" onclick="closeModal('editProjModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     <h2>Edit Project</h2>
     <div class="form-grid">
-      <div class="form-group full">
-        <label>Title</label>
-        <input type="text" id="e-title">
-      </div>
-      <div class="form-group">
-        <label>Project URL</label>
-        <input type="url" id="e-url">
-      </div>
-      <div class="form-group">
-        <label>Image URL</label>
-        <input type="url" id="e-img">
-      </div>
-      <div class="form-group full">
-        <label>Tags</label>
-        <div class="tags-wrap" id="eTagsWrap">
-          <input class="tags-input" id="eTagsInput" placeholder="WordPress, CSS...">
-        </div>
-      </div>
+      <div class="fg full"><label>Title</label><input type="text" id="ep-title"></div>
+      <div class="fg"><label>Project URL</label><input type="url" id="ep-url"></div>
+      <div class="fg"><label>Image URL</label><input type="url" id="ep-img"></div>
+      <div class="fg full"><label>Tags</label><div class="tags-wrap" id="epTagsWrap"><input class="tags-input" id="epTagsInput" placeholder="WordPress, CSS..."></div></div>
     </div>
     <div class="form-actions">
-      <button class="btn btn-primary" id="saveEdit">Save changes</button>
-      <button class="btn btn-ghost" id="cancelEdit">Cancel</button>
+      <button class="btn btn-primary" id="saveEP">Save changes</button>
+      <button class="btn btn-ghost" onclick="closeModal('editProjModal')">Cancel</button>
     </div>
   </div>
 </div>
 
-<!-- TOAST -->
-<div class="toast" id="toast">
-  <span class="toast-icon" id="toastIcon"></span>
-  <span id="toastMsg"></span>
+<!-- EDIT TESTIMONIAL MODAL -->
+<div class="modal-overlay" id="editTestModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('editTestModal')"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <h2>Edit Testimonial</h2>
+    <div class="form-grid">
+      <div class="fg"><label>Name</label><input type="text" id="et-name"></div>
+      <div class="fg"><label>Role / Company</label><input type="text" id="et-role"></div>
+      <div class="fg"><label>Initials</label><input type="text" id="et-initials" maxlength="3"></div>
+      <div class="fg full"><label>Quote</label><textarea id="et-quote" rows="4"></textarea></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" id="saveET">Save changes</button>
+      <button class="btn btn-ghost" onclick="closeModal('editTestModal')">Cancel</button>
+    </div>
+  </div>
 </div>
 
+<div class="toast" id="toast"><span id="toastIcon"></span><span id="toastMsg"></span></div>
+
 <script>
-const REPO  = 'adimovi/adimovi.github.io';
-const BRANCH = 'main';
-const FILE  = 'projects.json';
+const API = '/api/projects';
+let projects = [], testimonials = [], pSHA = null, tSHA = null;
+let editPI = -1, editTI = -1, pTags = [], epTags = [];
 
-// ── STATE ────────────────────────────────────
-let projects = [];
-let editIndex = -1;
-let addTags   = [];
-let editTags  = [];
-let fileSHA   = null;
-
-// ── INIT ─────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  loadToken();
-  fetchProjects();
   setupNav();
-  setupAddForm();
-  setupEditModal();
-  setupSettings();
-  setupTagInput('tagsInput', 'tagsWrap', () => addTags, t => addTags = t);
-  setupTagInput('eTagsInput', 'eTagsWrap', () => editTags, t => editTags = t);
+  setupTagInput('pTagsInput', 'pTagsWrap', () => pTags, v => pTags = v);
+  setupTagInput('epTagsInput', 'epTagsWrap', () => epTags, v => epTags = v);
+  document.getElementById('p-img').addEventListener('input', e => {
+    const img = document.getElementById('previewImg'), sp = document.getElementById('imgPreview').querySelector('span');
+    if (e.target.value) { img.src = e.target.value; img.style.display = 'block'; sp.style.display = 'none'; }
+    else { img.style.display = 'none'; sp.style.display = ''; }
+  });
+  document.getElementById('addProjectForm').addEventListener('submit', submitProject);
+  document.getElementById('addTestimonialForm').addEventListener('submit', submitTestimonial);
+  document.getElementById('saveEP').addEventListener('click', saveEditProject);
+  document.getElementById('saveET').addEventListener('click', saveEditTestimonial);
+  document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('active'); }));
+  fetchAll();
 });
 
-// ── TOKEN ─────────────────────────────────────
-function getToken() { return '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'; }
-function loadToken() { updateTokenStatus(true); }
-function updateTokenStatus(ok) {
-  document.getElementById('tokenDot').className = 'token-dot' + (ok ? ' ok' : '');
-  document.getElementById('tokenLabel').textContent = ok ? 'Token saved' : 'No token set';
-}
-
-// ── NAV ───────────────────────────────────────
 function setupNav() {
   document.querySelectorAll('.nav-item').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -759,252 +356,221 @@ function setupNav() {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('page-' + btn.dataset.page).classList.add('active');
-      if (btn.dataset.page === 'projects') renderProjects();
-      if (btn.dataset.page === 'dashboard') renderDashboard();
     });
   });
 }
 
-// ── GITHUB API ────────────────────────────────
-async function ghFetch(path, opts = {}) {
-  const token = getToken();
-  if (!token) { toast('No token set — go to Settings first', 'error'); throw new Error('no token'); }
-  const res = await fetch(`https://api.github.com/repos/${REPO}/contents/${path}`, {
-    ...opts,
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Accept': 'application/vnd.github+json',
-      'Content-Type': 'application/json',
-      ...(opts.headers || {})
-    }
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || res.statusText);
-  }
-  return res.json();
+async function apiFetch(file, method = 'GET', body = null) {
+  const opts = { method, headers: { 'Content-Type': 'application/json' } };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(`${API}?file=${file}`, opts);
+  const data = await res.json();
+  if (data.error) throw new Error(data.error);
+  return data;
 }
 
-async function fetchProjects() {
+async function loadFile(file) {
+  const data = await apiFetch(file);
+  return { content: JSON.parse(atob(data.content.replace(/\n/g, ''))), sha: data.sha };
+}
+
+async function saveFile(file, content, sha, message) {
+  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2))));
+  const data = await apiFetch(file, 'PUT', { content: encoded, sha, message });
+  return data.sha;
+}
+
+async function fetchAll() {
   try {
-    const data = await ghFetch(FILE);
-    fileSHA  = data.sha;
-    projects = JSON.parse(atob(data.content.replace(/\n/g, '')));
-  } catch (e) {
-    if (e.message && e.message.includes('Not Found')) {
-      projects = [];
-      fileSHA  = null;
-    }
-  }
-  renderDashboard();
-  renderProjects();
+    const [p, t] = await Promise.all([loadFile('projects.json'), loadFile('testimonials.json')]);
+    projects = p.content; pSHA = p.sha;
+    testimonials = t.content; tSHA = t.sha;
+  } catch(e) { toast('Error loading: ' + e.message, 'error'); }
+  renderAll();
 }
 
-async function saveProjects(msg = 'Update projects.json') {
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(projects, null, 2))));
-  const body = { message: msg, content, branch: BRANCH };
-  if (fileSHA) body.sha = fileSHA;
-  const data = await ghFetch(FILE, { method: 'PUT', body: JSON.stringify(body) });
-  fileSHA = data.content.sha;
+function renderAll() {
+  const tags = new Set(projects.flatMap(p => p.tags || []));
+  document.getElementById('statP').textContent    = projects.length;
+  document.getElementById('statT').textContent    = testimonials.length;
+  document.getElementById('statTags').textContent = tags.size;
+  document.getElementById('statAll').textContent  = projects.length + testimonials.length;
+  document.getElementById('pCount').textContent   = projects.length;
+  document.getElementById('tCount').textContent   = testimonials.length;
+
+  const dp = document.getElementById('dashProjects');
+  dp.innerHTML = projects.length ? [...projects].reverse().slice(0,3).map((p,i) => projRowHTML(p, projects.length-1-i, true)).join('') : emptyHTML();
+
+  const dt = document.getElementById('dashTestimonials');
+  dt.innerHTML = testimonials.length ? [...testimonials].reverse().slice(0,3).map((t,i) => testRowHTML(t, testimonials.length-1-i, true)).join('') : emptyHTML();
+
+  const pl = document.getElementById('projectList');
+  pl.innerHTML = projects.length ? [...projects].reverse().map((p,i) => projRowHTML(p, projects.length-1-i)).join('') : emptyHTML('No projects yet.');
+  bindBtns(pl);
+
+  const tl = document.getElementById('testimonialList');
+  tl.innerHTML = testimonials.length ? [...testimonials].reverse().map((t,i) => testRowHTML(t, testimonials.length-1-i)).join('') : emptyHTML('No testimonials yet.');
+  bindBtns(tl);
 }
 
-// ── RENDER DASHBOARD ──────────────────────────
-function renderDashboard() {
-  document.getElementById('statTotal').textContent = projects.length;
-  const allTags = new Set(projects.flatMap(p => p.tags || []));
-  document.getElementById('statTags').textContent = allTags.size;
-  document.getElementById('statLast').textContent = projects.length ? 'Today' : '—';
-  const recent = projects.slice(-3).reverse();
-  const el = document.getElementById('dashRecent');
-  el.innerHTML = recent.length ? recent.map(projectRowHTML).join('') : emptyHTML();
-}
-
-// ── RENDER PROJECTS ───────────────────────────
-function renderProjects() {
-  document.getElementById('projectCount').textContent = projects.length;
-  const el = document.getElementById('projectList');
-  el.innerHTML = projects.length
-    ? [...projects].reverse().map((p, i) => projectRowHTML(p, projects.length - 1 - i)).join('')
-    : emptyHTML();
-  el.querySelectorAll('.edit-btn').forEach(b => b.addEventListener('click', () => openEdit(+b.dataset.i)));
-  el.querySelectorAll('.del-btn').forEach(b => b.addEventListener('click', () => deleteProject(+b.dataset.i)));
-}
-
-function projectRowHTML(p, i) {
-  return `
-  <div class="project-row">
-    <img class="project-thumb" src="${p.image}" alt="${p.title}" onerror="this.style.opacity='.2'">
-    <div class="project-info">
-      <div class="project-title">${p.title}</div>
-      <div class="project-tags">${(p.tags||[]).map(t => `<span class="project-tag">${t}</span>`).join('')}</div>
-    </div>
-    <div class="project-actions">
-      <button class="btn btn-ghost btn-sm edit-btn" data-i="${i}">Edit</button>
-      <button class="btn btn-danger btn-sm del-btn" data-i="${i}">Delete</button>
-    </div>
+function projRowHTML(p, i, compact = false) {
+  const tags = (p.tags||[]).map(t => `<span class="item-tag">${t}</span>`).join('');
+  return `<div class="item-row">
+    <img class="item-thumb" src="${p.image}" alt="${p.title}" onerror="this.style.opacity='.2'">
+    <div class="item-info"><div class="item-title">${p.title}</div><div class="item-tags">${tags}</div></div>
+    ${!compact ? `<div class="item-actions">
+      <button class="btn btn-ghost btn-sm" data-type="proj" data-i="${i}">Edit</button>
+      <button class="btn btn-danger btn-sm" data-type="proj-del" data-i="${i}">Delete</button>
+    </div>` : ''}
   </div>`;
 }
 
-function emptyHTML() {
-  return `<div class="empty-state">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-    <p>No projects yet. Add your first one!</p>
+function testRowHTML(t, i, compact = false) {
+  return `<div class="item-row">
+    <div class="item-avatar">${t.initials}</div>
+    <div class="item-info"><div class="item-title">${t.name}</div><div class="item-sub">${t.role}</div></div>
+    ${!compact ? `<div class="item-actions">
+      <button class="btn btn-ghost btn-sm" data-type="test" data-i="${i}">Edit</button>
+      <button class="btn btn-danger btn-sm" data-type="test-del" data-i="${i}">Delete</button>
+    </div>` : ''}
   </div>`;
 }
 
-// ── ADD FORM ──────────────────────────────────
-function setupAddForm() {
-  document.getElementById('f-img').addEventListener('input', e => {
-    const img = document.getElementById('previewImg');
-    const wrap = document.getElementById('imgPreview');
-    if (e.target.value) {
-      img.src = e.target.value;
-      img.style.display = 'block';
-      wrap.querySelector('span').style.display = 'none';
-    } else {
-      img.style.display = 'none';
-      wrap.querySelector('span').style.display = '';
-    }
-  });
-
-  document.getElementById('addForm').addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = document.getElementById('saveBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<div class="spinner"></div> Saving...';
-    try {
-      projects.push({
-        id: Date.now(),
-        title: document.getElementById('f-title').value.trim(),
-        url: document.getElementById('f-url').value.trim(),
-        image: document.getElementById('f-img').value.trim(),
-        tags: [...addTags]
-      });
-      await saveProjects(`Add project: ${document.getElementById('f-title').value}`);
-      toast('Project saved to GitHub! ✓', 'success');
-      resetForm();
-      renderDashboard();
-    } catch (err) {
-      toast('Error: ' + err.message, 'error');
-      projects.pop();
-    } finally {
-      btn.disabled = false;
-      btn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Save to GitHub';
-    }
+function bindBtns(el) {
+  el.querySelectorAll('[data-type]').forEach(b => {
+    b.addEventListener('click', () => {
+      const i = +b.dataset.i;
+      if (b.dataset.type === 'proj')     openEditProj(i);
+      if (b.dataset.type === 'proj-del') deleteProj(i);
+      if (b.dataset.type === 'test')     openEditTest(i);
+      if (b.dataset.type === 'test-del') deleteTest(i);
+    });
   });
 }
 
-function resetForm() {
-  document.getElementById('addForm').reset();
-  addTags = [];
-  document.getElementById('tagsWrap').querySelectorAll('.tag-pill').forEach(t => t.remove());
+function emptyHTML(msg = 'Nothing here yet.') {
+  return `<div class="empty-state"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><p>${msg}</p></div>`;
+}
+
+async function submitProject(e) {
+  e.preventDefault();
+  const btn = document.getElementById('saveProjBtn');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Saving...';
+  const title = document.getElementById('p-title').value.trim();
+  try {
+    projects.push({ id: Date.now(), title, url: document.getElementById('p-url').value.trim(), image: document.getElementById('p-img').value.trim(), tags: [...pTags] });
+    pSHA = await saveFile('projects.json', projects, pSHA, `Add project: ${title}`);
+    toast('Project saved ✓', 'success');
+    resetProjForm(); renderAll();
+  } catch(err) { toast('Error: ' + err.message, 'error'); projects.pop(); }
+  finally { btn.disabled = false; btn.innerHTML = 'Save to GitHub'; }
+}
+
+function resetProjForm() {
+  document.getElementById('addProjectForm').reset();
+  pTags = [];
+  document.getElementById('pTagsWrap').querySelectorAll('.tag-pill').forEach(t => t.remove());
   document.getElementById('previewImg').style.display = 'none';
   document.getElementById('imgPreview').querySelector('span').style.display = '';
 }
 
-// ── EDIT MODAL ────────────────────────────────
-function setupEditModal() {
-  document.getElementById('closeEdit').addEventListener('click', closeEdit);
-  document.getElementById('cancelEdit').addEventListener('click', closeEdit);
-  document.getElementById('editModal').addEventListener('click', e => { if (e.target === document.getElementById('editModal')) closeEdit(); });
-  document.getElementById('saveEdit').addEventListener('click', saveEdit);
+async function submitTestimonial(e) {
+  e.preventDefault();
+  const btn = document.getElementById('saveTestBtn');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Saving...';
+  const name = document.getElementById('t-name').value.trim();
+  try {
+    testimonials.push({ id: Date.now(), name, role: document.getElementById('t-role').value.trim(), initials: document.getElementById('t-initials').value.trim().toUpperCase(), quote: document.getElementById('t-quote').value.trim() });
+    tSHA = await saveFile('testimonials.json', testimonials, tSHA, `Add testimonial: ${name}`);
+    toast('Testimonial saved ✓', 'success');
+    document.getElementById('addTestimonialForm').reset(); renderAll();
+  } catch(err) { toast('Error: ' + err.message, 'error'); testimonials.pop(); }
+  finally { btn.disabled = false; btn.innerHTML = 'Save to GitHub'; }
 }
 
-function openEdit(i) {
-  editIndex = i;
-  const p = projects[i];
-  document.getElementById('e-title').value = p.title;
-  document.getElementById('e-url').value = p.url;
-  document.getElementById('e-img').value = p.image;
-  editTags = [...(p.tags || [])];
-  const wrap = document.getElementById('eTagsWrap');
+function openEditProj(i) {
+  editPI = i; const p = projects[i];
+  document.getElementById('ep-title').value = p.title;
+  document.getElementById('ep-url').value   = p.url;
+  document.getElementById('ep-img').value   = p.image;
+  epTags = [...(p.tags||[])];
+  const wrap = document.getElementById('epTagsWrap');
   wrap.querySelectorAll('.tag-pill').forEach(t => t.remove());
-  editTags.forEach(t => addTagPill(t, 'eTagsWrap', () => editTags, v => editTags = v));
-  document.getElementById('editModal').classList.add('active');
+  epTags.forEach(t => addTagPill(t, 'epTagsWrap', () => epTags, v => epTags = v));
+  document.getElementById('editProjModal').classList.add('active');
 }
 
-function closeEdit() {
-  document.getElementById('editModal').classList.remove('active');
-  editIndex = -1;
-}
-
-async function saveEdit() {
-  if (editIndex < 0) return;
-  const btn = document.getElementById('saveEdit');
-  btn.disabled = true;
-  btn.innerHTML = '<div class="spinner"></div> Saving...';
+async function saveEditProject() {
+  if (editPI < 0) return;
+  const btn = document.getElementById('saveEP');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Saving...';
   try {
-    projects[editIndex] = {
-      ...projects[editIndex],
-      title: document.getElementById('e-title').value.trim(),
-      url:   document.getElementById('e-url').value.trim(),
-      image: document.getElementById('e-img').value.trim(),
-      tags:  [...editTags]
-    };
-    await saveProjects(`Edit project: ${projects[editIndex].title}`);
+    projects[editPI] = { ...projects[editPI], title: document.getElementById('ep-title').value.trim(), url: document.getElementById('ep-url').value.trim(), image: document.getElementById('ep-img').value.trim(), tags: [...epTags] };
+    pSHA = await saveFile('projects.json', projects, pSHA, `Edit project: ${projects[editPI].title}`);
     toast('Project updated ✓', 'success');
-    closeEdit();
-    renderProjects();
-    renderDashboard();
-  } catch (err) {
-    toast('Error: ' + err.message, 'error');
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Save changes';
-  }
+    closeModal('editProjModal'); renderAll();
+  } catch(err) { toast('Error: ' + err.message, 'error'); }
+  finally { btn.disabled = false; btn.textContent = 'Save changes'; }
 }
 
-async function deleteProject(i) {
-  if (!confirm(`Delete "${projects[i].title}"? This cannot be undone.`)) return;
-  const removed = projects.splice(i, 1);
+async function deleteProj(i) {
+  if (!confirm(`Delete "${projects[i].title}"?`)) return;
+  const r = projects.splice(i, 1);
+  try { pSHA = await saveFile('projects.json', projects, pSHA, `Delete project: ${r[0].title}`); toast('Deleted ✓', 'success'); renderAll(); }
+  catch(err) { toast('Error: ' + err.message, 'error'); projects.splice(i, 0, r[0]); }
+}
+
+function openEditTest(i) {
+  editTI = i; const t = testimonials[i];
+  document.getElementById('et-name').value     = t.name;
+  document.getElementById('et-role').value     = t.role;
+  document.getElementById('et-initials').value = t.initials;
+  document.getElementById('et-quote').value    = t.quote;
+  document.getElementById('editTestModal').classList.add('active');
+}
+
+async function saveEditTestimonial() {
+  if (editTI < 0) return;
+  const btn = document.getElementById('saveET');
+  btn.disabled = true; btn.innerHTML = '<div class="spinner"></div> Saving...';
   try {
-    await saveProjects(`Delete project: ${removed[0].title}`);
-    toast('Project deleted', 'success');
-    renderProjects();
-    renderDashboard();
-  } catch (err) {
-    toast('Error: ' + err.message, 'error');
-    projects.splice(i, 0, removed[0]);
-  }
+    testimonials[editTI] = { ...testimonials[editTI], name: document.getElementById('et-name').value.trim(), role: document.getElementById('et-role').value.trim(), initials: document.getElementById('et-initials').value.trim().toUpperCase(), quote: document.getElementById('et-quote').value.trim() };
+    tSHA = await saveFile('testimonials.json', testimonials, tSHA, `Edit testimonial: ${testimonials[editTI].name}`);
+    toast('Testimonial updated ✓', 'success');
+    closeModal('editTestModal'); renderAll();
+  } catch(err) { toast('Error: ' + err.message, 'error'); }
+  finally { btn.disabled = false; btn.textContent = 'Save changes'; }
 }
 
-// ── SETTINGS ─────────────────────────────────
-function setupSettings() {
-
-  document.getElementById('resetJson').addEventListener('click', async () => {
-    if (!confirm('This will reset projects.json to an empty array. Are you sure?')) return;
-    projects = [];
-    try {
-      await saveProjects('Reset projects.json');
-      toast('projects.json reset ✓', 'success');
-      renderDashboard();
-      renderProjects();
-    } catch (err) {
-      toast('Error: ' + err.message, 'error');
-    }
-  });
+async function deleteTest(i) {
+  if (!confirm(`Delete testimonial from "${testimonials[i].name}"?`)) return;
+  const r = testimonials.splice(i, 1);
+  try { tSHA = await saveFile('testimonials.json', testimonials, tSHA, `Delete testimonial: ${r[0].name}`); toast('Deleted ✓', 'success'); renderAll(); }
+  catch(err) { toast('Error: ' + err.message, 'error'); testimonials.splice(i, 0, r[0]); }
 }
 
-// ── TAGS ──────────────────────────────────────
+async function resetFile(file, label) {
+  if (!confirm(`Reset ${label}? Cannot be undone.`)) return;
+  try {
+    if (file === 'projects.json') { projects = []; pSHA = await saveFile(file, [], pSHA, `Reset ${file}`); }
+    else { testimonials = []; tSHA = await saveFile(file, [], tSHA, `Reset ${file}`); }
+    toast(`${label} reset ✓`, 'success'); renderAll();
+  } catch(err) { toast('Error: ' + err.message, 'error'); }
+}
+
+function closeModal(id) { document.getElementById(id).classList.remove('active'); editPI = editTI = -1; }
+
 function setupTagInput(inputId, wrapId, getArr, setArr) {
   const input = document.getElementById(inputId);
   input.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ',') {
       e.preventDefault();
-      const val = input.value.replace(',', '').trim();
-      if (val && !getArr().includes(val)) {
-        setArr([...getArr(), val]);
-        addTagPill(val, wrapId, getArr, setArr);
-      }
+      const val = input.value.replace(',','').trim();
+      if (val && !getArr().includes(val)) { setArr([...getArr(), val]); addTagPill(val, wrapId, getArr, setArr); }
       input.value = '';
     } else if (e.key === 'Backspace' && !input.value) {
       const arr = getArr();
-      if (arr.length) {
-        const last = arr[arr.length - 1];
-        setArr(arr.slice(0, -1));
-        const pills = document.getElementById(wrapId).querySelectorAll('.tag-pill');
-        if (pills.length) pills[pills.length - 1].remove();
-      }
+      if (arr.length) { setArr(arr.slice(0,-1)); const pills = document.getElementById(wrapId).querySelectorAll('.tag-pill'); if (pills.length) pills[pills.length-1].remove(); }
     }
   });
   document.getElementById(wrapId).addEventListener('click', () => input.focus());
@@ -1015,20 +581,14 @@ function addTagPill(val, wrapId, getArr, setArr) {
   const pill = document.createElement('div');
   pill.className = 'tag-pill';
   pill.innerHTML = `${val}<button type="button">×</button>`;
-  pill.querySelector('button').addEventListener('click', () => {
-    setArr(getArr().filter(t => t !== val));
-    pill.remove();
-  });
+  pill.querySelector('button').addEventListener('click', () => { setArr(getArr().filter(t => t !== val)); pill.remove(); });
   wrap.insertBefore(pill, wrap.querySelector('.tags-input'));
 }
 
-// ── TOAST ─────────────────────────────────────
 function toast(msg, type = 'success') {
-  const el   = document.getElementById('toast');
-  const icon = document.getElementById('toastIcon');
-  const txt  = document.getElementById('toastMsg');
-  icon.textContent = type === 'success' ? '✓' : '✕';
-  txt.textContent  = msg;
+  const el = document.getElementById('toast');
+  document.getElementById('toastIcon').textContent = type === 'success' ? '✓' : '✕';
+  document.getElementById('toastMsg').textContent  = msg;
   el.className = `toast ${type} show`;
   clearTimeout(el._t);
   el._t = setTimeout(() => el.classList.remove('show'), 3500);
