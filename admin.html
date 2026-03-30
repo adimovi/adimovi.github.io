@@ -529,8 +529,8 @@
 
     <div class="sidebar-footer">
       <div class="token-status">
-        <div class="token-dot" id="tokenDot"></div>
-        <span id="tokenLabel" style="color:var(--muted)">No token set</span>
+        <div class="token-dot ok" id="tokenDot"></div>
+        <span id="tokenLabel" style="color:var(--muted)">Connected to GitHub</span>
       </div>
     </div>
   </aside>
@@ -636,10 +636,10 @@
         <div class="setting-row">
           <div class="setting-info">
             <strong>Personal Access Token</strong>
-            <small>Generate one at GitHub → Settings → Developer Settings → Personal access tokens → Fine-grained. Give it <em>Contents: Read & Write</em> permission on your repo.</small>
+            <small>Token is hardcoded in this file and protected by Cloudflare Access. No action needed.</small>
           </div>
           <div class="setting-control">
-            <input type="password" id="tokenInput" placeholder="github_pat_...">
+            <input type="text" value="••••••••••••••••••••" readonly style="opacity:.4;letter-spacing:.1em">
           </div>
         </div>
         <div class="setting-row">
@@ -659,10 +659,6 @@
           <div class="setting-control">
             <input type="text" value="main" readonly style="opacity:.5">
           </div>
-        </div>
-        <div class="form-actions">
-          <button class="btn btn-primary" id="saveToken">Save Token</button>
-          <button class="btn btn-danger btn-sm" id="clearToken">Clear Token</button>
         </div>
       </div>
 
@@ -748,12 +744,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ── TOKEN ─────────────────────────────────────
-function getToken() { return localStorage.getItem('gh_token') || ''; }
-function loadToken() {
-  const t = getToken();
-  document.getElementById('tokenInput').value = t;
-  updateTokenStatus(!!t);
-}
+function getToken() { return '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'; }
+function loadToken() { updateTokenStatus(true); }
 function updateTokenStatus(ok) {
   document.getElementById('tokenDot').className = 'token-dot' + (ok ? ' ok' : '');
   document.getElementById('tokenLabel').textContent = ok ? 'Token saved' : 'No token set';
@@ -978,20 +970,6 @@ async function deleteProject(i) {
 
 // ── SETTINGS ─────────────────────────────────
 function setupSettings() {
-  document.getElementById('saveToken').addEventListener('click', () => {
-    const t = document.getElementById('tokenInput').value.trim();
-    localStorage.setItem('gh_token', t);
-    updateTokenStatus(!!t);
-    toast(t ? 'Token saved ✓' : 'Token cleared', t ? 'success' : 'error');
-    if (t) fetchProjects();
-  });
-
-  document.getElementById('clearToken').addEventListener('click', () => {
-    localStorage.removeItem('gh_token');
-    document.getElementById('tokenInput').value = '';
-    updateTokenStatus(false);
-    toast('Token cleared', 'error');
-  });
 
   document.getElementById('resetJson').addEventListener('click', async () => {
     if (!confirm('This will reset projects.json to an empty array. Are you sure?')) return;
