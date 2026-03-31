@@ -3,14 +3,21 @@
     "id": 1,
     "quote": "Adrian delivered a <em>clean, fast landing page</em> that exceeded our expectations. He communicated clearly and handled every revision with professionalism.",
     "name": "John D.",
-    "role": "Pipe Medic · Wichita, US",
+    "role": "Pipe Medic Â· Wichita, US",
     "initials": "JD"
   },
   {
     "id": 2,
     "quote": "Great attention to detail and <em>mobile responsiveness</em>. The site looks polished on every device. Would definitely work with Adrian again.",
     "name": "Sarah M.",
-    "role": "Revenue River · Affiliate Marketing",
+    "role": "Revenue River Â· Affiliate Marketing",
     "initials": "SM"
+  },
+  {
+    "id": 1774977362973,
+    "name": "Aliss Mares",
+    "role": "Mares Psihi",
+    "initials": "AM",
+    "quote": "\"Absolutely impressed with the fantastic work on the HTML, CSS, and JavaScript aspects of our project. You nailed my requirements perfectly, delivering spot-on results that matched my vision exactly. Your grasp of what I needed and your flawless execution really stand out. I couldn't be happier with the outcome and I'm definitely looking forward to working with you again. Thanks for the outstanding job!\""
   }
 ]
