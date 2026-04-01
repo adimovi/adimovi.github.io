@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-  
 <style>
   :root {
     --bg: #0d0d0d;
@@ -842,7 +841,7 @@
     border-radius: 14px;
     padding: 18px 20px;
     flex-shrink: 0;
-    height: auto;
+    height: 138px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1446,6 +1445,9 @@
         if (!data.length) return;
         const html = data.map(cardHTML).join('');
         track.innerHTML = html + html; // original + clone for seamless loop
+        // 4s per card keeps speed constant regardless of count
+        const duration = data.length * 4;
+        track.style.animationDuration = duration + 's';
       })
       .catch(() => {});
   })();
