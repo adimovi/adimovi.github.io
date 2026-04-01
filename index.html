@@ -958,12 +958,11 @@
     .col-2 { grid-column: span 6; }
     .service-grid { grid-template-columns: repeat(2, 1fr); }
     .card-cta { flex-direction: column; align-items: flex-start; }
-    .card-hero { min-height: 220px; }
-    .card-avail { min-height: auto; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 28px; }
+    .card-hero { min-height: 220px;grid-column:span 12; }
+    .card-avail { min-height: auto; flex-direction: row; align-items: center; justify-content: space-between; padding: 24px 28px; grid-column:span 12;}
     .avail-big { font-size: 36px; }
     .avail-sub { font-size: 14px; }
     .tcarousel-viewport { height: 320px; }
-    .testimonial-item { height: 150px; }
   }
   @media (max-width: 600px) {
     body { padding: 12px; }
@@ -977,7 +976,7 @@
     .avail-sub { font-size: 14px; }
     .avail-cta { width: 100%; justify-content: center; }
     .tcarousel-viewport { height: 360px; }
-    .testimonial-item { height: 170px; font-size: 12.5px; padding: 14px 16px; }
+    .testimonial-item { font-size: 12.5px; padding: 14px 16px; }
     .testimonial-item blockquote { font-size: 12.5px; }
   }
 </style>
