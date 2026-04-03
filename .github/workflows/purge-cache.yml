@@ -1,0 +1,32 @@
+name: Purge Cloudflare Cache
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  purge-cache:
+    name: Purge cache after deployment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Wait for Cloudflare Pages deployment
+        run: sleep 60
+
+      - name: Purge Cloudflare cache
+        run: |
+          curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
+            -H "Authorization: Bearer ${{ secrets.CF_CACHE_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything": true}' \
+            | tee /tmp/cf_response.json
+
+          SUCCESS=$(cat /tmp/cf_response.json | python3 -c "import sys,json; print(json.load(sys.stdin)['success'])")
+          if [ "$SUCCESS" != "True" ]; then
+            echo "Cache purge failed:"
+            cat /tmp/cf_response.json
+            exit 1
+          fi
+
+          echo "✓ Cloudflare cache purged successfully"
