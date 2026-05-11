@@ -76,5 +76,17 @@
       "Elementor Pro",
       "ACF"
     ]
+  },
+  {
+    "id": 1778497356265,
+    "title": "Psiho-Medica",
+    "url": "https://psihomedica.net",
+    "image": "https://thefrontdev.ro/img/psihomedica.png",
+    "tags": [
+      "Wordpress",
+      "Elementor",
+      "CSS",
+      "Javascript"
+    ]
   }
 ]
